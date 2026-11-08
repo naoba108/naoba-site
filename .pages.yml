@@ -11,6 +11,7 @@ content:
     fields:
       - { name: tagline_1, label: Tagline line 1, type: string }
       - { name: tagline_2, label: Tagline line 2, type: string }
+      - { name: tagline_3, label: Tagline line 3, type: string }
       - { name: intro, label: Short intro, type: text }
       - { name: email, label: Contact email, type: string }
       - { name: kofi, label: Ko-fi link, type: string }

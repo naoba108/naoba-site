@@ -17,7 +17,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   <div class="shade"></div>
   <div class="center">
     <img class="logo" src="./images/logo.webp" alt="NAOBA" width="1200" height="543" />
-    <p class="italic tag">{site.tagline_1}<br />{site.tagline_2}</p>
+    <p class="italic tag">{site.tagline_1}<br />{site.tagline_2}{site.tagline_3 && <><br />{site.tagline_3}</>}</p>
   </div>
   <a class="cue" href="#doors">Enter</a>
 </section>
@@ -30,13 +30,13 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   </a>
   <a class="door listen" href="./listen.html">
     <video src="./video/grass.mp4" poster="./images/ometepe-jungle.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
-    <div class="txt"><h2 class="h1">Listen</h2><p class="italic">Sound research &amp; bioacoustics, Heart in Nature tools</p><span class="btn">Enter the lab</span></div>
+    <div class="txt"><h2 class="h1">Listen</h2><p class="italic">Heart in Nature. Nervous System &amp; Immersive Listening.</p><span class="btn">Enter the lab</span></div>
   </a>
 </section>
 
 <section class="small-doors">
   <a class="sdoor" href="./film.html"><img src="./images/tree-bw.jpg" alt="" loading="lazy" /><span class="h2">Film</span><span class="italic">Scores and sound design</span></a>
-  <a class="sdoor" href="./shop.html"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" /><span class="h2">Shop</span><span class="italic">Sounds and plugins</span></a>
+  <a class="sdoor" href="./shop.html"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" /><span class="h2">Download</span><span class="italic">Sound Design Tools, Sample Packs &amp; Ableton Templates</span></a>
   <a class="sdoor" href="./mentorship.html"><img src="./images/studio-circle.jpg" alt="" loading="lazy" /><span class="h2">Mentorship</span><span class="italic">Three paths</span></a>
 </section>
 </div>
@@ -128,4 +128,14 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .sdoor .italic{font-size:18px}
 @media (max-width:820px){.portal{grid-template-rows:2fr 1fr}.doors{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.door + .door{border-left:0}.door{padding:20px}.door .italic{font-size:15px;margin:4px 0 10px}.door .btn{font-size:15px;padding:7px 14px}.sdoor{padding:14px}.sdoor .h2{font-size:20px}.sdoor .italic{display:none}}
 </style>
+<script is:inline>
+(function(){
+  function go(e){var d=document.getElementById('doors'); if(!d) return; if(e) e.preventDefault(); d.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}); history.replaceState(null,'','#doors');}
+  var cue=document.querySelector('.cue'); if(cue) cue.addEventListener('click',go);
+  document.addEventListener('keydown',function(e){
+    var t=document.activeElement; var typing=t&&(/INPUT|TEXTAREA|SELECT/.test(t.tagName)||t.isContentEditable);
+    if(e.key==='Enter'&&!typing&&(!t||t===document.body||t===cue)&&window.scrollY<window.innerHeight*0.6){go(e);}
+  });
+})();
+</script>
 </Base>
