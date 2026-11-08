@@ -19,7 +19,7 @@ const nav = [
 <meta name="description" content={site.intro} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Jost:wght@300;400&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
 </head>
 <body class={page}>
 <header class="bar">
@@ -53,11 +53,11 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 <style is:global>
 @font-face{font-family:'Butterbrotpapier';src:url('./fonts/butterbrotpapier.woff2') format('woff2');font-display:swap}
 :root{--black:#000;--obsidian:#0b0907;--noche:#0F2619;--moss:#5A6431;--gold:#C9984A;--lgold:#F0C67C;--copal:#E8822A;--cacao:#1a100a;--maize:#EFE3C8;--line:#2b2a1c;
---head:'Butterbrotpapier','IM Fell English',Georgia,serif;--fell:'IM Fell English',Georgia,serif;--body:'Jost',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+--head:'Butterbrotpapier',Georgia,serif;--fell:'Figtree',system-ui,sans-serif;--body:'Figtree',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--black);color:var(--maize);font:300 17px/1.7 var(--body)}
+body{margin:0;background:var(--black);color:var(--maize);font:400 17px/1.7 var(--body)}
 a{color:var(--lgold)}
 a:hover{color:var(--copal)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--copal);outline-offset:3px}
@@ -75,10 +75,10 @@ img,video{max-width:100%;display:block}
 .band{padding:96px 0;position:relative}
 .band.noche{background:var(--noche)}
 .band.cacao{background:var(--cacao)}
-.h1{font-family:var(--head);font-weight:400;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:.04em;color:var(--lgold);margin:0}
-.h2{font-family:var(--head);font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:.03em;color:var(--lgold);margin:0 0 18px}
+.h1{font-family:var(--head);font-weight:400;text-transform:uppercase;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:.04em;color:var(--lgold);margin:0}
+.h2{font-family:var(--head);font-weight:400;text-transform:uppercase;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:.03em;color:var(--lgold);margin:0 0 18px}
 .h3{font-family:var(--head);font-weight:400;font-size:24px;letter-spacing:.02em;color:var(--lgold);margin:0 0 6px}
-.italic,.lede{font-family:var(--fell);font-style:italic;font-size:clamp(19px,2vw,23px);line-height:1.45;color:var(--maize);max-width:40ch;margin:0 0 28px}
+.italic,.lede{font-family:var(--fell);font-style:normal;font-weight:400;font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--maize);max-width:40ch;margin:0 0 28px}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--gold)}
 .small{font-size:14px}
 .btn{display:inline-block;font-family:var(--head);font-size:18px;letter-spacing:.05em;text-decoration:none;padding:10px 22px;border-radius:2px;border:1px solid var(--gold);color:var(--lgold);background:transparent;cursor:pointer}
