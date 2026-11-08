@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import Glyph from '../components/Glyph.astro';
+import Video from '../components/Video.astro';
+import Cochlea from '../components/Cochlea.astro';
+import Spectrogram from '../components/Spectrogram.astro';
+import listen from '../content/listen.json';
+const glyphs = ['spiral', 'turtle', 'sun'];
+---
+<Base title="Listen, NAOBA" page="listen">
+<section class="page-hero">
+  <video src="./video/grass.mp4" poster="./images/ometepe-jungle.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="wrap">
+    <p class="mono">N 11°30′ W 85°35′ &nbsp; Ometepe, Nicaragua</p>
+    <h1 class="h1">Sound research &amp; bioacoustics</h1>
+  </div>
+</section>
+
+<section class="band noche">
+  <div class="wrap grid2">
+    <div>
+      <h2 class="h2">Heart in Nature</h2>
+      <p class="italic">{listen.intro}</p>
+    </div>
+    <Cochlea size={320} />
+  </div>
+</section>
+
+<section class="band" style="padding-top:56px;padding-bottom:56px">
+  <div class="wrap"><Spectrogram /></div>
+</section>
+
+<section class="band noche">
+  <div class="wrap">
+    <h2 class="h2">The research</h2>
+    <div class="grid3">
+      {listen.research.map((r, i) => <div class="card plate"><Glyph name={glyphs[i % 3]} /><h3 class="h3" style="margin-top:14px">{r.title}</h3><p>{r.text}</p></div>)}
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap grid2">
+    <div class="frame"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
+    <div>
+      <h2 class="h2">Play with these sounds</h2>
+      <p class="italic">Sample packs, plugins and templates made from these recordings.</p>
+      <p><a class="btn solid" href="./shop.html">Visit the shop</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band noche">
+  <div class="wrap">
+    <h2 class="h2">From the field</h2>
+    <div class="grid2">{listen.videos.map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap grid2">
+    <div class="frame"><img src="./images/rooftop-setup.jpg" alt="Tamara at a hybrid DJ and Ableton setup" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
+    <div>
+      <h2 class="h2">Learn the craft</h2>
+      <p class="italic">Field recording, Ableton and sound design, one to one.</p>
+      <p><a class="btn solid" href="./mentorship.html">See mentorship</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+.plate{background-image:linear-gradient(#26402F 1px,transparent 1px),linear-gradient(90deg,#26402F 1px,transparent 1px);background-size:28px 28px;background-color:rgba(0,0,0,.35)}
+.product{text-decoration:none;color:var(--maize);display:block;transition:border-color .4s}
+.product:hover{border-color:var(--gold);color:var(--maize)}
+</style>
+</Base>

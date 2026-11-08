@@ -1,0 +1,9 @@
+{
+  "intro": "I walk beside artists in their creative journey, so more of their music can pour out the way they want it to. Sound engineer, composer, label curator, mixing and mastering engineer, and spaceholder: I bring all of it to your music.",
+  "video_id": "",
+  "packages": [
+    { "name": "Semilla", "meaning": "Seed", "length": "1 month", "sessions": "2 sessions of 75 min", "usd": "$390", "eur": "€350", "plan": "", "includes": ["A written roadmap for your music", "Recording and setup advice", "Feedback on 2 tracks", "Voice messages between sessions"] },
+    { "name": "Raíz", "meaning": "Root", "length": "3 months", "sessions": "6 sessions of 90 min", "usd": "$1,150", "eur": "€1,035", "plan": "or 3 × $395 / €355", "includes": ["Everything in Semilla", "Ableton Live coaching on your own music", "Feedback on 6 tracks", "Creative blocks and your posture as an artist"] },
+    { "name": "Cosecha", "meaning": "Harvest", "length": "6 months", "sessions": "12 sessions of 90 min", "usd": "$2,200", "eur": "€1,975", "plan": "or 6 × $375 / €340", "includes": ["Everything in Raíz", "Catalogue curation, like a label", "Mixing and mastering of an EP (5 tracks)", "Full release plan"] }
+  ]
+}

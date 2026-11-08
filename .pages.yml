@@ -1,0 +1,193 @@
+media:
+  input: public/images
+  output: ./images
+
+content:
+  - name: site
+    label: Home, links and taglines
+    type: file
+    path: src/content/site.json
+    format: json
+    fields:
+      - { name: tagline_1, label: Tagline line 1, type: string }
+      - { name: tagline_2, label: Tagline line 2, type: string }
+      - { name: intro, label: Short intro, type: text }
+      - { name: email, label: Contact email, type: string }
+      - { name: kofi, label: Ko-fi link, type: string }
+      - { name: substack, label: Substack link, type: string }
+      - { name: soundcloud, label: SoundCloud link, type: string }
+      - { name: spotify, label: Spotify link, type: string }
+      - { name: bandcamp, label: Bandcamp link, type: string }
+      - { name: instagram, label: Instagram link, type: string }
+      - { name: youtube, label: YouTube channel link, type: string }
+  - name: awards
+    label: Awards
+    type: file
+    path: src/content/awards.json
+    format: json
+    fields:
+      - name: highlight
+        label: Highlight (big title)
+        type: object
+        fields:
+          - { name: title, label: Small line, type: string }
+          - { name: detail, label: Big title, type: string }
+      - name: awards
+        label: Music awards
+        type: object
+        list: true
+        fields:
+          - { name: prize, label: Prize, type: string }
+          - { name: org, label: Awarded by, type: string }
+          - { name: for, label: For which work, type: string }
+      - name: film
+        label: Film awards
+        type: object
+        list: true
+        fields:
+          - { name: prize, label: Prize, type: string }
+          - { name: org, label: Festival, type: string }
+          - { name: for, label: Film and role, type: string }
+      - { name: labels, label: Labels, type: string, list: true }
+  - name: dance
+    label: Dance page
+    type: file
+    path: src/content/dance.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - name: offerings
+        label: What I bring
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - { name: soundcloud_track, label: SoundCloud mix link, type: string }
+      - name: videos
+        label: Videos
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: youtube_id, label: YouTube video ID (the letters after watch?v=), type: string }
+      - name: events
+        label: CACAO Bass events
+        type: object
+        list: true
+        fields:
+          - { name: date, label: Date, type: string }
+          - { name: city, label: City, type: string }
+          - { name: venue, label: Venue, type: string }
+          - { name: tickets, label: Ticket link, type: string }
+      - { name: stages, label: Stages and spaces, type: string, list: true }
+  - name: listen
+    label: Listen page
+    type: file
+    path: src/content/listen.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - name: research
+        label: Research cards
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - name: videos
+        label: Videos
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: youtube_id, label: YouTube video ID, type: string }
+  - name: mentorship
+    label: Mentorship page
+    type: file
+    path: src/content/mentorship.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - { name: video_id, label: Intro video YouTube ID, type: string }
+      - name: packages
+        label: Packages
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: meaning, label: Meaning, type: string }
+          - { name: length, label: Length, type: string }
+          - { name: sessions, label: Sessions, type: string }
+          - { name: usd, label: Price USD, type: string }
+          - { name: eur, label: Price EUR, type: string }
+          - { name: plan, label: Payment plan, type: string }
+          - { name: includes, label: What's included, type: string, list: true }
+  - name: film
+    label: Film page
+    type: file
+    path: src/content/film.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - { name: showreel_id, label: Showreel YouTube ID, type: string }
+      - name: services
+        label: What I make
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - name: projects
+        label: Projects
+        type: object
+        list: true
+        fields:
+          - { name: year, label: Year, type: string }
+          - { name: title, label: Film, type: string }
+          - { name: role, label: Your role, type: string }
+          - { name: note, label: Award or festival, type: string }
+  - name: shop
+    label: Shop page
+    type: file
+    path: src/content/shop.json
+    format: json
+    fields:
+      - { name: intro, label: Intro, type: text }
+      - name: shelves
+        label: Shelves
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Shelf name, type: string }
+          - name: items
+            label: Products
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: format, label: Format, type: string }
+              - { name: text, label: Description, type: text }
+              - { name: price, label: Price, type: string }
+              - { name: url, label: Ko-fi link, type: string }
+              - { name: audio, label: Audio preview (upload an MP3), type: file }
+              - { name: status, label: Status, type: string }
+  - name: music
+    label: Music players (Home)
+    type: file
+    path: src/content/music.json
+    format: json
+    fields:
+      - { name: intro, label: Short line above the players, type: string }
+      - name: players
+        label: Players (paste any Spotify or SoundCloud link)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Name, type: string }
+          - { name: url, label: Spotify or SoundCloud link, type: string }
+          - name: size
+            label: Size
+            type: select
+            options:
+              values: [large, compact]

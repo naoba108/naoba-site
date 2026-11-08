@@ -1,0 +1,24 @@
+{
+  "intro": "Recorded in rainforests, rivers and volcanoes, cleaned and tuned in the studio. Sounds and tools for producers, sound designers and sound healers who want the living Earth inside their music.",
+  "shelves": [
+    {
+      "name": "Sample packs",
+      "items": [
+        { "title": "Rainforest at dawn", "format": "WAV 24-bit, 48 kHz", "text": "Howler monkeys, birds and insects, from first light to full chorus.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Coming soon" },
+        { "title": "Volcano and river", "format": "WAV 24-bit, 48 kHz", "text": "Deep rumbles, water textures and stones, ready to layer.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Coming soon" }
+      ]
+    },
+    {
+      "name": "Plugins",
+      "items": [
+        { "title": "NAOBA plugin", "format": "VST3, AU", "text": "An instrument built from field recordings. In development.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Early access" }
+      ]
+    },
+    {
+      "name": "Templates",
+      "items": [
+        { "title": "Sound-healing Ableton template", "format": "Ableton Live 11+", "text": "Open the session and play with drones, frequencies and nature layers.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Coming soon" }
+      ]
+    }
+  ]
+}

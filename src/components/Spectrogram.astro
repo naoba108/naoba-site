@@ -1,0 +1,29 @@
+---
+// Gold birdsong spectrogram, same drawing every build.
+const { seed = 11, label = 'Fig. Dawn chorus spectrogram, 0 to 10 kHz (sample)' } = Astro.props;
+let s = seed;
+const rnd = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
+const W = 1200, H = 160;
+const calls = [];
+let x = 50;
+while (x < W - 30) {
+  const base = 30 + rnd() * 100, n = 2 + Math.floor(rnd() * 5), kind = Math.floor(rnd() * 3);
+  for (let i = 0; i < n && x < W - 20; i++) {
+    const w = 6 + rnd() * 18, top = base - 8 - rnd() * 26;
+    const d = kind ? `M${x} ${base + 6} L${x + w} ${top}` : `M${x} ${base} Q${x + w / 2} ${top} ${x + w} ${base + 5}`;
+    calls.push({ d, c: rnd() < 0.1 ? 'var(--copal)' : 'var(--lgold)', o: (0.45 + rnd() * 0.55).toFixed(2), w: (1 + rnd() * 1.8).toFixed(1) });
+    x += w + 3 + rnd() * 6;
+  }
+  x += 16 + rnd() * 60;
+}
+const noise = Array.from({ length: 300 }, () => ({ x: (50 + rnd() * 1150).toFixed(1), y: (125 + rnd() * 30).toFixed(1), h: (1 + rnd() * 6).toFixed(1), o: (0.1 + rnd() * 0.25).toFixed(2) }));
+const ticks = ['10', '7.5', '5', '2.5', '0'];
+---
+<figure style="margin:0">
+  <svg viewBox={`0 0 ${W} ${H}`} width="100%" preserveAspectRatio="none" style="height:clamp(110px,14vw,170px)" role="img" aria-label="Spectrogram of birdsong">
+    {ticks.map((t, k) => <g><line x1="40" x2={W} y1={10 + k * 35} y2={10 + k * 35} stroke="#26402F" stroke-width="0.6"/><text x="0" y={14 + k * 35} font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--gold)">{t}</text></g>)}
+    {noise.map(n => <rect x={n.x} y={n.y} width="1.4" height={n.h} fill="var(--gold)" opacity={n.o}/>)}
+    {calls.map(c => <path d={c.d} fill="none" stroke={c.c} stroke-width={c.w} stroke-linecap="round" opacity={c.o}/>)}
+  </svg>
+  <figcaption class="mono" style="margin-top:6px">{label}</figcaption>
+</figure>

@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Glyph from '../components/Glyph.astro';
+import site from '../content/site.json';
+const reasons = ['Booking a DJ set', 'Hosting a CACAO Bass gathering', 'Mentorship', 'Film or sound design', 'Something else'];
+---
+<Base title="Contact, NAOBA" page="contact">
+<section class="page-hero" style="min-height:60vh">
+  <img src="./images/lava-portrait.jpg" alt="Tamara Montenegro on a lava field" />
+  <div class="wrap">
+    <p class="mono">Write to me</p>
+    <h1 class="h1">Contact</h1>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap grid2" style="align-items:start">
+    <form class="form" id="contact">
+      <label>Your name<input name="name" required autocomplete="name" /></label>
+      <label>Your email<input name="email" type="email" required autocomplete="email" /></label>
+      <label>What is it about?
+        <select name="reason">{reasons.map(r => <option>{r}</option>)}</select>
+      </label>
+      <label>Date and place, if it's an event<input name="when" /></label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button class="btn solid" type="submit">Send</button>
+      <p class="small" id="form-note" role="status"></p>
+    </form>
+    <div>
+      <Glyph name="temple" size={48} />
+      <p class="italic" style="margin-top:16px">For bookings, mentorship and everything else.</p>
+      <p class="h3"><a href={`mailto:${site.email}`} style="text-decoration:none">{site.email}</a></p>
+      <ul class="list" style="margin-top:28px">
+        <li><a href={site.kofi}>Ko-fi</a><span class="mono">shop and support</span></li>
+        <li><a href={site.substack}>Substack</a><span class="mono">letters</span></li>
+        <li><a href={site.instagram}>Instagram</a><span class="mono">@naobamusic</span></li>
+        <li><a href={site.soundcloud}>SoundCloud</a><span class="mono">mixes</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ email: site.email }}>
+document.getElementById('contact').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const f = new FormData(this);
+  const body = `Name: ${f.get('name')}\nEmail: ${f.get('email')}\nAbout: ${f.get('reason')}\nWhen/where: ${f.get('when')}\n\n${f.get('message')}`;
+  location.href = `mailto:${email}?subject=${encodeURIComponent('NAOBA: ' + f.get('reason'))}&body=${encodeURIComponent(body)}`;
+  document.getElementById('form-note').textContent = `Your email app should open now. If it doesn't, write to ${email}.`;
+});
+</script>
+
+<style>
+.form{display:grid;gap:18px}
+.form label{display:grid;gap:6px;font-family:var(--head);font-size:18px;color:var(--lgold)}
+.form input,.form select,.form textarea{font:300 16px var(--body);color:var(--maize);background:var(--obsidian);border:1px solid var(--moss);border-radius:2px;padding:12px 14px}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold)}
+.form button{justify-self:start}
+</style>
+</Base>

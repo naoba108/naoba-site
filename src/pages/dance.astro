@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import Divider from '../components/Divider.astro';
+import Glyph from '../components/Glyph.astro';
+import Video from '../components/Video.astro';
+import site from '../content/site.json';
+import dance from '../content/dance.json';
+const sc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(dance.soundcloud_track)}&color=%23e8822a&auto_play=false&hide_related=true&show_comments=false&visual=true`;
+const glyphs = ['spiral', 'double', 'temple'];
+---
+<Base title="Dance, NAOBA" page="dance">
+<section class="page-hero">
+  <img src="./images/dj-candles.jpg" alt="NAOBA DJing by candlelight" />
+  <div class="wrap">
+    <p class="mono" style="color:var(--copal)">Ecstatic dance DJ, producer</p>
+    <h1 class="h1">Ceremony on the dance floor</h1>
+  </div>
+</section>
+
+<section class="band cacao">
+  <div class="wrap grid2">
+    <p class="italic" style="margin:0">{dance.intro}</p>
+    <div class="frame"><iframe class="player" src={sc} title="NAOBA mixes on SoundCloud" loading="lazy"></iframe></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 class="h2">What I bring</h2>
+    <div class="grid3">
+      {dance.offerings.map((o, i) => <div class="card"><Glyph name={glyphs[i % 3]} color="var(--copal)" /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div>)}
+    </div>
+  </div>
+</section>
+
+<section class="band cacao">
+  <div class="wrap">
+    <h2 class="h2">Watch</h2>
+    <div class="grid2">{dance.videos.map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap grid2" style="align-items:start">
+    <div>
+      <h2 class="h2">CACAO Bass</h2>
+      {dance.events.length
+        ? <ul class="list">{dance.events.map(e => <li><span>{e.city}, {e.venue}</span><a class="mono" href={e.tickets}>{e.date}</a></li>)}</ul>
+        : <p class="italic">New gatherings are announced first in the letters. Sign up at the bottom of the page.</p>}
+      <p><a class="btn copal" href="./contact.html">Host a CACAO Bass gathering</a></p>
+    </div>
+    <div>
+      <h3 class="h3">Stages and spaces</h3>
+      <ul class="list">{dance.stages.map(s => <li><span>{s}</span></li>)}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="band cacao">
+  <div class="wrap grid2">
+    <img class="photo" src="./images/dj-motion.jpg" alt="NAOBA in motion behind the mixer" loading="lazy" />
+    <div>
+      <Divider />
+      <h2 class="h2" style="margin-top:24px">Book NAOBA</h2>
+      <p class="italic">Festivals, ecstatic dance communities, retreats and ceremonies. Tell me about your space and your people.</p>
+      <p><a class="btn solid" href="./contact.html">Send a booking request</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+.player{width:100%;height:300px;border:0;display:block;background:#000}
+.photo{width:100%;aspect-ratio:4/5;object-fit:cover;filter:brightness(.85)}
+</style>
+</Base>

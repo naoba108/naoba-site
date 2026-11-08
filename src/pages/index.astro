@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import Divider from '../components/Divider.astro';
+import Glyph from '../components/Glyph.astro';
+import Video from '../components/Video.astro';
+import site from '../content/site.json';
+import awards from '../content/awards.json';
+import dance from '../content/dance.json';
+import listen from '../content/listen.json';
+import music from '../content/music.json';
+import Player from '../components/Player.astro';
+const homeVideos = [dance.videos[0], listen.videos[0]];
+---
+<Base title="NAOBA, Tamara Montenegro" page="home">
+<section class="hero">
+  <video src="./video/tree.mp4" poster="./images/tree-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="shade"></div>
+  <div class="center">
+    <img class="logo" src="./images/logo.png" alt="NAOBA" width="440" height="199" />
+    <p class="italic tag">{site.tagline_1}<br />{site.tagline_2}</p>
+  </div>
+  <a class="cue" href="#doors">Enter</a>
+</section>
+
+<section class="doors" id="doors">
+  <a class="door dance" href="./dance.html">
+    <img src="./images/dj-candles.jpg" alt="NAOBA DJing by candlelight" loading="lazy" />
+    <div class="txt"><h2 class="h1">Dance</h2><p class="italic">DJ sets and CACAO Bass gatherings</p><span class="btn copal">Book NAOBA</span></div>
+  </a>
+  <a class="door listen" href="./listen.html">
+    <video src="./video/grass.mp4" poster="./images/ometepe-jungle.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+    <div class="txt"><h2 class="h1">Listen</h2><p class="italic">Sound research &amp; bioacoustics, Heart in Nature tools</p><span class="btn">Enter the lab</span></div>
+  </a>
+</section>
+
+<section class="small-doors">
+  <a class="sdoor" href="./film.html"><img src="./images/tree-bw.jpg" alt="" loading="lazy" /><span class="h2">Film</span><span class="italic">Scores and sound design</span></a>
+  <a class="sdoor" href="./shop.html"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" /><span class="h2">Shop</span><span class="italic">Sounds and plugins</span></a>
+  <a class="sdoor" href="./mentorship.html"><img src="./images/studio-circle.jpg" alt="" loading="lazy" /><span class="h2">Mentorship</span><span class="italic">Three paths</span></a>
+</section>
+
+<section class="band">
+  <div class="wrap center-text">
+    <Glyph name="spiral" size={48} />
+    <p class="italic intro">{site.intro}</p>
+  </div>
+</section>
+
+<section class="band noche" id="music">
+  <div class="wrap">
+    <h2 class="h2">Music</h2>
+    <p class="lede">{music.intro} Released on {awards.labels.slice(0, 6).join(', ')} and more.</p>
+    <div class="players">
+      {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
+    </div>
+    <p style="margin-top:28px"><a class="btn" href={site.bandcamp}>Buy on Bandcamp</a></p>
+  </div>
+</section>
+
+<section class="band" id="videos">
+  <div class="wrap">
+    <h2 class="h2">Videos</h2>
+    <div class="grid2">
+      {homeVideos.map(v => <Video id={v.youtube_id} title={v.title} />)}
+    </div>
+    <p style="margin-top:28px"><a class="btn" href={site.youtube}>More on YouTube</a></p>
+  </div>
+</section>
+
+<section class="band cacao" id="awards">
+  <div class="wrap">
+    <Divider />
+    <div class="center-text" style="margin:40px 0 56px">
+      <Glyph name="sun" size={56} color="var(--lgold)" />
+      <p class="mono" style="margin:14px 0 6px">{awards.highlight.title}</p>
+      <h2 class="h1">{awards.highlight.detail}</h2>
+    </div>
+    <div class="grid2" style="align-items:start">
+      <div>
+        <h3 class="h3">Music awards</h3>
+        <ul class="list">
+          {awards.awards.map(a => <li><span>{a.prize}</span><span class="mono">{a.org}</span></li>)}
+        </ul>
+      </div>
+      <div>
+        <h3 class="h3">Film</h3>
+        <ul class="list">
+          {awards.film.map(a => <li><span>{a.prize}<br /><span class="small" style="color:var(--gold)">{a.for}</span></span><span class="mono">{a.org}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero{position:relative;height:100vh;min-height:560px;overflow:hidden;display:grid;place-items:center}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.25) 0%,rgba(0,0,0,.72) 70%,#000 100%)}
+.center{position:relative;z-index:2;text-align:center;padding:0 20px}
+.logo{width:min(560px,82vw);height:auto;margin:0 auto;opacity:0;animation:rise 2.4s 1s ease forwards}
+.tag{margin:18px auto 0;text-align:center;opacity:0;animation:rise 2s 2.4s ease forwards}
+.cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--head);font-size:18px;text-decoration:none}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.logo,.tag{animation:none;opacity:1}}
+.doors{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.door{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:44px;text-decoration:none;border-top:1px solid var(--line)}
+.door + .door{border-left:1px solid var(--line)}
+.door img,.door video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease,filter 1.2s ease;filter:brightness(.55)}
+.door:hover img,.door:hover video{transform:scale(1.04);filter:brightness(.72)}
+.door::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),transparent 60%)}
+.door .txt{position:relative;z-index:2}
+.door .italic{margin:10px 0 18px}
+.center-text{text-align:center}
+.center-text .italic,.intro{margin:20px auto 0;max-width:44ch;text-align:center}
+.players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px}
+@media (max-width:820px){.players{grid-template-columns:1fr}}
+.small-doors{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.sdoor{position:relative;min-height:42vh;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;text-decoration:none;overflow:hidden;border-right:1px solid var(--line)}
+.sdoor:last-child{border-right:0}
+.sdoor img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42);transition:transform 1.2s ease,filter 1.2s ease}
+.sdoor:hover img{transform:scale(1.04);filter:brightness(.6)}
+.sdoor .h2,.sdoor .italic{position:relative;z-index:2;margin:0}
+.sdoor .italic{font-size:18px}
+@media (max-width:820px){.small-doors{grid-template-columns:1fr}.sdoor{border-right:0;border-bottom:1px solid var(--line);min-height:32vh}.doors{grid-template-columns:1fr}.door{min-height:62vh;padding:28px}.door + .door{border-left:0}}
+</style>
+</Base>

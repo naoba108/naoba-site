@@ -1,0 +1,27 @@
+{
+  "intro": "For nine years I have recorded rainforests, rivers and volcanoes through Heart in Nature. I study how sound moves through the body and the nervous system, and I turn those recordings into tools you can play.",
+  "research": [
+    {
+      "title": "Psychoacoustics",
+      "text": "How the ear and brain turn vibration into feeling. The heart of my Master's in Sound Art."
+    },
+    {
+      "title": "Bioacoustics",
+      "text": "The voices of living ecosystems, recorded and archived from Central America."
+    },
+    {
+      "title": "3D sound",
+      "text": "Binaural and ambisonic environments for installations, planetariums and headphones."
+    }
+  ],
+  "videos": [
+    {
+      "title": "Heart in Nature film",
+      "youtube_id": ""
+    },
+    {
+      "title": "Recording in the field",
+      "youtube_id": ""
+    }
+  ]
+}

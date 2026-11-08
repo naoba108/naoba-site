@@ -1,0 +1,28 @@
+---
+// Turns a normal Spotify or SoundCloud link into an embedded player.
+// Spotify: open.spotify.com/{artist|album|track|playlist}/{id} -> open.spotify.com/embed/...
+// SoundCloud: any soundcloud.com link -> w.soundcloud.com/player
+const { url = '', title = 'Music player', size = 'large' } = Astro.props;
+let src = '', height = 152, kind = '';
+const clean = url.split('?')[0].trim();
+if (clean.includes('open.spotify.com')) {
+  kind = 'spotify';
+  src = clean.replace('open.spotify.com/', 'open.spotify.com/embed/').replace(/\/intl-[a-z]+\//, '/');
+  height = size === 'large' ? 380 : 152;
+} else if (clean.includes('soundcloud.com')) {
+  kind = 'soundcloud';
+  const many = clean.split('/').length <= 4 || clean.includes('/sets/');
+  src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(clean)}&color=%23c9984a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=${size === 'large' ? 'true' : 'false'}`;
+  height = size === 'large' ? 380 : (many ? 300 : 166);
+}
+---
+{src && (
+  <div class={`frame player-wrap ${kind}`}>
+    <iframe src={src} title={title} loading="lazy" style={`height:${height}px`} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <a class="mono open" href={url}>Open on {kind === 'spotify' ? 'Spotify' : 'SoundCloud'}</a>
+  </div>
+)}
+<style>
+.player-wrap iframe{width:100%;border:0;display:block;border-radius:2px;background:var(--obsidian)}
+.player-wrap .open{display:inline-block;margin-top:8px;text-decoration:none}
+</style>

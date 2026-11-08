@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Divider from '../components/Divider.astro';
+import Spectrogram from '../components/Spectrogram.astro';
+import shop from '../content/shop.json';
+import site from '../content/site.json';
+---
+<Base title="Shop, sound design, NAOBA" page="shop">
+<section class="page-hero">
+  <img src="./images/guitar-hand.jpg" alt="A hand playing an acoustic guitar" style="object-position:center 40%" />
+  <div class="wrap">
+    <p class="mono">Samples, plugins, templates</p>
+    <h1 class="h1">Sound design from the living Earth</h1>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="italic" style="max-width:52ch">{shop.intro}</p>
+    <div style="margin-top:40px"><Spectrogram seed={23} label="Fig. Rainforest recording, 0 to 10 kHz (sample)" /></div>
+  </div>
+</section>
+
+{shop.shelves.map((shelf, s) => (
+  <section class={`band ${s % 2 === 0 ? 'noche' : ''}`}>
+    <div class="wrap">
+      <h2 class="h2">{shelf.name}</h2>
+      <div class="grid3">
+        {shelf.items.map(it => (
+          <article class="card item">
+            <p class="mono">{it.format} &nbsp; {it.status}</p>
+            <h3 class="h3" style="margin-top:10px">{it.title}</h3>
+            <p>{it.text}</p>
+            {it.audio
+              ? <audio controls preload="none" src={it.audio}></audio>
+              : <p class="preview mono">Audio preview coming soon</p>}
+            <div class="buy">
+              {it.price && <span class="price">{it.price}</span>}
+              <a class="btn solid" href={it.url}>Buy on Ko-fi</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+))}
+
+<section class="band cacao">
+  <div class="wrap" style="text-align:center">
+    <Divider />
+    <h2 class="h2" style="margin-top:24px">Want a custom sound world?</h2>
+    <p class="italic" style="margin:0 auto 28px">For films, games, installations and albums.</p>
+    <a class="btn" href="./film.html#quote">Request a quote</a>
+    <a class="btn" href={site.kofi} style="margin-left:10px">Visit my Ko-fi</a>
+  </div>
+</section>
+
+<style>
+.item{display:flex;flex-direction:column;gap:12px}
+.item p{margin:0}
+.item audio{width:100%;margin-top:6px}
+.preview{border:1px dashed var(--moss);padding:12px;text-align:center}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:8px}
+.price{font-family:var(--head);font-size:26px;color:var(--lgold)}
+</style>
+</Base>

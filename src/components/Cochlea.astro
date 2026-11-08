@@ -1,0 +1,23 @@
+---
+// The cochlea drawn as a petroglyph spiral, with frequency ticks.
+const { size = 300 } = Astro.props;
+let d = '';
+const ticks = [];
+for (let i = 0; i <= 400; i++) {
+  const th = i / 400 * 5.2 * Math.PI, r = 6 * Math.exp(0.19 * th);
+  const x = 150 + r * Math.cos(th), y = 150 + r * Math.sin(th);
+  d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
+  if (i % 25 === 0 && i > 40) ticks.push({ x, y, nx: Math.cos(th), ny: Math.sin(th) });
+}
+---
+<figure style="margin:0;text-align:center">
+  <svg viewBox="0 0 300 300" width={size} style="max-width:100%;height:auto;margin:0 auto" role="img" aria-label="The cochlea as a petroglyph spiral">
+    <circle cx="150" cy="150" r="140" fill="none" stroke="#3c4222" stroke-width="0.6"/>
+    <circle cx="150" cy="150" r="130" fill="none" stroke="var(--gold)" stroke-width="0.5" stroke-dasharray="1 5"/>
+    <path d={d} fill="none" stroke="var(--lgold)" stroke-width="1.6" stroke-linecap="round"/>
+    {ticks.map(t => <line x1={t.x} y1={t.y} x2={t.x + t.nx * 7} y2={t.y + t.ny * 7} stroke="var(--gold)" stroke-width="0.7"/>)}
+    <text x="118" y="144" font-family="IBM Plex Mono, monospace" font-size="8" fill="var(--gold)">20 Hz</text>
+    <text x="210" y="290" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--gold)">20 kHz</text>
+  </svg>
+  <figcaption class="mono" style="margin-top:8px">Fig. 1 The cochlea as petroglyph spiral</figcaption>
+</figure>

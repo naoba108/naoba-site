@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Divider from '../components/Divider.astro';
+import Glyph from '../components/Glyph.astro';
+import Video from '../components/Video.astro';
+import m from '../content/mentorship.json';
+const glyphs = ['spiral', 'turtle', 'sun'];
+---
+<Base title="Mentorship, NAOBA" page="mentorship">
+<section class="page-hero">
+  <img src="./images/studio-circle.jpg" alt="Tamara teaching music production to a circle of artists" />
+  <div class="wrap">
+    <p class="mono">1:1 music mentorship</p>
+    <h1 class="h1">Work with me</h1>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap grid2">
+    <p class="italic" style="margin:0">{m.intro}</p>
+    <Video id={m.video_id} title="Why I mentor" />
+  </div>
+</section>
+
+<section class="band noche">
+  <div class="wrap">
+    <Divider />
+    <h2 class="h2" style="text-align:center;margin-top:28px">Three paths</h2>
+    <p class="lede" style="text-align:center;margin:0 auto 44px">The longer the path, the more each hour gives you.</p>
+    <div class="grid3">
+      {m.packages.map((p, i) => (
+        <article class={`card pkg ${i === 2 ? 'feature' : ''}`}>
+          <Glyph name={glyphs[i]} size={40} color={i === 2 ? 'var(--copal)' : 'var(--gold)'} />
+          <h3 class="h1" style="font-size:44px;margin-top:12px">{p.name}</h3>
+          <p class="italic" style="font-size:18px;margin:2px 0 14px">{p.meaning}, {p.length}</p>
+          <p class="price">{p.usd} <span>/ {p.eur}</span></p>
+          {p.plan && <p class="mono">{p.plan}</p>}
+          <p class="mono" style="color:var(--maize);margin-top:10px">{p.sessions}, every 2 weeks</p>
+          <ul>{p.includes.map(x => <li>{x}</li>)}</ul>
+          <a class={`btn ${i === 2 ? 'solid' : ''}`} href="./contact.html">Book a free call</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.pkg{display:flex;flex-direction:column}
+.pkg ul{list-style:none;padding:0;margin:18px 0 24px;flex:1}
+.pkg li{padding:8px 0 8px 18px;border-top:1px solid var(--line);position:relative;font-size:16px}
+.pkg li::before{content:'';position:absolute;left:0;top:17px;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+.pkg .btn{align-self:flex-start}
+.price{font-family:var(--head);font-size:32px;color:var(--lgold);margin:0}
+.price span{font-size:22px;color:var(--gold)}
+.feature{border-color:var(--copal)}
+</style>
+</Base>
