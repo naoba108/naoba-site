@@ -51,9 +51,10 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 }
 </script>
 <style is:global>
+@font-face{font-family:'Nova';src:url('./fonts/nova-bold.woff2?v=1') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:'Butterbrotpapier';src:url('./fonts/butterbrotpapier.woff2?v=3') format('woff2');font-display:swap}
 :root{--navh:64px;--black:#000;--obsidian:#0b0907;--noche:#0F2619;--moss:#5A6431;--gold:#C9984A;--lgold:#F0C67C;--copal:#E8822A;--cacao:#1a100a;--maize:#EFE3C8;--line:#2b2a1c;
---head:'Butterbrotpapier',Georgia,serif;--fell:'Fraunces',Georgia,serif;--body:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+--head:'Butterbrotpapier',Georgia,serif;--title:'Nova','Jost',system-ui,sans-serif;--fell:'Fraunces',Georgia,serif;--body:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box}
 .bar.solid,body:not(.home) .bar{background:rgba(11,9,7,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
 html{scroll-padding-top:var(--navh)}
@@ -77,9 +78,9 @@ img,video{max-width:100%;display:block}
 .band{padding:96px 0;position:relative}
 .band.noche{background:var(--noche)}
 .band.cacao{background:var(--cacao)}
-.h1{font-family:var(--head);font-weight:400;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:.04em;color:var(--lgold);margin:0}
-.h2{font-family:var(--head);font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:.03em;color:var(--lgold);margin:0 0 18px}
-.h3{font-family:var(--head);font-weight:400;font-size:24px;letter-spacing:.02em;color:var(--lgold);margin:0 0 6px}
+.h1{font-family:var(--title);font-weight:400;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:.04em;color:var(--lgold);margin:0}
+.h2{font-family:var(--title);font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:.03em;color:var(--lgold);margin:0 0 18px}
+.h3{font-family:var(--title);font-weight:400;font-size:24px;letter-spacing:.02em;color:var(--lgold);margin:0 0 6px}
 .italic,.lede{font-family:var(--fell);font-style:normal;font-weight:400;font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--maize);max-width:40ch;margin:0 0 28px}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--gold)}
 .small{font-size:14px}
