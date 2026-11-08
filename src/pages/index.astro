@@ -8,6 +8,7 @@ import awards from '../content/awards.json';
 import dance from '../content/dance.json';
 import listen from '../content/listen.json';
 import music from '../content/music.json';
+import press from '../content/press.json';
 import Player from '../components/Player.astro';
 const homeVideos = [dance.videos[0], listen.videos[0]];
 ---
@@ -39,6 +40,11 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   <a class="sdoor" href="./shop.html"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" /><span class="h2">Download</span><span class="italic">Sound Design Tools, Sample Packs &amp; Ableton Templates</span></a>
   <a class="sdoor" href="./mentorship.html"><img src="./images/studio-circle.jpg" alt="" loading="lazy" /><span class="h2">Mentorship</span><span class="italic">Three paths</span></a>
 </section>
+<a class="listen-strip" href="#music" aria-label="Keep scrolling to listen to NAOBA">
+  <span class="wave" aria-hidden="true">{Array.from({length:28}).map((_, i) => <i style={`--d:${(i*0.137)%1.1}s;--h:${30+((i*37)%60)}%`}></i>)}</span>
+  <span class="strip-text">Keep scrolling to listen</span>
+  <span class="arrow" aria-hidden="true">↓</span>
+</a>
 </div>
 
 <section class="band">
@@ -56,6 +62,22 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
       {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
     </div>
     <p style="margin-top:28px"><a class="btn" href={site.bandcamp}>Buy on Bandcamp</a></p>
+  </div>
+</section>
+
+<section class="band cacao" id="gigs">
+  <div class="wrap grid2" style="align-items:start">
+    <div>
+      <h2 class="h2">Next gigs</h2>
+      {dance.events.length
+        ? <ul class="list gigs">{dance.events.map(e => <li><span><strong>{e.date}</strong><br />{e.city}, {e.venue}</span>{e.tickets ? <a class="btn" href={e.tickets}>Tickets</a> : null}</li>)}</ul>
+        : <p class="lede">New dates are on their way. They're announced first in the letters, at the bottom of this page.</p>}
+    </div>
+    <div class="book-box">
+      <h3 class="h3">Bring NAOBA to your event</h3>
+      <p>Ecstatic dance, festivals, CACAO Bass gatherings and immersive listening sessions.</p>
+      <p><a class="btn copal" href="./dance.html">Book NAOBA</a> <a class="btn" href="#press">Press kit</a></p>
+    </div>
   </div>
 </section>
 
@@ -94,6 +116,32 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   </div>
 </section>
 
+<section class="band noche" id="press">
+  <div class="wrap">
+    <h2 class="h2">Press kit</h2>
+    <p class="lede">For promoters and event organisers: bio, photos and links, ready to use.</p>
+    <div class="grid2" style="align-items:start">
+      <div>
+        <h3 class="h3">Short bio</h3>
+        <p>{press.bio_short}</p>
+        <p class="press-btns">
+          <a class="btn copal" href="./press/naoba-press-photos.zip" download>Download all photos (.zip)</a>
+          {press.epk_pdf && <a class="btn" href={press.epk_pdf}>EPK (PDF)</a>}
+          {press.rider_pdf && <a class="btn" href={press.rider_pdf}>Tech rider (PDF)</a>}
+        </p>
+      </div>
+      <div class="photo-grid">
+        {press.photos.map(ph => (
+          <a class="press-photo" href={`./press/${ph.file}.jpg`} download>
+            <img src={`./press/${ph.file}-thumb.webp`} alt={ph.title} loading="lazy" />
+            <span>{ph.title}{ph.credit && ` · Photo: ${ph.credit}`}<br /><em>Download high-res</em></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
 .hero{position:relative;height:100vh;min-height:560px;overflow:hidden;display:grid;place-items:center}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -105,7 +153,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--head);font-size:18px;text-decoration:none}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.logo,.tag{animation:none;opacity:1}}
-.portal{height:100vh;height:100svh;min-height:560px;display:grid;grid-template-rows:3fr 2fr;scroll-margin-top:0}
+.portal{height:calc(100vh - var(--navh));height:calc(100svh - var(--navh));min-height:560px;display:grid;grid-template-rows:3fr 2fr auto;scroll-margin-top:var(--navh)}
 .doors{display:grid;grid-template-columns:1fr 1fr;min-height:0}
 .door{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:clamp(22px,3.2vw,44px);min-height:0;text-decoration:none;border-top:1px solid var(--line)}
 .door + .door{border-left:1px solid var(--line)}
@@ -127,6 +175,25 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .sdoor .h2,.sdoor .italic{position:relative;z-index:2;margin:0}
 .sdoor .italic{font-size:18px}
 @media (max-width:820px){.portal{grid-template-rows:2fr 1fr}.doors{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.door + .door{border-left:0}.door{padding:20px}.door .italic{font-size:15px;margin:4px 0 10px}.door .btn{font-size:15px;padding:7px 14px}.sdoor{padding:14px}.sdoor .h2{font-size:20px}.sdoor .italic{display:none}}
+.listen-strip{display:flex;align-items:center;justify-content:center;gap:18px;padding:12px 20px;background:var(--obsidian);border-top:1px solid var(--line);text-decoration:none;color:var(--lgold)}
+.listen-strip:hover .strip-text{color:var(--copal)}
+.wave{display:flex;align-items:center;gap:3px;height:26px}
+.wave i{display:block;width:3px;height:var(--h);background:var(--gold);border-radius:2px;transform-origin:center}
+.strip-text{font-family:var(--head);font-size:19px;letter-spacing:.03em}
+.arrow{font-size:20px}
+@media (prefers-reduced-motion:no-preference){.wave i{animation:pulse 1.1s ease-in-out var(--d) infinite alternate}.arrow{animation:nudge 1.6s ease-in-out infinite}}
+@keyframes pulse{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.gigs li{align-items:center}
+.book-box{border:1px solid var(--moss);padding:28px}
+.press-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.press-photo{position:relative;display:block;aspect-ratio:1;overflow:hidden;text-decoration:none;border:1px solid var(--line)}
+.press-photo img{width:100%;height:100%;object-fit:cover;transition:filter .4s}
+.press-photo span{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:13px;line-height:1.35;color:var(--maize);background:linear-gradient(to top,rgba(0,0,0,.85),transparent)}
+.press-photo em{color:var(--lgold);font-style:normal}
+.press-photo:hover img{filter:brightness(.7)}
+@media (max-width:820px){.photo-grid{grid-template-columns:repeat(2,1fr)}.wave{display:none}.strip-text{font-size:16px}}
 </style>
 <script is:inline>
 (function(){

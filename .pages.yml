@@ -192,3 +192,19 @@ content:
             type: select
             options:
               values: [large, compact]
+  - name: press
+    label: Press kit (EPK) and photos (Home)
+    type: file
+    path: src/content/press.json
+    fields:
+      - { name: bio_short, label: Short bio for organisers, type: text }
+      - { name: epk_pdf, label: EPK PDF link (optional), type: string }
+      - { name: rider_pdf, label: Tech rider PDF link (optional), type: string }
+      - name: photos
+        label: Press photos
+        type: object
+        list: true
+        fields:
+          - { name: file, label: File name in public/press (no .jpg), type: string }
+          - { name: title, label: Caption, type: string }
+          - { name: credit, label: Photo credit, type: string }

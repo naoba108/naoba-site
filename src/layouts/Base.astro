@@ -19,10 +19,10 @@ const nav = [
 <meta name="description" content={site.intro} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IM+Fell+English:ital@1&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IM+Fell+English:ital@1&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
 </head>
 <body class={page}>
-<header class="bar">
+<header class="bar" id="bar">
   <a class="home" href="./index.html">NAOBA</a>
   <nav aria-label="Main" class="desk">
     {nav.map(n => <a href={n.href} aria-current={page === n.key ? 'page' : undefined}>{n.label}</a>)}
@@ -52,9 +52,11 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 </script>
 <style is:global>
 @font-face{font-family:'Butterbrotpapier';src:url('./fonts/butterbrotpapier.woff2?v=3') format('woff2');font-display:swap}
-:root{--black:#000;--obsidian:#0b0907;--noche:#0F2619;--moss:#5A6431;--gold:#C9984A;--lgold:#F0C67C;--copal:#E8822A;--cacao:#1a100a;--maize:#EFE3C8;--line:#2b2a1c;
---head:'Butterbrotpapier',Georgia,serif;--fell:'Figtree',system-ui,sans-serif;--body:'Figtree',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+:root{--navh:64px;--black:#000;--obsidian:#0b0907;--noche:#0F2619;--moss:#5A6431;--gold:#C9984A;--lgold:#F0C67C;--copal:#E8822A;--cacao:#1a100a;--maize:#EFE3C8;--line:#2b2a1c;
+--head:'Butterbrotpapier',Georgia,serif;--fell:'Fraunces',Georgia,serif;--body:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box}
+.bar.solid,body:not(.home) .bar{background:rgba(11,9,7,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
+html{scroll-padding-top:var(--navh)}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--black);color:var(--maize);font:400 17px/1.7 var(--body)}
@@ -62,7 +64,7 @@ a{color:var(--lgold)}
 a:hover{color:var(--copal)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--copal);outline-offset:3px}
 img,video{max-width:100%;display:block}
-.bar{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;font-family:var(--head);font-size:19px;letter-spacing:.05em}
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--navh);transition:background .4s,border-color .4s;border-bottom:1px solid transparent;display:flex;justify-content:space-between;align-items:center;padding:0 28px;font-family:var(--head);font-size:19px;letter-spacing:.05em}
 .bar a{color:var(--lgold);text-decoration:none}
 .bar nav{display:flex;gap:24px}
 .mob{display:none}
@@ -75,8 +77,8 @@ img,video{max-width:100%;display:block}
 .band{padding:96px 0;position:relative}
 .band.noche{background:var(--noche)}
 .band.cacao{background:var(--cacao)}
-.h1{font-family:var(--head);font-weight:400;text-transform:uppercase;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:.04em;color:var(--lgold);margin:0}
-.h2{font-family:var(--head);font-weight:400;text-transform:uppercase;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:.03em;color:var(--lgold);margin:0 0 18px}
+.h1{font-family:var(--head);font-weight:400;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:.04em;color:var(--lgold);margin:0}
+.h2{font-family:var(--head);font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:.03em;color:var(--lgold);margin:0 0 18px}
 .h3{font-family:var(--head);font-weight:400;font-size:24px;letter-spacing:.02em;color:var(--lgold);margin:0 0 6px}
 .italic,.lede{font-family:var(--fell);font-style:normal;font-weight:400;font-size:clamp(18px,1.8vw,21px);line-height:1.5;color:var(--maize);max-width:40ch;margin:0 0 28px}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--gold)}
@@ -112,10 +114,13 @@ img,video{max-width:100%;display:block}
 .foot .links{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;font-family:var(--head);font-size:18px;margin-bottom:20px}
 .foot .links a{text-decoration:none}
 @media (max-width:820px){
-  .bar{padding:16px 18px}.desk{display:none !important}.mob{display:block}
+  .bar{padding:0 18px}.desk{display:none !important}.mob{display:block}
   .wrap{padding:0 20px}.band{padding:64px 0}
   .grid3,.grid2{grid-template-columns:1fr}
 }
 </style>
+<script is:inline>
+(function(){var b=document.getElementById('bar');if(!b)return;function f(){b.classList.toggle('solid',window.scrollY>40)}f();window.addEventListener('scroll',f,{passive:true});})();
+</script>
 </body>
 </html>
