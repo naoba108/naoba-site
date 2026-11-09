@@ -1,15 +1,47 @@
 {
   "intro": "I play ancestral rhythms and world music with a balanced electronic drive, reading the room, the frequencies and the energy of every body on the floor. A set with NAOBA is a ceremony: it opens, it builds, it lands.",
   "offerings": [
-    { "title": "Ecstatic dance sets", "text": "Journeys from the first breath to the last stillness." },
-    { "title": "CACAO Bass gatherings", "text": "Cacao ceremony, dance and bass. My own event series, travelling city to city." },
-    { "title": "Hybrid live set", "text": "DJing with Ableton Push, live looping, voice and nature recordings." }
+    {
+      "title": "Ecstatic dance sets",
+      "text": "Journeys from the first breath to the last stillness."
+    },
+    {
+      "title": "CACAO Bass gatherings",
+      "text": "Cacao ceremony, dance and bass. My own event series, travelling city to city."
+    },
+    {
+      "title": "Hybrid live set",
+      "text": "DJing with Ableton Push, live looping, voice and nature recordings."
+    }
   ],
   "soundcloud_track": "https://soundcloud.com/naobamusic",
   "videos": [
-    { "title": "Live set video", "youtube_id": "" },
-    { "title": "CACAO Bass gathering", "youtube_id": "" }
+    {
+      "title": "Ecstatic Dance at Lake Atitlán",
+      "youtube_id": "iIvuDM-O8zY"
+    },
+    {
+      "title": "Live performances reel",
+      "youtube_id": "MjX4inni7mg"
+    },
+    {
+      "title": "Cacao Bass, Latinoamérica",
+      "youtube_id": "ISAdObllCqg"
+    },
+    {
+      "title": "Tribal Flow, Ometepe",
+      "youtube_id": "urkk6hx5avM"
+    }
   ],
   "events": [],
-  "stages": ["Sound Art Festival, Mexico City", "Loop Festival, Berlin", "ISEA, Dubai and Abu Dhabi", "TEDxManagua", "CCCB, Barcelona", "Mercat de les Flors, Barcelona", "MNAC, Barcelona", "Goethe Institute, Barcelona"]
+  "stages": [
+    "Sound Art Festival, Mexico City",
+    "Loop Festival, Berlin",
+    "ISEA, Dubai and Abu Dhabi",
+    "TEDxManagua",
+    "CCCB, Barcelona",
+    "Mercat de les Flors, Barcelona",
+    "MNAC, Barcelona",
+    "Goethe Institute, Barcelona"
+  ]
 }

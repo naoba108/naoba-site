@@ -1,18 +1,60 @@
 {
   "intro": "I compose and design sound for documentaries, animation and fiction: scores that breathe with the image, rooted in field recordings and ancestral instruments.",
-  "showreel_id": "",
+  "showreel_id": "jxyCHmbyiv8",
   "services": [
-    { "title": "Original score", "text": "Themes and full scores, from intimate to orchestral-electronic." },
-    { "title": "Sound design", "text": "Worlds built from real recordings: forests, rivers, rituals, cities." },
-    { "title": "Field recording", "text": "On location, in stereo, binaural or ambisonic." },
-    { "title": "Mixing and mastering", "text": "Final mix ready for festivals and streaming." }
+    {
+      "title": "Original score",
+      "text": "Themes and full scores, from intimate to orchestral-electronic."
+    },
+    {
+      "title": "Sound design",
+      "text": "Worlds built from real recordings: forests, rivers, rituals, cities."
+    },
+    {
+      "title": "Field recording",
+      "text": "On location, in stereo, binaural or ambisonic."
+    },
+    {
+      "title": "Mixing and mastering",
+      "text": "Final mix ready for festivals and streaming."
+    }
   ],
   "projects": [
-    { "year": "2025", "title": "Stinky Mango", "role": "Sound director, composer, mastering", "note": "Best Cast, Diversity in Cannes Short Film Showcase" },
-    { "year": "In progress", "title": "Fuego mi Espíritu", "role": "Director, script, sound", "note": "Documentary, Masaya and Monimbó" },
-    { "year": "2024", "title": "Water is Love", "role": "Sound director, composer, mastering", "note": "" },
-    { "year": "2024", "title": "The Untamed", "role": "Script, AI art, music", "note": "" },
-    { "year": "2022", "title": "Kumina Queen", "role": "Sound editor", "note": "" },
-    { "year": "2018", "title": "Agwe", "role": "Sound director, composer, mastering", "note": "KingstOOn Animation Festival 2019" }
+    {
+      "year": "2025",
+      "title": "Stinky Mango",
+      "role": "Sound director, composer, mastering",
+      "note": "Best Cast, Diversity in Cannes Short Film Showcase"
+    },
+    {
+      "year": "In progress",
+      "title": "Fuego mi Espíritu",
+      "role": "Director, script, sound",
+      "note": "Documentary, Masaya and Monimbó"
+    },
+    {
+      "year": "2024",
+      "title": "Water is Love",
+      "role": "Sound director, composer, mastering",
+      "note": ""
+    },
+    {
+      "year": "2024",
+      "title": "The Untamed",
+      "role": "Script, AI art, music",
+      "note": ""
+    },
+    {
+      "year": "2022",
+      "title": "Kumina Queen",
+      "role": "Sound editor",
+      "note": ""
+    },
+    {
+      "year": "2018",
+      "title": "Agwe",
+      "role": "Sound director, composer, mastering",
+      "note": "KingstOOn Animation Festival 2019"
+    }
   ]
 }
