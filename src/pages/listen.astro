@@ -31,12 +31,9 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap">
     <p class="mono center-text">In the field</p>
     <h2 class="h2 center-text" style="margin-bottom:34px">Listening to the living world</h2>
-    <Gallery cols={3} items={[
-      { src: './images/gallery/sunset-boom.webp', alt: 'Tamara recording a lake at sunset with a boom microphone', caption: 'Recording at dusk', wide: true },
-      { src: './images/gallery/headphones-portrait.webp', alt: 'Tamara with headphones and recording gear', caption: 'On location', tall: true },
-      { src: './images/gallery/field-forest.webp', alt: 'Tamara holding microphones up to the forest canopy', caption: 'Forest canopy' },
-      { src: './images/gallery/field-tripod.webp', alt: 'Tamara recording with a field recorder on a tripod', caption: 'Cloud forest' },
-    ]} />
+  </div>
+  <figure class="field-wide"><img src="./images/gallery/sunset-boom.webp" alt="Recording a lake at sunset with a boom microphone" loading="lazy" /></figure>
+  <div>
   </div>
 </section>
 
@@ -67,21 +64,7 @@ import Gallery from '../components/Gallery.astro';
 <section class="band noche">
   <div class="wrap">
     <h2 class="h2">From the field</h2>
-    <div class="grid2">{listen.videos.map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <p class="mono center-text">Sound art</p>
-    <h2 class="h2 center-text">Body, space and technology</h2>
-    <p class="lede center-text" style="max-width:60ch;margin:12px auto 34px;text-align:center">My sound art moves between somatic, dance and performance art, digital and 3D sound, programming and installation.</p>
-    <Gallery cols={3} items={[
-      { src: './images/gallery/soundart-uv.webp', alt: 'Performer painted in ultraviolet colours, arms outstretched', caption: 'Performance', wide: true },
-      { src: './images/gallery/soundart-cables.webp', alt: 'Dancer bound in red cables and small speakers', caption: 'Somatic sound piece' },
-      { src: './images/gallery/soundart-speakers.webp', alt: 'Speakers worn on the body', caption: 'Wearable sound' },
-      { src: './images/gallery/soundart-room.webp', alt: 'Multichannel speaker installation in a white room', caption: 'Multichannel installation', wide: true },
-    ]} />
+    <div class="one-video">{listen.videos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
 
@@ -100,5 +83,7 @@ import Gallery from '../components/Gallery.astro';
 .plate{background-image:linear-gradient(#26402F 1px,transparent 1px),linear-gradient(90deg,#26402F 1px,transparent 1px);background-size:28px 28px;background-color:rgba(0,0,0,.35)}
 .product{text-decoration:none;color:var(--maize);display:block;transition:border-color .4s}
 .product:hover{border-color:var(--gold);color:var(--maize)}
+.field-wide{margin:0;line-height:0}
+.field-wide img{width:100%;max-height:78vh;object-fit:cover}
 </style>
 </Base>

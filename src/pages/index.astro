@@ -16,11 +16,13 @@ const photos = press.photos.map(ph => ph.image ? { title: ph.title, href: ph.ima
 const photoSlots = [...photos, ...Array(Math.max(0, 9 - photos.length)).fill(null)];
 import Player from '../components/Player.astro';
 import Signup from '../components/Signup.astro';
+import Cymatic from '../components/Cymatic.astro';
 import gigs from '../content/gigs.json';
 const homeVideos = [dance.videos[0], listen.videos[0]];
 ---
 <Base title="NAOBA, Tamara Montenegro" page="home">
 <section class="hero dark">
+  <div class="hero-geo" aria-hidden="true"><Cymatic size={760} petals={6} color="#E6C37F" opacity={0.28} /></div>
   <video src="./video/tree.mp4" poster="./images/tree-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="shade"></div>
   <div class="center">
@@ -73,7 +75,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
       {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
     </div>
     <div class="healing">
-      <Glyph name="spiral" size={40} />
+      <Cymatic size={150} petals={8} color="var(--gold)" />
       <h3 class="h3">{music.healing_title}</h3>
       <p>{music.healing_text}</p>
     </div>
@@ -88,7 +90,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   </div>
 </section>
 
-<section class="band noche" id="gigs">
+<section class="band noche geo-bg" id="gigs">
+  <div class="geo-mark" aria-hidden="true"><Cymatic size={560} petals={5} color="#E6C37F" opacity={0.12} /></div>
   <div class="wrap">
     <h2 class="h2 center-text">Next gigs</h2>
     {gigs.bandsintown_artist
@@ -102,7 +105,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
 <section class="band noche press" id="press">
   <div class="wrap center-text">
-    <p class="mono">For promoters and event organisers</p>
+    <Cymatic size={110} petals={6} color="#E6C37F" />
+    <p class="mono" style="margin-top:18px">For promoters and event organisers</p>
     <h2 class="h2">Press kit</h2>
     <p class="press-bio">{press.bio_short}</p>
     <p class="press-btns">
@@ -143,14 +147,9 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
     <h3 class="h3 sub" id="videos">Watch</h3>
   </div>
-  <div class="shorts" aria-label="Short videos">
-    {shortList.map(sh => sh.id
-      ? <div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      : <div class="short frame empty"><span>Short video</span></div>)}
-  </div>
   <div class="wrap" style="margin-top:44px">
-    <div class="grid2">
-      {homeVideos.map(v => <Video id={v.youtube_id} title={v.title} />)}
+    <div class="one-video">
+      {homeVideos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}
     </div>
     <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>More on YouTube</a></p>
   </div>
@@ -282,6 +281,13 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .press .shorts{margin-top:0}
 .press .short.empty{border-color:rgba(240,198,124,.5)}
 @media (max-width:820px){.arches{grid-template-columns:1fr;gap:22px;max-width:480px}.press .sub{margin:60px 0 24px}.award-grid{gap:14px}.award-grid .award{flex:0 1 calc(50% - 7px)}.award{padding:20px 10px}.a-prize{font-size:18px}}
+.hero-geo{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:1}
+.hero-geo svg{width:min(92vw,760px);height:auto}
+.hero .center{position:relative;z-index:2}
+.geo-bg{position:relative;overflow:hidden}
+.geo-mark{position:absolute;right:-140px;top:50%;transform:translateY(-50%);pointer-events:none}
+.geo-bg .wrap{position:relative;z-index:1}
+@media (max-width:820px){.geo-mark{right:-260px}}
 </style>
 {gigs.bandsintown_artist && <script is:inline charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>}
 <script is:inline>

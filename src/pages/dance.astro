@@ -37,20 +37,10 @@ import Gallery from '../components/Gallery.astro';
 <section class="collage dark">
   <img src="./images/gallery/dance-collage.webp" alt="Dancers in ceremony, moments from NAOBA's dance space-holding" loading="lazy" />
 </section>
-<section class="band">
-  <div class="wrap">
-    <h2 class="h2 center-text" style="margin-bottom:34px">Ceremony &amp; dance space-holding</h2>
-    <Gallery cols={3} items={[
-      { src: './images/gallery/dance-hands.webp', alt: 'Tamara guiding a ceremony with open hands', caption: 'Holding the space', tall: true },
-      { src: './images/gallery/drum-circle.webp', alt: 'Sound ceremony with drums and singing bowls in an open-air temple', caption: 'Sound ceremony', wide: true },
-    ]} />
-  </div>
-</section>
-
 <section class="band cacao">
   <div class="wrap">
     <h2 class="h2">Watch</h2>
-    <div class="grid2">{dance.videos.map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
+    <div class="one-video">{dance.videos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
 

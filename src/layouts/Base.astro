@@ -54,6 +54,16 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 --head:'Italiana',Georgia,serif;--title:'Italiana',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--fell:'Fraunces',Georgia,serif;--body:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box}
 .center-text{text-align:center}
+.band,.page-hero .wrap{text-align:center}
+.band .lede,.band .italic,.band p{margin-left:auto;margin-right:auto}
+.band .lede,.band .italic{max-width:62ch}
+.list{max-width:720px;margin-left:auto !important;margin-right:auto !important}
+.list li{grid-template-columns:1fr !important;justify-items:center;text-align:center;gap:4px}
+.grid2>*,.grid3>*{text-align:center}
+.card ul,.card ol{text-align:center;padding-left:0}
+form,.form{text-align:left;max-width:640px;margin-left:auto;margin-right:auto}
+.one-video{max-width:900px;margin:0 auto}
+
 .dark,.band.noche,.band.cacao,.page-hero,.foot{--maize:#EFE3C8;--lgold:#E6C37F;--line:rgba(240,198,124,.16);--obsidian:#0b0907;--cardbg:rgba(0,0,0,.25);color:var(--maize)}
 .bar.solid,body:not(.home) .bar{background:rgba(243,238,226,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
 .bar.solid a,body:not(.home) .bar a,.bar.solid .mob summary,body:not(.home) .bar .mob summary{color:#3b2f22}
