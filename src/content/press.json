@@ -3,11 +3,55 @@
   "epk_pdf": "",
   "rider_pdf": "",
   "photos": [
-    { "file": "naoba-dj-candlelight", "title": "DJ set by candlelight", "credit": "" },
-    { "file": "naoba-dj-rooftop", "title": "DJ set, rooftop", "credit": "" },
-    { "file": "naoba-live-circle", "title": "Live set in circle", "credit": "" },
-    { "file": "naoba-portrait-stone", "title": "Portrait, stone", "credit": "" },
-    { "file": "naoba-portrait-flowers", "title": "Portrait, flowers", "credit": "" },
-    { "file": "naoba-portrait-lava", "title": "Portrait, lava field", "credit": "" }
+    {
+      "file": "naoba-dj-candlelight",
+      "title": "DJ set by candlelight",
+      "credit": ""
+    },
+    {
+      "file": "naoba-dj-rooftop",
+      "title": "DJ set, rooftop",
+      "credit": ""
+    },
+    {
+      "file": "naoba-live-circle",
+      "title": "Live set in circle",
+      "credit": ""
+    },
+    {
+      "file": "naoba-portrait-stone",
+      "title": "Portrait, stone",
+      "credit": ""
+    },
+    {
+      "file": "naoba-portrait-flowers",
+      "title": "Portrait, flowers",
+      "credit": ""
+    },
+    {
+      "file": "naoba-portrait-lava",
+      "title": "Portrait, lava field",
+      "credit": ""
+    }
+  ],
+  "performed": [
+    {
+      "place": "Venue or festival name",
+      "city": "City",
+      "country": "Country",
+      "year": "Year"
+    },
+    {
+      "place": "Venue or festival name",
+      "city": "City",
+      "country": "Country",
+      "year": "Year"
+    },
+    {
+      "place": "Venue or festival name",
+      "city": "City",
+      "country": "Country",
+      "year": "Year"
+    }
   ]
 }

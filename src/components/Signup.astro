@@ -1,0 +1,29 @@
+---
+import site from '../content/site.json';
+const { title = 'Become part of the tribe', text = 'Newsletters to your inbox: new music, gatherings and field notes.', variant = 'band' } = Astro.props;
+const base = (site.substack || '').replace(/\/$/, '');
+---
+<div class={`signup ${variant}`}>
+  <div class="s-copy">
+    <h2 class="s-title">{title}</h2>
+    <p class="s-text">{text}</p>
+  </div>
+  <form class="s-form" action={`${base}/api/v1/free?nojs=true`} method="post" target="_blank">
+    <label class="sr" for={`email-${variant}`}>Your email</label>
+    <input id={`email-${variant}`} type="email" name="email" placeholder="Your email" required autocomplete="email" />
+    <input type="hidden" name="first_url" value="https://naobasounds.com" />
+    <button class="btn" type="submit">Join</button>
+  </form>
+</div>
+<style>
+.signup{display:grid;grid-template-columns:1fr 1.1fr;gap:28px 56px;align-items:center;max-width:74rem;margin:0 auto;padding:0 28px}
+.s-title{font:400 clamp(30px,3.6vw,44px)/1.1 var(--title);letter-spacing:.04em;color:var(--lgold);margin:0 0 6px}
+.s-text{margin:0;color:var(--maize);font-size:16px}
+.s-form{display:flex;gap:0;width:100%}
+.s-form input[type=email]{flex:1;min-width:0;font:400 16px var(--body);padding:15px 18px;border:1px solid var(--gold);border-right:0;background:#fff;color:#3b2f22;border-radius:0}
+.s-form input::placeholder{color:#8a7b66}
+.s-form .btn{flex:0 0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.signup.foot{grid-template-columns:1fr;max-width:560px;text-align:center;margin-bottom:36px}
+@media (max-width:820px){.signup{grid-template-columns:1fr;padding:0 20px;text-align:left}.signup.foot{text-align:center}}
+</style>

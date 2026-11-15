@@ -1,7 +1,27 @@
 {
   "intro": "Ancestral voices, field recordings and electronic bass.",
   "players": [
-    { "title": "NAOBA on Spotify", "url": "https://open.spotify.com/artist/5ALmTtJzgTed5D5YpzmaXX", "size": "large" },
-    { "title": "NAOBA on SoundCloud", "url": "https://soundcloud.com/naobamusic", "size": "large" }
+    {
+      "title": "NAOBA on Spotify",
+      "url": "https://open.spotify.com/artist/5ALmTtJzgTed5D5YpzmaXX",
+      "size": "large"
+    },
+    {
+      "title": "NAOBA on SoundCloud",
+      "url": "https://soundcloud.com/naobamusic",
+      "size": "large"
+    }
+  ],
+  "bandcamp_albums": [
+    {
+      "title": "Cetacean Dreams",
+      "url": "https://naoba.bandcamp.com/album/cetacean-dreams",
+      "album_id": "2108791726"
+    },
+    {
+      "title": "BIOSPHERES REIMAGINED",
+      "url": "https://naoba.bandcamp.com/album/biospheres-reimagined",
+      "album_id": "2019916038"
+    }
   ]
 }

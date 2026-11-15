@@ -13,6 +13,8 @@ import shorts from '../content/shorts.json';
 const shortId = (u) => { const m = (u||'').match(/(?:shorts\/|youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/); return m ? m[1] : ''; };
 const shortList = shorts.items.map(it => ({...it, id: shortId(it.url)}));
 import Player from '../components/Player.astro';
+import Signup from '../components/Signup.astro';
+import gigs from '../content/gigs.json';
 const homeVideos = [dance.videos[0], listen.videos[0]];
 ---
 <Base title="NAOBA, Tamara Montenegro" page="home">
@@ -50,17 +52,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 </a>
 </div>
 
-<section class="band intro-band">
-  <div class="wrap center-text">
-    <Glyph name="spiral" size={48} />
-    <h2 class="h2" style="margin-top:22px">The NAOBA experience</h2>
-    <p class="italic intro">{site.intro}</p>
-  </div>
-  <div class="shorts" aria-label="Short videos">
-    {shortList.map(sh => sh.id
-      ? <div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      : <div class="short frame empty"><span>Short video</span></div>)}
-  </div>
+<section class="tribe" id="tribe">
+  <Signup />
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="track"><span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i></div></div>
@@ -82,68 +75,51 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
     <div class="players">
       {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
     </div>
-    <p style="margin-top:28px"><a class="btn" href={site.bandcamp}>Buy on Bandcamp</a></p>
+    {music.bandcamp_albums?.length > 0 && (
+      <div class="bc-albums">
+        {music.bandcamp_albums.map(al => (
+          <iframe class="bc" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe>
+        ))}
+      </div>
+    )}
+    <p class="center-text" style="margin-top:36px"><a class="btn" href={site.bandcamp}>Buy on Bandcamp</a></p>
   </div>
 </section>
 
 <section class="band noche" id="gigs">
-  <div class="wrap grid2" style="align-items:start">
-    <div>
-      <h2 class="h2">Next gigs</h2>
-      {dance.events.length
-        ? <ul class="list gigs">{dance.events.map(e => <li><span><strong>{e.date}</strong><br />{e.city}, {e.venue}</span>{e.tickets ? <a class="btn" href={e.tickets}>Tickets</a> : null}</li>)}</ul>
-        : <p class="lede">New dates are on their way. They're announced first in the letters, at the bottom of this page.</p>}
-    </div>
-    <div class="book-box">
-      <h3 class="h3">Bring NAOBA to your event</h3>
-      <p>Ecstatic dance, festivals, CACAO Bass gatherings and immersive listening sessions.</p>
-      <p><a class="btn copal" href="./dance.html">Book NAOBA</a> <a class="btn" href="#press">Press kit</a></p>
-    </div>
+  <div class="wrap">
+    <h2 class="h2 center-text">Next gigs</h2>
+    {gigs.bandsintown_artist
+      ? <div class="bit-wrap"><a class="bit-widget-initializer" data-artist-name={gigs.bandsintown_artist} data-app-id={gigs.bandsintown_app_id || undefined} data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#EFE3C8" data-link-color="#BC9855" data-background-color="rgba(0,0,0,0)" data-display-limit="8" data-link-text-color="#FFFFFF" data-popup-background-color="#0F2619" data-separator-color="rgba(240,198,124,0.2)" data-font="Jost" data-display-track-button="true" data-display-play-my-city="true"></a></div>
+      : <p class="lede center-text" style="margin:0 auto 28px">New dates are on their way.</p>}
+    <p class="center-text"><a class="btn copal" href="./dance.html">Book NAOBA</a></p>
   </div>
 </section>
 
 <section class="band" id="videos">
   <div class="wrap">
     <h2 class="h2">Videos</h2>
+  </div>
+  <div class="shorts" aria-label="Short videos">
+    {shortList.map(sh => sh.id
+      ? <div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      : <div class="short frame empty"><span>Short video</span></div>)}
+  </div>
+  <div class="wrap" style="margin-top:48px">
     <div class="grid2">
       {homeVideos.map(v => <Video id={v.youtube_id} title={v.title} />)}
     </div>
-    <p style="margin-top:28px"><a class="btn" href={site.youtube}>More on YouTube</a></p>
+    <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>More on YouTube</a></p>
   </div>
 </section>
 
-<section class="band noche" id="awards">
-  <div class="wrap">
-    <Divider />
-    <div class="center-text" style="margin:40px 0 56px">
-      <Glyph name="sun" size={56} color="var(--lgold)" />
-      <p class="mono" style="margin:14px 0 6px">{awards.highlight.title}</p>
-      <h2 class="h1">{awards.highlight.detail}</h2>
-    </div>
-    <div class="grid2" style="align-items:start">
-      <div>
-        <h3 class="h3">Music awards</h3>
-        <ul class="list">
-          {awards.awards.map(a => <li><span>{a.prize}</span><span class="mono">{a.org}</span></li>)}
-        </ul>
-      </div>
-      <div>
-        <h3 class="h3">Film</h3>
-        <ul class="list">
-          {awards.film.map(a => <li><span>{a.prize}<br /><span class="small" style="color:var(--gold)">{a.for}</span></span><span class="mono">{a.org}</span></li>)}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="press">
+<section class="band noche" id="press">
   <div class="wrap">
     <h2 class="h2">Press kit</h2>
-    <p class="lede">For promoters and event organisers: bio, photos and links, ready to use.</p>
+    <p class="lede">For promoters and event organisers: bio, photos, awards and stages.</p>
     <div class="grid2" style="align-items:start">
       <div>
-        <h3 class="h3">Short bio</h3>
+        <h3 class="h3">Bio</h3>
         <p>{press.bio_short}</p>
         <p class="press-btns">
           <a class="btn copal" href="./press/naoba-press-photos.zip" download>Download all photos (.zip)</a>
@@ -151,13 +127,35 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
           {press.rider_pdf && <a class="btn" href={press.rider_pdf}>Tech rider (PDF)</a>}
         </p>
       </div>
-      <div class="photo-grid">
-        {press.photos.map(ph => (
-          <a class="press-photo" href={`./press/${ph.file}.jpg`} download>
-            <img src={`./press/${ph.file}-thumb.webp`} alt={ph.title} loading="lazy" />
-            <span>{ph.title}{ph.credit && ` · Photo: ${ph.credit}`}<br /><em>Download high-res</em></span>
-          </a>
-        ))}
+      <div>
+        <h3 class="h3">High-res photos</h3>
+        <div class="photo-grid">
+          {press.photos.map(ph => (
+            <a class="press-photo" href={`./press/${ph.file}.jpg`} download>
+              <img src={`./press/${ph.file}-thumb.webp`} alt={ph.title} loading="lazy" />
+              <span>{ph.title}{ph.credit && ` · Photo: ${ph.credit}`}<br /><em>Download high-res</em></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+    <div class="award-hl center-text">
+      <Glyph name="sun" size={48} color="var(--lgold)" />
+      <p class="mono" style="margin:14px 0 6px">{awards.highlight.title}</p>
+      <p class="hl-title">{awards.highlight.detail}</p>
+    </div>
+    <div class="grid2" style="align-items:start">
+      <div>
+        <h3 class="h3">Awards</h3>
+        <ul class="list">
+          {awards.awards.map(a => <li><span>{a.prize}</span><span class="mono">{a.org}</span></li>)}
+        </ul>
+      </div>
+      <div>
+        <h3 class="h3">Where I have played</h3>
+        <ul class="list">
+          {(press.performed || []).map(pl => <li><span>{pl.place}</span><span class="mono">{[pl.city, pl.country, pl.year].filter(Boolean).join(' · ')}</span></li>)}
+        </ul>
       </div>
     </div>
   </div>
@@ -248,7 +246,17 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   .reel-band{padding-top:64px}
   .reel video{max-height:none}
 }
+.tribe{background:var(--bg);padding:72px 0;border-top:1px solid var(--line)}
+.bc-albums{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:40px}
+.bc{border:0;width:350px;max-width:100%;height:470px;background:#fff}
+.bit-wrap{max-width:820px;margin:0 auto 32px;font-family:var(--sans)}
+.award-hl{margin:80px 0 48px}
+.hl-title{font:400 clamp(44px,6vw,80px)/1.05 var(--title);letter-spacing:.04em;color:var(--lgold);margin:0}
+#press .h3{margin-bottom:14px}
+#press .photo-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:820px){.tribe{padding:56px 0}.award-hl{margin:56px 0 36px}}
 </style>
+{gigs.bandsintown_artist && <script is:inline charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>}
 <script is:inline>
 (function(){var v=document.querySelector('.reel video');if(!v)return;var still=matchMedia('(prefers-reduced-motion: reduce)').matches;if(still)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!v.src){v.src=v.dataset.src}v.play().catch(function(){})}else{v.pause()}})},{threshold:.25});io.observe(v);})();
 (function(){

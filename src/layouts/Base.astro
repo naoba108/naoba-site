@@ -9,6 +9,8 @@ const nav = [
   { href: './mentorship.html', label: 'Mentorship', key: 'mentorship' },
   { href: './contact.html', label: 'Contact', key: 'contact' }
 ];
+import Signup from '../components/Signup.astro';
+import Social from '../components/Social.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -34,15 +36,8 @@ const nav = [
 </header>
 <slot />
 <footer class="foot">
-  <div class="news">
-    <h2 class="h2">Letters from the forest</h2>
-    <p class="lede">New music, gatherings and field notes, straight to your inbox through Substack.</p>
-    <iframe src={site.substack_embed} title="Subscribe to Heart in Nature on Substack" loading="lazy"></iframe>
-    <p class="small"><a href={site.substack}>Read past letters on Substack</a></p>
-  </div>
-  <div class="links">
-    <a href={site.kofi}>Ko-fi</a><a href={site.substack}>Substack</a><a href={site.soundcloud}>SoundCloud</a><a href={site.spotify}>Spotify</a><a href={site.bandcamp}>Bandcamp</a><a href={site.instagram}>Instagram</a><a href={site.youtube}>YouTube</a>
-  </div>
+  <Signup variant="foot" />
+  <Social />
   {site.person && <p class="small mono">NAOBA is {site.person}</p>}
 </footer>
 <script is:inline>

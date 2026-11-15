@@ -1,0 +1,20 @@
+---
+import icons from './icons.json';
+import site from '../content/site.json';
+const links = [
+  ['kofi', site.kofi], ['substack', site.substack], ['spotify', site.spotify], ['soundcloud', site.soundcloud],
+  ['bandcamp', site.bandcamp], ['youtube', site.youtube], ['instagram', site.instagram], ['bandsintown', site.bandsintown],
+].filter(([, u]) => u);
+---
+<ul class="social">
+  {links.map(([k, u]) => (
+    <li><a href={u} aria-label={icons[k].title} title={icons[k].title}>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d={icons[k].path} fill="currentColor" /></svg>
+    </a></li>
+  ))}
+</ul>
+<style>
+.social{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:0;margin:0 0 28px}
+.social a{display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;color:var(--lgold);transition:background .3s,color .3s,border-color .3s}
+.social a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+</style>

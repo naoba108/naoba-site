@@ -192,6 +192,14 @@ content:
             type: select
             options:
               values: [large, compact]
+      - name: bandcamp_albums
+        label: Bandcamp albums to stream
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Album title, type: string }
+          - { name: url, label: Album link, type: string }
+          - { name: album_id, label: Bandcamp album id (number), type: string }
   - name: press
     label: Press kit (EPK) and photos (Home)
     type: file
@@ -208,6 +216,15 @@ content:
           - { name: file, label: File name in public/press (no .jpg), type: string }
           - { name: title, label: Caption, type: string }
           - { name: credit, label: Photo credit, type: string }
+      - name: performed
+        label: Places I have performed
+        type: object
+        list: true
+        fields:
+          - { name: place, label: Venue or festival, type: string }
+          - { name: city, label: City, type: string }
+          - { name: country, label: Country, type: string }
+          - { name: year, label: Year, type: string }
   - name: mixing
     label: Mixing & mastering (Mentorship page)
     type: file
@@ -239,3 +256,10 @@ content:
         fields:
           - { name: title, label: Title, type: string }
           - { name: url, label: YouTube Shorts link, type: string }
+  - name: gigs
+    label: Gigs widget (Bandsintown)
+    type: file
+    path: src/content/gigs.json
+    fields:
+      - { name: bandsintown_artist, label: Bandsintown artist name or id, type: string }
+      - { name: bandsintown_app_id, label: Bandsintown app id (from the widget builder), type: string }
