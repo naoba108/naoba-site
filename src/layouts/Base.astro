@@ -5,7 +5,7 @@ const nav = [
   { href: './dance.html', label: 'Dance', key: 'dance' },
   { href: './listen.html', label: 'Listen', key: 'listen' },
   { href: './film.html', label: 'Film', key: 'film' },
-  { href: './shop.html', label: 'Download', key: 'shop' },
+  { href: './shop.html', label: 'Samples & Tools', key: 'shop' },
   { href: './mentorship.html', label: 'Mentorship', key: 'mentorship' },
   { href: './contact.html', label: 'Contact', key: 'contact' }
 ];
@@ -43,7 +43,7 @@ const nav = [
   <div class="links">
     <a href={site.kofi}>Ko-fi</a><a href={site.substack}>Substack</a><a href={site.soundcloud}>SoundCloud</a><a href={site.spotify}>Spotify</a><a href={site.bandcamp}>Bandcamp</a><a href={site.instagram}>Instagram</a><a href={site.youtube}>YouTube</a>
   </div>
-  <p class="small mono">NAOBA is {site.person}</p>
+  {site.person && <p class="small mono">NAOBA is {site.person}</p>}
 </footer>
 <script is:inline>
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -60,7 +60,7 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 *{box-sizing:border-box}
 .dark,.band.noche,.band.cacao,.page-hero,.foot{--maize:#EFE3C8;--lgold:#E6C37F;--line:rgba(240,198,124,.16);--obsidian:#0b0907;--cardbg:rgba(0,0,0,.25);color:var(--maize)}
 .bar.solid,body:not(.home) .bar{background:rgba(243,238,226,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
-.bar.solid a,body:not(.home) .bar a{color:#3b2f22}
+.bar.solid a,body:not(.home) .bar a,.bar.solid .mob summary,body:not(.home) .bar .mob summary{color:#3b2f22}
 .bar.solid nav a[aria-current],body:not(.home) .bar nav a[aria-current]{color:var(--gold)}
 html{scroll-padding-top:var(--navh)}
 html{scroll-behavior:smooth}
@@ -75,7 +75,7 @@ img,video{max-width:100%;display:block}
 .bar a:hover{color:var(--gold)}
 .bar nav{display:flex;gap:30px}
 .mob{display:none}
-.mob summary{list-style:none;cursor:pointer;color:inherit;border:1px solid var(--gold);padding:8px 14px;border-radius:0}
+.mob summary{list-style:none;cursor:pointer;color:#F6EFE0;font:500 11px/1 var(--sans);letter-spacing:.2em;border:1px solid var(--gold);padding:8px 14px;border-radius:0}
 .mob summary::-webkit-details-marker{display:none}
 .mob nav{position:absolute;right:18px;top:58px;flex-direction:column;gap:16px;background:#F3EEE2;border:1px solid var(--line);padding:20px 26px}
 .mob nav a{color:#3b2f22 !important}
@@ -124,6 +124,10 @@ img,video{max-width:100%;display:block}
   .bar{padding:0 18px;justify-content:space-between}.desk{display:none !important}.mob{display:block}
   .wrap{padding:0 20px}.band{padding:64px 0}
   .grid3,.grid2{grid-template-columns:1fr}
+  .list li{grid-template-columns:1fr;gap:4px}
+  .card{padding:22px}
+  .h2{font-size:clamp(34px,9vw,44px)}
+  .btn{padding:15px 26px}
 }
 </style>
 <script is:inline>

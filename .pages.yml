@@ -227,3 +227,15 @@ content:
           - { name: details, label: What's included, type: text }
       - { name: packages_note, label: Packages note, type: text }
       - { name: turnaround, label: Turnaround, type: string }
+  - name: shorts
+    label: YouTube Shorts (Home intro)
+    type: file
+    path: src/content/shorts.json
+    fields:
+      - name: items
+        label: Shorts (paste the YouTube link)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: url, label: YouTube Shorts link, type: string }
