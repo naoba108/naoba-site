@@ -33,6 +33,8 @@ content:
         fields:
           - { name: title, label: Small line, type: string }
           - { name: detail, label: Big title, type: string }
+          - { name: image, label: Highlight graphic, type: image }
+          - { name: caption, label: Caption under the graphic, type: string }
       - name: awards
         label: Music awards
         type: object
@@ -41,6 +43,7 @@ content:
           - { name: prize, label: Prize, type: string }
           - { name: org, label: Awarded by, type: string }
           - { name: for, label: For which work, type: string }
+          - { name: image, label: Award graphic (optional), type: image }
       - name: film
         label: Film awards
         type: object
@@ -192,6 +195,8 @@ content:
             type: select
             options:
               values: [large, compact]
+      - { name: healing_title, label: Sound healing title (between the players), type: string }
+      - { name: healing_text, label: Sound healing text, type: text }
       - name: bandcamp_albums
         label: Bandcamp albums to stream
         type: object
@@ -214,6 +219,7 @@ content:
         list: true
         fields:
           - { name: file, label: File name in public/press (no .jpg), type: string }
+          - { name: image, label: Or upload a high-res photo, type: image }
           - { name: title, label: Caption, type: string }
           - { name: credit, label: Photo credit, type: string }
       - name: performed
