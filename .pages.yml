@@ -208,3 +208,22 @@ content:
           - { name: file, label: File name in public/press (no .jpg), type: string }
           - { name: title, label: Caption, type: string }
           - { name: credit, label: Photo credit, type: string }
+  - name: mixing
+    label: Mixing & mastering (Mentorship page)
+    type: file
+    path: src/content/mixing.json
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: intro, label: Intro, type: text }
+      - name: services
+        label: Services
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: usd, label: Price USD, type: string }
+          - { name: eur, label: Price EUR, type: string }
+          - { name: unit, label: Unit (e.g. per track), type: string }
+          - { name: details, label: What's included, type: text }
+      - { name: packages_note, label: Packages note, type: text }
+      - { name: turnaround, label: Turnaround, type: string }

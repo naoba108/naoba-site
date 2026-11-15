@@ -4,6 +4,7 @@ import Divider from '../components/Divider.astro';
 import Glyph from '../components/Glyph.astro';
 import Video from '../components/Video.astro';
 import m from '../content/mentorship.json';
+import mx from '../content/mixing.json';
 const glyphs = ['spiral', 'turtle', 'sun'];
 ---
 <Base title="Mentorship, NAOBA" page="mentorship">
@@ -44,6 +45,25 @@ const glyphs = ['spiral', 'turtle', 'sun'];
   </div>
 </section>
 
+<section class="band" id="mixing">
+  <div class="wrap">
+    <h2 class="h2">{mx.title}</h2>
+    <p class="lede" style="max-width:62ch">{mx.intro}</p>
+    <div class="mix-grid">
+      {mx.services.map(sv => (
+        <article class="card mix">
+          <h3 class="h3">{sv.name}</h3>
+          <p class="price">{sv.usd} <span>/ {sv.eur}</span></p>
+          <p class="mono">{sv.unit}</p>
+          <p class="mix-detail">{sv.details}</p>
+        </article>
+      ))}
+    </div>
+    <p class="mix-note">{mx.packages_note}<br />{mx.turnaround}</p>
+    <a class="btn copal" href="./contact.html?reason=Mixing%20%26%20mastering">Send your track</a>
+  </div>
+</section>
+
 <style>
 .pkg{display:flex;flex-direction:column}
 .pkg ul{list-style:none;padding:0;margin:18px 0 24px;flex:1}
@@ -53,5 +73,12 @@ const glyphs = ['spiral', 'turtle', 'sun'];
 .price{font-family:var(--head);font-size:32px;color:var(--lgold);margin:0}
 .price span{font-size:22px;color:var(--gold)}
 .feature{border-color:var(--copal)}
+.mix-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:32px 0 24px}
+.mix{display:flex;flex-direction:column}
+.mix .price{font-size:28px;margin-top:8px}
+.mix-detail{font-size:15px;line-height:1.5;margin:12px 0 0}
+.mix-note{margin:0 0 24px}
+@media (max-width:980px){.mix-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.mix-grid{grid-template-columns:1fr}}
 </style>
 </Base>
