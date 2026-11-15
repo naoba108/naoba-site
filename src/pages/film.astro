@@ -8,6 +8,7 @@ import site from '../content/site.json';
 const glyphs = ['spiral', 'turtle', 'double', 'sun'];
 const types = ['Documentary', 'Feature film', 'Short film', 'Animation', 'Series', 'Installation', 'Something else'];
 const budgets = ['Under 1,000', '1,000 to 3,000', '3,000 to 8,000', 'Over 8,000', 'Not sure yet'];
+import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Film and soundtrack, NAOBA" page="film">
 <section class="page-hero">
@@ -28,6 +29,7 @@ const budgets = ['Under 1,000', '1,000 to 3,000', '3,000 to 8,000', 'Over 8,000'
 <section class="band noche">
   <div class="wrap">
     <h2 class="h2">What I make</h2>
+    {film.services_line && <p class="lede" style="max-width:62ch">{film.services_line}</p>}
     <div class="grid4">
       {film.services.map((s, i) => <div class="card"><Glyph name={glyphs[i % 4]} /><h3 class="h3" style="margin-top:14px">{s.title}</h3><p>{s.text}</p></div>)}
     </div>
@@ -46,6 +48,19 @@ const budgets = ['Under 1,000', '1,000 to 3,000', '3,000 to 8,000', 'Over 8,000'
         </li>
       ))}
     </ol>
+  </div>
+</section>
+
+<section class="band noche">
+  <div class="wrap">
+    <h2 class="h2 center-text" style="margin-bottom:34px">From the studio and the screen</h2>
+    <Gallery cols={3} items={[
+      { src: './images/gallery/ephimoptera.webp', alt: 'Ephimoptera, dance performance with soundtrack by Tamara Montenegro', caption: 'Ephimoptera' },
+      { src: './images/gallery/water-is-love.webp', alt: 'Water is Love animation premiere poster', caption: 'Water is Love', wide: true },
+      { src: './images/gallery/agwe-kingstoon.webp', alt: 'Agwe, KingstOOn 2019 finalist laurels', caption: 'Agwe' },
+      { src: './images/gallery/studio-console.webp', alt: 'Tamara at a mixing console', caption: 'Mixing' },
+      { src: './images/gallery/studio-bamboo.webp', alt: 'Recording bamboo instruments in the studio', caption: 'Recording session' },
+    ]} />
   </div>
 </section>
 

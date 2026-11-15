@@ -1,5 +1,5 @@
 {
-  "bio_short": "NAOBA is the music of Tamara Montenegro, a Nicaraguan producer, DJ and sound artist. Her sets weave ancestral rhythms, field recordings from the rainforest and electronic bass into dance rituals, and her CACAO Bass gatherings travel city to city. Her music has been considered for the Latin Grammy 2026 with Canción Medicina.",
+  "bio_short": "NAOBA is the music of Tamara Montenegro, a Nicaraguan producer, DJ, sound artist and researcher. With a Master's in Sound Art and a Bachelor's in Biology, she has spent more than fifteen years weaving music, science and ceremony. Her dance sets braid ancestral rhythms, rainforest field recordings and electronic bass into living rituals, and her Cacao Bass gatherings travel from city to city. Through Heart in Nature, her label and field-recording project, she has spent a decade documenting endangered ecosystems and ceremonial traditions, with over 30 albums including BIOSPHERES & The Voices of Earth. Since 2025 her research has turned toward bioacoustics and neuroacoustics: how the soundscapes of living ecosystems shape consciousness and help the nervous system come back to rest. Her scores accompany films honoured at Diversity in Cannes and KingstOOn, her installations have been shown at the Sound Art Festival in Mexico City and ISEA in Dubai, and her song Canción Medicina was in consideration for the Latin Grammy 2026.",
   "epk_pdf": "",
   "rider_pdf": "",
   "photos": [
@@ -36,22 +36,88 @@
   ],
   "performed": [
     {
-      "place": "Venue or festival name",
-      "city": "City",
-      "country": "Country",
-      "year": "Year"
+      "place": "Sound Art Festival",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "year": "2019"
     },
     {
-      "place": "Venue or festival name",
-      "city": "City",
-      "country": "Country",
-      "year": "Year"
+      "place": "Loop Festival",
+      "city": "Berlin",
+      "country": "Germany",
+      "year": "2017"
     },
     {
-      "place": "Venue or festival name",
-      "city": "City",
-      "country": "Country",
-      "year": "Year"
+      "place": "CCEN, Centro Cultural de España",
+      "city": "Managua",
+      "country": "Nicaragua",
+      "year": "2016"
+    },
+    {
+      "place": "Gráfica Génesis",
+      "city": "San José",
+      "country": "Costa Rica",
+      "year": "2015"
+    },
+    {
+      "place": "MADC, Museo de Arte y Diseño Contemporáneo",
+      "city": "San José",
+      "country": "Costa Rica",
+      "year": "2015"
+    },
+    {
+      "place": "ISEA, International Symposium of Electronic Arts",
+      "city": "Dubai and Abu Dhabi",
+      "country": "UAE",
+      "year": "2014"
+    },
+    {
+      "place": "Hangar",
+      "city": "Barcelona",
+      "country": "Spain",
+      "year": "2014"
+    },
+    {
+      "place": "MNAC, Museu Nacional d'Art de Catalunya",
+      "city": "Barcelona",
+      "country": "Spain",
+      "year": "2013"
+    },
+    {
+      "place": "Goethe-Institut",
+      "city": "Barcelona",
+      "country": "Spain",
+      "year": "2013"
+    },
+    {
+      "place": "L'Estruch",
+      "city": "Sabadell",
+      "country": "Spain",
+      "year": "2013"
+    },
+    {
+      "place": "CCCB, Centre de Cultura Contemporània",
+      "city": "Barcelona",
+      "country": "Spain",
+      "year": ""
+    },
+    {
+      "place": "Mercat de les Flors",
+      "city": "Barcelona",
+      "country": "Spain",
+      "year": ""
+    },
+    {
+      "place": "TEDxManagua",
+      "city": "Managua",
+      "country": "Nicaragua",
+      "year": "2012"
+    },
+    {
+      "place": "Centro Cultural Pablo Antonio Cuadra",
+      "city": "Managua",
+      "country": "Nicaragua",
+      "year": "2011"
     }
   ]
 }

@@ -21,40 +21,125 @@
   ],
   "projects": [
     {
-      "year": "2025",
-      "title": "Stinky Mango",
-      "role": "Sound director, composer, mastering",
-      "note": "Best Cast, Diversity in Cannes Short Film Showcase"
-    },
-    {
       "year": "In progress",
       "title": "Fuego mi Espíritu",
-      "role": "Director, script, sound",
-      "note": "Documentary, Masaya and Monimbó"
+      "role": "Documentary, directed by Tamara Montenegro · Nicaragua",
+      "note": "Director, script and sound"
+    },
+    {
+      "year": "2025",
+      "title": "iContact the Opera",
+      "role": "Musical · USA",
+      "note": ""
+    },
+    {
+      "year": "2024",
+      "title": "Stinky Mango",
+      "role": "Fiction short · Jamaica · sound direction, score and mastering",
+      "note": "Best Cast, Diversity in Cannes 2025"
     },
     {
       "year": "2024",
       "title": "Water is Love",
-      "role": "Sound director, composer, mastering",
+      "role": "Animation short · Portugal · sound direction, score and mastering",
       "note": ""
     },
     {
       "year": "2024",
       "title": "The Untamed",
-      "role": "Script, AI art, music",
+      "role": "Script, AI art and music",
       "note": ""
     },
     {
       "year": "2022",
+      "title": "Locas",
+      "role": "Feature film · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2021",
       "title": "Kumina Queen",
-      "role": "Sound editor",
+      "role": "Feature documentary · Jamaica · sound editing",
       "note": ""
     },
     {
       "year": "2018",
       "title": "Agwe",
-      "role": "Sound director, composer, mastering",
-      "note": "KingstOOn Animation Festival 2019"
+      "role": "Animation short · Jamaica · sound direction, score and mastering",
+      "note": "Finalist, Best Short Film and Best Storyboard, KingstOOn 2019"
+    },
+    {
+      "year": "2017",
+      "title": "El Laboratorio de Xiloá",
+      "role": "Documentary feature · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2015",
+      "title": "Transdesfiguraciones",
+      "role": "Experimental short · Guatemala",
+      "note": ""
+    },
+    {
+      "year": "2014–2016",
+      "title": "Calvin Klein Europe",
+      "role": "Ad campaign · Milan",
+      "note": ""
+    },
+    {
+      "year": "2014",
+      "title": "La Bacteria del Pincel",
+      "role": "Fiction short · Spain",
+      "note": ""
+    },
+    {
+      "year": "2014",
+      "title": "Comamos Juntos",
+      "role": "Documentary short · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2013",
+      "title": "Casa Vacía",
+      "role": "Fiction short · Nicaragua and Costa Rica",
+      "note": ""
+    },
+    {
+      "year": "2013",
+      "title": "Persona Preferencial",
+      "role": "Fiction short · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2012",
+      "title": "freedom2dance",
+      "role": "Documentary · USA",
+      "note": ""
+    },
+    {
+      "year": "2011",
+      "title": "La Identidad de mi Madre",
+      "role": "Fiction short · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2011",
+      "title": "Contracorrientes",
+      "role": "TV series · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2011",
+      "title": "Escultoras de Sueños",
+      "role": "Fiction short · Nicaragua",
+      "note": ""
+    },
+    {
+      "year": "2010",
+      "title": "Serdo Umano",
+      "role": "Jingle for TV series · Honduras",
+      "note": ""
     }
-  ]
+  ],
+  "services_line": "Production, post-production, live sound, recording, sound design, music composition, Foley, sound mix and master."
 }

@@ -133,6 +133,7 @@ content:
     path: src/content/film.json
     format: json
     fields:
+      - { name: services_line, label: Services line (under What I make), type: text }
       - { name: intro, label: Intro, type: text }
       - { name: showreel_id, label: Showreel YouTube ID, type: string }
       - name: services

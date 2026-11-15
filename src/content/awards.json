@@ -47,6 +47,12 @@
       "prize": "Best World Music",
       "for": "",
       "image": ""
+    },
+    {
+      "org": "TEDxManagua 2012",
+      "prize": "Speaker",
+      "for": "",
+      "image": "./images/gallery/tedx-managua.webp"
     }
   ],
   "film": [
@@ -57,7 +63,7 @@
     },
     {
       "org": "KingstOOn Animation Festival 2019",
-      "prize": "Festival laurels",
+      "prize": "Finalist, Best Short Film and Best Storyboard",
       "for": "Agwe, sound and score"
     }
   ],

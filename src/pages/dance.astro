@@ -7,6 +7,7 @@ import site from '../content/site.json';
 import dance from '../content/dance.json';
 const sc = `https://w.soundcloud.com/player/?url=${encodeURIComponent(dance.soundcloud_track)}&color=%23e8822a&auto_play=false&hide_related=true&show_comments=false&visual=true`;
 const glyphs = ['spiral', 'double', 'temple'];
+import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Dance, NAOBA" page="dance">
 <section class="page-hero">
@@ -30,6 +31,19 @@ const glyphs = ['spiral', 'double', 'temple'];
     <div class="grid3">
       {dance.offerings.map((o, i) => <div class="card"><Glyph name={glyphs[i % 3]} color="var(--copal)" /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div>)}
     </div>
+  </div>
+</section>
+
+<section class="collage dark">
+  <img src="./images/gallery/dance-collage.webp" alt="Dancers in ceremony, moments from NAOBA's dance space-holding" loading="lazy" />
+</section>
+<section class="band">
+  <div class="wrap">
+    <h2 class="h2 center-text" style="margin-bottom:34px">Ceremony &amp; dance space-holding</h2>
+    <Gallery cols={3} items={[
+      { src: './images/gallery/dance-hands.webp', alt: 'Tamara guiding a ceremony with open hands', caption: 'Holding the space', tall: true },
+      { src: './images/gallery/drum-circle.webp', alt: 'Sound ceremony with drums and singing bowls in an open-air temple', caption: 'Sound ceremony', wide: true },
+    ]} />
   </div>
 </section>
 
@@ -71,5 +85,7 @@ const glyphs = ['spiral', 'double', 'temple'];
 <style>
 .player{width:100%;height:300px;border:0;display:block;background:#000}
 .photo{width:100%;aspect-ratio:4/5;object-fit:cover;filter:brightness(.85)}
+.collage{background:#000;line-height:0}
+.collage img{width:100%;height:auto;max-height:520px;object-fit:cover}
 </style>
 </Base>

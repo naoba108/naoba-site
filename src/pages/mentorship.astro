@@ -6,10 +6,11 @@ import Video from '../components/Video.astro';
 import m from '../content/mentorship.json';
 import mx from '../content/mixing.json';
 const glyphs = ['spiral', 'turtle', 'sun'];
+import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Mentorship, NAOBA" page="mentorship">
 <section class="page-hero">
-  <img src="./images/studio-circle.jpg" alt="Tamara teaching music production to a circle of artists" />
+  <img src="./images/studio-circle-hd.webp" alt="Tamara teaching music production to a circle of artists" />
   <div class="wrap">
     <p class="mono">1:1 music mentorship</p>
     <h1 class="h1">Work with me</h1>
@@ -20,6 +21,19 @@ const glyphs = ['spiral', 'turtle', 'sun'];
   <div class="wrap grid2">
     <p class="italic" style="margin:0">{m.intro}</p>
     <Video id={m.video_id} title="Why I mentor" />
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <p class="mono center-text">Teaching, speaking, holding space</p>
+    <h2 class="h2 center-text" style="margin-bottom:34px">In the room</h2>
+    <Gallery cols={3} items={[
+      { src: './images/gallery/tedx-managua.webp', alt: 'Tamara speaking on the TEDxManagua stage', caption: 'TEDxManagua', wide: true },
+      { src: './images/gallery/presenting.webp', alt: 'Tamara presenting, hand on heart', caption: 'Keynote', tall: true },
+      { src: './images/gallery/workshop-laptop.webp', alt: 'Women gathered around a laptop in a production workshop', caption: 'Music production for women' },
+      { src: './images/gallery/workshop-push.webp', alt: 'Tamara teaching on Ableton Push', caption: 'Ableton workshop' },
+    ]} />
   </div>
 </section>
 
