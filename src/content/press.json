@@ -1,96 +1,78 @@
 {
-  "bio_short": "NAOBA is the sound of Tamara Montenegro, a Nicaraguan producer, DJ and sound artist building a bridge between human technology and Earth technology: the deep, energetic intelligence we already carry inside us. Her music works like architecture made of frequency. Sub-bass pulses, ancestral rhythm and fine organic textures lock into geometric patterns, like sand drawing sacred shapes on a vibrating plate, so the sound is felt in the body as much as heard. On the dance floor it becomes ritual. In the studio it becomes a laboratory where psychoacoustics, code and intuition meet, and each set is a sequence of frequency codes that tunes the nervous system and returns people to their own inner signal. Her music was in consideration for the Latin Grammy 2026, her scores accompany films honoured at Diversity in Cannes, and her work has been presented at ISEA Dubai, Sound Art Festival Mexico City and TEDx.",
-  "epk_pdf": "",
-  "rider_pdf": "",
+  "bio_short": "NAOBA is the sound of Tamara Montenegro, a Nicaraguan-German producer, DJ and sound artist amplifying consciousness through music. Her music works like architecture made of frequency. Sub-bass pulses, ancestral rhythm and fine organic textures lock into geometric patterns, like sand drawing sacred shapes on a vibrating plate, her sound is very much for the body as much as as to take pleasure in listening. \n\nThe dance floor becomes ritual as she is a dancer herself. The studio, a laboratory where psychoacoustics, codes and intuition meet. Each set is a journey that guides deep somatic experiences, soothing or activating the nervous system and returning listeners and dancers to a remembrance. \n\nHer music was in consideration for the Latin Grammy 2026, her scores accompany films honoured at Diversity in Cannes, and her work has been presented at ISEA Dubai, Sound Art Festival Mexico City and TEDx.",
   "photos": [
     {
       "file": "naoba-dj-candlelight",
-      "title": "DJ set by candlelight",
-      "credit": ""
+      "title": "DJ set by candlelight"
     },
     {
       "file": "naoba-dj-rooftop",
-      "title": "DJ set, rooftop",
-      "credit": ""
+      "title": "DJ set, rooftop"
     },
     {
       "file": "naoba-live-circle",
-      "title": "Live set in circle",
-      "credit": ""
+      "title": "Live set in circle"
     },
     {
       "file": "naoba-portrait-stone",
-      "title": "Portrait, stone",
-      "credit": ""
+      "title": "Portrait, stone"
     },
     {
       "file": "naoba-portrait-flowers",
-      "title": "Portrait, flowers",
-      "credit": ""
+      "title": "Portrait, flowers"
     },
     {
       "file": "naoba-portrait-lava",
-      "title": "Portrait, lava field",
-      "credit": ""
+      "title": "Portrait, lava field"
     },
     {
       "file": "naoba-sound-ceremony",
-      "title": "Sound ceremony",
-      "credit": ""
+      "title": "Sound ceremony"
     }
   ],
+  "performed_note": "Some of the latest venues and communities I have played at during the last three years.",
   "performed": [
     {
       "place": "Ecstatic Dance Berlin",
       "city": "Berlin",
-      "country": "Germany",
-      "year": ""
+      "country": "Germany"
     },
     {
       "place": "Ecstatic Dance Paris",
       "city": "Paris",
-      "country": "France",
-      "year": ""
+      "country": "France"
     },
     {
       "place": "The Center San Francisco",
       "city": "San Francisco",
-      "country": "USA",
-      "year": ""
+      "country": "USA"
     },
     {
       "place": "Ecstatic Dance Boulder",
       "city": "Boulder",
-      "country": "USA",
-      "year": ""
+      "country": "USA"
     },
     {
       "place": "Ecstatic Dance Oakland",
       "city": "Oakland",
-      "country": "USA",
-      "year": ""
+      "country": "USA"
     },
     {
       "place": "Ecstatic Dance San Jose",
       "city": "San Jose",
-      "country": "USA",
-      "year": ""
+      "country": "USA"
     },
     {
       "place": "Ecstatic Dance Portugal",
-      "city": "",
-      "country": "Portugal",
-      "year": ""
+      "country": "Portugal"
     },
     {
       "place": "Envision Festival",
-      "city": "",
       "country": "Costa Rica",
       "year": "2024"
     },
     {
       "place": "Tribal Gathering",
-      "city": "",
       "country": "Panama",
       "year": "2024"
     },
@@ -103,26 +85,21 @@
     {
       "place": "Ecstatic Dance New York City",
       "city": "New York",
-      "country": "USA",
-      "year": ""
+      "country": "USA"
     },
     {
       "place": "Ecstatic Dance San Francisco",
       "city": "San Francisco",
-      "country": "USA",
-      "year": ""
+      "country": "USA"
     },
     {
       "place": "Ecstatic Dance Festival",
       "city": "Lake Atitlán",
-      "country": "Guatemala",
-      "year": ""
+      "country": "Guatemala"
     },
     {
       "place": "Audio Alchemy Festival",
-      "city": "",
-      "country": "Hawaii",
-      "year": ""
+      "country": "Hawaii"
     },
     {
       "place": "SoulPlay Festival",
@@ -132,16 +109,13 @@
     },
     {
       "place": "Unity Festival",
-      "city": "",
       "country": "Guatemala",
       "year": "2024"
     },
     {
       "place": "Downtempo Festival",
       "city": "Tepoztlán",
-      "country": "Mexico",
-      "year": ""
+      "country": "Mexico"
     }
-  ],
-  "performed_note": "Some of the latest venues and communities I have played at during the last three years."
+  ]
 }
