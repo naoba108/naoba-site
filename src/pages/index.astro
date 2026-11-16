@@ -140,6 +140,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
     </div>
 
     <h3 class="h3 sub">Where I have played</h3>
+    {press.performed_note && <p class="italic stages-note">{press.performed_note}</p>}
     <ul class="stages">
       {(press.performed || []).map(pl => <li><span class="st-place">{pl.place}</span><span class="mono">{[pl.city, pl.country, pl.year].filter(Boolean).join(' · ')}</span></li>)}
     </ul>
@@ -275,9 +276,11 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .seal{width:84px;height:84px;border-radius:50%;border:1px solid rgba(240,198,124,.5);display:grid;place-items:center;margin-bottom:4px}
 .a-prize{font:400 22px/1.2 var(--title);letter-spacing:.03em;color:#F6EFE0;margin:0}
 .award .mono{margin:0}
-.stages{list-style:none;padding:0;margin:0 auto;max-width:620px}
-.stages li{display:flex;flex-direction:column;gap:4px;padding:16px 0;border-top:1px solid rgba(240,198,124,.2)}
-.stages li:last-child{border-bottom:1px solid rgba(240,198,124,.2)}
+.stages{list-style:none;padding:0;margin:0 auto;max-width:900px;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+@media (max-width:700px){.stages{grid-template-columns:1fr}}
+.stages-note{margin:-6px auto 26px;opacity:.8}
+.stages li{display:flex;flex-direction:column;gap:3px;padding:11px 0;border-top:1px solid rgba(240,198,124,.2)}
+.stages li:nth-last-child(-n+2){border-bottom:1px solid rgba(240,198,124,.2)}
 .st-place{font:400 24px/1.2 var(--title);color:#F6EFE0}
 .press .shorts{margin-top:0}
 .press .short.empty{border-color:rgba(240,198,124,.5)}

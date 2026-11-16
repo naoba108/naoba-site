@@ -223,6 +223,7 @@ content:
           - { name: image, label: Or upload a high-res photo, type: image }
           - { name: title, label: Caption, type: string }
           - { name: credit, label: Photo credit, type: string }
+      - { name: performed_note, label: Line under 'Where I have played', type: string }
       - name: performed
         label: Places I have performed
         type: object

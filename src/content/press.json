@@ -41,88 +41,89 @@
   ],
   "performed": [
     {
-      "place": "Sound Art Festival",
-      "city": "Mexico City",
-      "country": "Mexico",
-      "year": "2019"
-    },
-    {
-      "place": "Loop Festival",
+      "place": "Ecstatic Dance Berlin",
       "city": "Berlin",
       "country": "Germany",
-      "year": "2017"
-    },
-    {
-      "place": "CCEN, Centro Cultural de España",
-      "city": "Managua",
-      "country": "Nicaragua",
-      "year": "2016"
-    },
-    {
-      "place": "Gráfica Génesis",
-      "city": "San José",
-      "country": "Costa Rica",
-      "year": "2015"
-    },
-    {
-      "place": "MADC, Museo de Arte y Diseño Contemporáneo",
-      "city": "San José",
-      "country": "Costa Rica",
-      "year": "2015"
-    },
-    {
-      "place": "ISEA, International Symposium of Electronic Arts",
-      "city": "Dubai and Abu Dhabi",
-      "country": "UAE",
-      "year": "2014"
-    },
-    {
-      "place": "Hangar",
-      "city": "Barcelona",
-      "country": "Spain",
-      "year": "2014"
-    },
-    {
-      "place": "MNAC, Museu Nacional d'Art de Catalunya",
-      "city": "Barcelona",
-      "country": "Spain",
-      "year": "2013"
-    },
-    {
-      "place": "Goethe-Institut",
-      "city": "Barcelona",
-      "country": "Spain",
-      "year": "2013"
-    },
-    {
-      "place": "L'Estruch",
-      "city": "Sabadell",
-      "country": "Spain",
-      "year": "2013"
-    },
-    {
-      "place": "CCCB, Centre de Cultura Contemporània",
-      "city": "Barcelona",
-      "country": "Spain",
       "year": ""
     },
     {
-      "place": "Mercat de les Flors",
-      "city": "Barcelona",
-      "country": "Spain",
+      "place": "Ecstatic Dance Paris",
+      "city": "Paris",
+      "country": "France",
       "year": ""
     },
     {
-      "place": "TEDxManagua",
-      "city": "Managua",
-      "country": "Nicaragua",
-      "year": "2012"
+      "place": "The Center San Francisco",
+      "city": "San Francisco",
+      "country": "USA",
+      "year": ""
     },
     {
-      "place": "Centro Cultural Pablo Antonio Cuadra",
-      "city": "Managua",
-      "country": "Nicaragua",
-      "year": "2011"
+      "place": "Ecstatic Dance Boulder",
+      "city": "Boulder",
+      "country": "USA",
+      "year": ""
+    },
+    {
+      "place": "Ecstatic Dance Oakland",
+      "city": "Oakland",
+      "country": "USA",
+      "year": ""
+    },
+    {
+      "place": "Ecstatic Dance San Jose",
+      "city": "San Jose",
+      "country": "USA",
+      "year": ""
+    },
+    {
+      "place": "Ecstatic Dance Portugal",
+      "city": "",
+      "country": "Portugal",
+      "year": ""
+    },
+    {
+      "place": "Envision Festival",
+      "city": "",
+      "country": "Costa Rica",
+      "year": "2024"
+    },
+    {
+      "place": "Tribal Gathering",
+      "city": "",
+      "country": "Panama",
+      "year": "2024"
+    },
+    {
+      "place": "Burning Man",
+      "city": "Black Rock City",
+      "country": "USA",
+      "year": "2023"
+    },
+    {
+      "place": "Ecstatic Dance New York City",
+      "city": "New York",
+      "country": "USA",
+      "year": ""
+    },
+    {
+      "place": "Ecstatic Dance San Francisco",
+      "city": "San Francisco",
+      "country": "USA",
+      "year": ""
+    },
+    {
+      "place": "Ecstatic Dance Festival",
+      "city": "Lake Atitlán",
+      "country": "Guatemala",
+      "year": ""
+    },
+    {
+      "place": "Audio Alchemy Festival",
+      "city": "",
+      "country": "Hawaii",
+      "year": ""
     }
-  ]
+  ],
+  "performed_note": "Amongst many others, from the last three years."
 }
