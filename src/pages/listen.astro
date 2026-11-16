@@ -10,40 +10,40 @@ import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Listen, NAOBA" page="listen">
 <section class="page-hero">
-  <video src="./video/grass.mp4" poster="./images/ometepe-jungle.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  {listen.hero.video ? <video src={listen.hero.video} poster={listen.hero.poster} autoplay muted loop playsinline aria-hidden="true"></video> : <img src={listen.hero.poster} alt="" />}
   <div class="wrap">
-    <p class="mono">N 11°30′ W 85°35′ &nbsp; Ometepe, Nicaragua</p>
-    <h1 class="h1">Sound research &amp; bioacoustics</h1>
+    <p class="mono">{listen.hero.kicker}</p>
+    <h1 class="h1">{listen.hero.title}</h1>
   </div>
 </section>
 
 <section class="band noche">
   <div class="wrap grid2">
     <div>
-      <h2 class="h2">Heart in Nature</h2>
+      <h2 class="h2">{listen.titles.intro}</h2>
       <p class="italic" style="white-space:pre-line">{listen.intro}</p>
     </div>
-    <Cochlea size={320} />
+    <Cochlea size={320} image={listen.figure.image} caption={listen.figure.caption} />
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <p class="mono center-text">In the field</p>
-    <h2 class="h2 center-text" style="margin-bottom:34px">Listening to the living world</h2>
+    <p class="mono center-text">{listen.titles.field_kicker}</p>
+    <h2 class="h2 center-text" style="margin-bottom:34px">{listen.titles.field}</h2>
   </div>
   <div class="wrap"><Gallery items={(listen.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
   <div>
   </div>
 </section>
 
-<section class="band" style="padding-top:56px;padding-bottom:56px">
-  <div class="wrap"><Spectrogram /></div>
-</section>
+{listen.spectrogram.show && <section class="band" style="padding-top:56px;padding-bottom:56px">
+  <div class="wrap">{listen.spectrogram.image ? <figure style="margin:0;text-align:center"><img src={listen.spectrogram.image} alt={listen.spectrogram.label} loading="lazy" style="max-width:100%;height:auto" /><figcaption class="mono" style="margin-top:8px">{listen.spectrogram.label}</figcaption></figure> : <Spectrogram label={listen.spectrogram.label} />}</div>
+</section>}
 
 <section class="band noche">
   <div class="wrap">
-    <h2 class="h2">The research</h2>
+    <h2 class="h2">{listen.titles.research}</h2>
     <div class="grid3">
       {listen.research.map((r, i) => <div class="card plate"><Glyph name={glyphs[i % 3]} /><h3 class="h3" style="margin-top:14px">{r.title}</h3><p>{r.text}</p></div>)}
     </div>
@@ -52,10 +52,10 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band">
   <div class="wrap grid2">
-    <div class="frame"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
+    <div class="frame"><img src={listen.sounds_image} alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
     <div>
-      <h2 class="h2">Play with these sounds</h2>
-      <p class="italic">Sample packs, plugins and templates made from these recordings.</p>
+      <h2 class="h2">{listen.titles.sounds}</h2>
+      <p class="italic">{listen.titles.sounds_text}</p>
       <p><a class="btn solid" href="./shop.html">Visit the shop</a></p>
     </div>
   </div>
@@ -63,17 +63,17 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band noche">
   <div class="wrap">
-    <h2 class="h2">From the field</h2>
+    <h2 class="h2">{listen.titles.video}</h2>
     <div class="one-video">{listen.videos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap grid2">
-    <div class="frame"><img src="./images/rooftop-setup.jpg" alt="Tamara at a hybrid DJ and Ableton setup" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
+    <div class="frame"><img src={listen.learn_image} alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
     <div>
-      <h2 class="h2">Learn the craft</h2>
-      <p class="italic">Field recording, Ableton and sound design, one to one.</p>
+      <h2 class="h2">{listen.titles.learn}</h2>
+      <p class="italic">{listen.titles.learn_text}</p>
       <p><a class="btn solid" href="./mentorship.html">See mentorship</a></p>
     </div>
   </div>

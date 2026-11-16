@@ -59,5 +59,15 @@
       "alt": "Ableton Push workshop",
       "caption": "Ableton workshop"
     }
-  ]
+  ],
+  "hero": {
+    "image": "./images/studio-circle-hd.webp",
+    "kicker": "1:1 music mentorship",
+    "title": "Work with me"
+  },
+  "titles": {
+    "video": "Why I mentor",
+    "paths": "Three paths",
+    "paths_lede": "The longer the path, the more each hour gives you."
+  }
 }

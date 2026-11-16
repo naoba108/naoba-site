@@ -4,21 +4,67 @@
     {
       "name": "Sample packs",
       "items": [
-        { "title": "Rainforest at dawn", "format": "WAV 24-bit, 48 kHz", "text": "Howler monkeys, birds and insects, from first light to full chorus.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Coming soon" },
-        { "title": "Volcano and river", "format": "WAV 24-bit, 48 kHz", "text": "Deep rumbles, water textures and stones, ready to layer.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Coming soon" }
+        {
+          "title": "Rainforest at dawn",
+          "format": "WAV 24-bit, 48 kHz",
+          "text": "Howler monkeys, birds and insects, from first light to full chorus.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Coming soon"
+        },
+        {
+          "title": "Volcano and river",
+          "format": "WAV 24-bit, 48 kHz",
+          "text": "Deep rumbles, water textures and stones, ready to layer.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Coming soon"
+        }
       ]
     },
     {
       "name": "Plugins",
       "items": [
-        { "title": "NAOBA plugin", "format": "VST3, AU", "text": "An instrument built from field recordings. In development.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Early access" }
+        {
+          "title": "NAOBA plugin",
+          "format": "VST3, AU",
+          "text": "An instrument built from field recordings. In development.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Early access"
+        }
       ]
     },
     {
       "name": "Templates",
       "items": [
-        { "title": "Sound-healing Ableton template", "format": "Ableton Live 11+", "text": "Open the session and play with drones, frequencies and nature layers.", "price": "", "url": "https://ko-fi.com/naoba", "audio": "", "status": "Coming soon" }
+        {
+          "title": "Sound-healing Ableton template",
+          "format": "Ableton Live 11+",
+          "text": "Open the session and play with drones, frequencies and nature layers.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Coming soon"
+        }
       ]
     }
-  ]
+  ],
+  "hero": {
+    "image": "./images/guitar-hand.jpg",
+    "kicker": "Samples, plugins, templates",
+    "title": "Sound design from the living Earth"
+  },
+  "spectrogram": {
+    "show": true,
+    "label": "Fig. Rainforest recording, 0 to 10 kHz (sample)",
+    "image": ""
+  },
+  "titles": {
+    "custom": "Want a custom sound world?",
+    "custom_text": "For films, games, installations and albums."
+  }
 }

@@ -7,17 +7,17 @@ import site from '../content/site.json';
 ---
 <Base title="Samples & Tools, NAOBA" page="shop">
 <section class="page-hero">
-  <img src="./images/guitar-hand.jpg" alt="A hand playing an acoustic guitar" style="object-position:center 40%" />
+  <img src={shop.hero.image} alt="" style="object-position:center 40%" />
   <div class="wrap">
-    <p class="mono">Samples, plugins, templates</p>
-    <h1 class="h1">Sound design from the living Earth</h1>
+    <p class="mono">{shop.hero.kicker}</p>
+    <h1 class="h1">{shop.hero.title}</h1>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
     <p class="italic" style="max-width:52ch">{shop.intro}</p>
-    <div style="margin-top:40px"><Spectrogram seed={23} label="Fig. Rainforest recording, 0 to 10 kHz (sample)" /></div>
+    {shop.spectrogram.show && <div style="margin-top:40px">{shop.spectrogram.image ? <figure style="margin:0;text-align:center"><img src={shop.spectrogram.image} alt={shop.spectrogram.label} loading="lazy" style="max-width:100%;height:auto" /><figcaption class="mono" style="margin-top:8px">{shop.spectrogram.label}</figcaption></figure> : <Spectrogram seed={23} label={shop.spectrogram.label} />}</div>}
   </div>
 </section>
 
@@ -48,8 +48,8 @@ import site from '../content/site.json';
 <section class="band cacao">
   <div class="wrap" style="text-align:center">
     <Divider />
-    <h2 class="h2" style="margin-top:24px">Want a custom sound world?</h2>
-    <p class="italic" style="margin:0 auto 28px">For films, games, installations and albums.</p>
+    <h2 class="h2" style="margin-top:24px">{shop.titles.custom}</h2>
+    <p class="italic" style="margin:0 auto 28px">{shop.titles.custom_text}</p>
     <a class="btn" href="./film.html#quote">Request a quote</a>
     <a class="btn" href={site.kofi} style="margin-left:10px">Visit my Ko-fi</a>
   </div>

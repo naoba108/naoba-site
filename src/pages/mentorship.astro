@@ -10,17 +10,17 @@ import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Mentorship, NAOBA" page="mentorship">
 <section class="page-hero">
-  <img src="./images/studio-circle-hd.webp" alt="Tamara teaching music production to a circle of artists" />
+  <img src={m.hero.image} alt="" />
   <div class="wrap">
-    <p class="mono">1:1 music mentorship</p>
-    <h1 class="h1">Work with me</h1>
+    <p class="mono">{m.hero.kicker}</p>
+    <h1 class="h1">{m.hero.title}</h1>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap grid2">
     <p class="italic" style="margin:0">{m.intro}</p>
-    <Video id={m.video_id} title="Why I mentor" />
+    <Video id={m.video_id} title={m.titles.video} />
   </div>
 </section>
 
@@ -33,8 +33,8 @@ import Gallery from '../components/Gallery.astro';
 <section class="band noche">
   <div class="wrap">
     <Divider />
-    <h2 class="h2" style="text-align:center;margin-top:28px">Three paths</h2>
-    <p class="lede" style="text-align:center;margin:0 auto 44px">The longer the path, the more each hour gives you.</p>
+    <h2 class="h2" style="text-align:center;margin-top:28px">{m.titles.paths}</h2>
+    <p class="lede" style="text-align:center;margin:0 auto 44px">{m.titles.paths_lede}</p>
     <div class="grid3">
       {m.packages.map((p, i) => (
         <article class={`card pkg ${i === 2 ? 'feature' : ''}`}>

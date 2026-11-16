@@ -1,0 +1,8 @@
+{
+  "hero": {
+    "image": "./images/lava-portrait.jpg",
+    "kicker": "Write to me",
+    "title": "Contact"
+  },
+  "aside": "For bookings, mentorship and everything else."
+}

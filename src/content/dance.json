@@ -50,5 +50,20 @@
       "alt": "Dancers in ceremony",
       "caption": ""
     }
-  ]
+  ],
+  "hero": {
+    "image": "./images/dj-candles.jpg",
+    "kicker": "Ecstatic dance DJ, producer",
+    "title": "Ceremony on the dance floor"
+  },
+  "titles": {
+    "offerings": "What I bring",
+    "watch": "Watch",
+    "events": "CACAO Bass",
+    "events_empty": "New gatherings are announced first in the letters. Sign up at the bottom of the page.",
+    "stages": "Stages and spaces",
+    "book": "Book NAOBA",
+    "book_text": "Festivals, ecstatic dance communities, retreats and ceremonies. Tell me about your space and your people."
+  },
+  "book_image": "./images/dj-motion.jpg"
 }

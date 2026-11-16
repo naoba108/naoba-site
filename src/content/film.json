@@ -158,5 +158,17 @@
       "alt": "Agwe, KingstOOn 2019 finalist",
       "caption": "Agwe"
     }
-  ]
+  ],
+  "hero": {
+    "image": "./images/tree-bw.jpg",
+    "kicker": "Composer and sound designer",
+    "title": "Film & soundtrack"
+  },
+  "titles": {
+    "services": "What I make",
+    "projects": "Film Scores and Sound Design for Film",
+    "gallery": "From the studio and the screen",
+    "quote": "Tell me about your project",
+    "quote_text": "Share a few details and I'll write back with ideas, a timeline and a quote."
+  }
 }

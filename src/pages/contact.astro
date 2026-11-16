@@ -2,14 +2,15 @@
 import Base from '../layouts/Base.astro';
 import Glyph from '../components/Glyph.astro';
 import site from '../content/site.json';
+import contact from '../content/contact.json';
 const reasons = ['Booking a DJ set', 'Hosting a CACAO Bass gathering', 'Mentorship', 'Mixing & mastering', 'Film or sound design', 'Something else'];
 ---
 <Base title="Contact, NAOBA" page="contact">
 <section class="page-hero" style="min-height:60vh">
-  <img src="./images/lava-portrait.jpg" alt="Tamara Montenegro on a lava field" />
+  <img src={contact.hero.image} alt="" />
   <div class="wrap">
-    <p class="mono">Write to me</p>
-    <h1 class="h1">Contact</h1>
+    <p class="mono">{contact.hero.kicker}</p>
+    <h1 class="h1">{contact.hero.title}</h1>
   </div>
 </section>
 
@@ -28,7 +29,7 @@ const reasons = ['Booking a DJ set', 'Hosting a CACAO Bass gathering', 'Mentorsh
     </form>
     <div>
       <Glyph name="temple" size={48} />
-      <p class="italic" style="margin-top:16px">For bookings, mentorship and everything else.</p>
+      <p class="italic" style="margin-top:16px">{contact.aside}</p>
       <p class="h3"><a href={`mailto:${site.email}`} style="text-decoration:none">{site.email}</a></p>
       <ul class="list" style="margin-top:28px">
         <li><a href={site.kofi}>Ko-fi</a><span class="mono">shop and support</span></li>

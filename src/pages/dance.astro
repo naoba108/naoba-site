@@ -11,10 +11,10 @@ import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Dance, NAOBA" page="dance">
 <section class="page-hero">
-  <img src="./images/dj-candles.jpg" alt="NAOBA DJing by candlelight" />
+  <img src={dance.hero.image} alt={dance.hero.title} />
   <div class="wrap">
-    <p class="mono" style="color:var(--copal)">Ecstatic dance DJ, producer</p>
-    <h1 class="h1">Ceremony on the dance floor</h1>
+    <p class="mono" style="color:var(--copal)">{dance.hero.kicker}</p>
+    <h1 class="h1">{dance.hero.title}</h1>
   </div>
 </section>
 
@@ -27,7 +27,7 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band">
   <div class="wrap">
-    <h2 class="h2">What I bring</h2>
+    <h2 class="h2">{dance.titles.offerings}</h2>
     <div class="grid3">
       {dance.offerings.map((o, i) => <div class="card"><Glyph name={glyphs[i % 3]} color="var(--copal)" /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div>)}
     </div>
@@ -39,7 +39,7 @@ import Gallery from '../components/Gallery.astro';
 </section>
 <section class="band cacao">
   <div class="wrap">
-    <h2 class="h2">Watch</h2>
+    <h2 class="h2">{dance.titles.watch}</h2>
     <div class="one-video">{dance.videos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
@@ -47,14 +47,14 @@ import Gallery from '../components/Gallery.astro';
 <section class="band">
   <div class="wrap grid2" style="align-items:start">
     <div>
-      <h2 class="h2">CACAO Bass</h2>
+      <h2 class="h2">{dance.titles.events}</h2>
       {dance.events.length
         ? <ul class="list">{dance.events.map(e => <li><span>{e.city}, {e.venue}</span><a class="mono" href={e.tickets}>{e.date}</a></li>)}</ul>
-        : <p class="italic">New gatherings are announced first in the letters. Sign up at the bottom of the page.</p>}
+        : <p class="italic">{dance.titles.events_empty}</p>}
       <p><a class="btn copal" href="./contact.html">Host a CACAO Bass gathering</a></p>
     </div>
     <div>
-      <h3 class="h3">Stages and spaces</h3>
+      <h3 class="h3">{dance.titles.stages}</h3>
       <ul class="list">{dance.stages.map(s => <li><span>{s}</span></li>)}</ul>
     </div>
   </div>
@@ -62,11 +62,11 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band cacao">
   <div class="wrap grid2">
-    <img class="photo" src="./images/dj-motion.jpg" alt="NAOBA in motion behind the mixer" loading="lazy" />
+    <img class="photo" src={dance.book_image} alt="" loading="lazy" />
     <div>
       <Divider />
-      <h2 class="h2" style="margin-top:24px">Book NAOBA</h2>
-      <p class="italic">Festivals, ecstatic dance communities, retreats and ceremonies. Tell me about your space and your people.</p>
+      <h2 class="h2" style="margin-top:24px">{dance.titles.book}</h2>
+      <p class="italic">{dance.titles.book_text}</p>
       <p><a class="btn solid" href="./contact.html">Send a booking request</a></p>
     </div>
   </div>

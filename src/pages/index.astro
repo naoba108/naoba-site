@@ -18,39 +18,39 @@ import Player from '../components/Player.astro';
 import Signup from '../components/Signup.astro';
 import Cymatic from '../components/Cymatic.astro';
 import gigs from '../content/gigs.json';
+import home from '../content/home.json';
+const T = home.titles; const D = home.doors; const reel = home.reel;
 const homeVideos = [dance.videos[0], listen.videos[0]];
 ---
 <Base title="NAOBA, Tamara Montenegro" page="home">
 <section class="hero dark">
-  <video src="./video/tree.mp4" poster="./images/tree-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <video src={home.hero.video} poster={home.hero.poster} autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="shade"></div>
   <div class="center">
     <img class="logo" src="./images/logo.webp" alt="NAOBA" width="1200" height="543" />
     <p class="italic tag">{site.tagline_1}<br />{site.tagline_2}{site.tagline_3 && <><br />{site.tagline_3}</>}</p>
-    <a class="cue btn" href="#doors">Enter</a>
+    <a class="cue btn" href="#doors">{home.hero.button}</a>
   </div>
 </section>
 
 <div class="portal dark" id="doors">
 <section class="doors">
   <a class="door dance" href="./dance.html">
-    <img src="./images/dj-candles.jpg" alt="NAOBA DJing by candlelight" loading="lazy" />
-    <div class="txt"><h2 class="h1">Dance</h2><p class="italic">Ecstatic Dance &amp; Cacao Bass<sup class="tm">™</sup> Gatherings</p><span class="btn copal">Book NAOBA</span></div>
+    <img src={D.dance.image} alt={D.dance.title} loading="lazy" />
+    <div class="txt"><h2 class="h1">{D.dance.title}</h2><p class="italic" set:html={D.dance.subtitle.replace("™","<sup class='tm'>™</sup>")}></p><span class="btn copal">{D.dance.button}</span></div>
   </a>
   <a class="door listen" href="./listen.html">
-    <video src="./video/grass.mp4" poster="./images/ometepe-jungle.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
-    <div class="txt"><h2 class="h1">Listen</h2><p class="italic">Heart in Nature. Nervous System &amp; Immersive Listening.</p><span class="btn">Enter the lab</span></div>
+    {D.listen.video ? <video src={D.listen.video} poster={D.listen.poster} autoplay muted loop playsinline aria-hidden="true"></video> : <img src={D.listen.poster} alt={D.listen.title} loading="lazy" />}
+    <div class="txt"><h2 class="h1">{D.listen.title}</h2><p class="italic">{D.listen.subtitle}</p><span class="btn">{D.listen.button}</span></div>
   </a>
 </section>
 
 <section class="small-doors">
-  <a class="sdoor" href="./film.html"><img src="./images/tree-bw.jpg" alt="" loading="lazy" /><span class="h2">Film</span><span class="italic">Scores and sound design</span></a>
-  <a class="sdoor" href="./shop.html"><img src="./images/guitar-hand.jpg" alt="" loading="lazy" /><span class="h2">Samples &amp; Tools</span><span class="italic">Sound Design Tools, Sample Packs &amp; Ableton Templates</span></a>
-  <a class="sdoor" href="./mentorship.html"><img src="./images/studio-circle.jpg" alt="" loading="lazy" /><span class="h2">Mentorship</span><span class="italic">Three paths</span></a>
+  {[["film",D.film],["shop",D.shop],["mentorship",D.mentorship]].map(([k,d]) => <a class="sdoor" href={`./${k}.html`}><img src={d.image} alt="" loading="lazy" /><span class="h2">{d.title}</span><span class="italic">{d.subtitle}</span></a>)}
 </section>
 <a class="listen-strip" href="#music" aria-label="Keep scrolling to listen to NAOBA">
   <span class="wave" aria-hidden="true">{Array.from({length:28}).map((_, i) => <i style={`--d:${(i*0.137)%1.1}s;--h:${30+((i*37)%60)}%`}></i>)}</span>
-  <span class="strip-text">Keep scrolling to listen</span>
+  <span class="strip-text">{home.strip_text}</span>
   <span class="arrow" aria-hidden="true">↓</span>
 </a>
 </div>
@@ -59,17 +59,18 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   <Signup />
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="track"><span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i> <span>Dance Rituals</span><i>✦</i> <span>Bioacoustics Research</span><i>✦</i> <span>Gaian Immersions</span><i>✦</i></div></div>
+<div class="marquee" aria-hidden="true"><div class="track">{Array.from({length:6}).flatMap(() => home.marquee).map(w => <><span>{w}</span><i>✦</i> </>)}</div></div>
 
 <section class="reel-band" id="live" aria-label="NAOBA live">
   <div class="reel">
-    <video data-src="./video/live-reel.mp4" poster="./images/live-reel-poster.webp" muted loop playsinline preload="none" aria-label="NAOBA live performances, silent loop"></video>
+    <video data-src={reel.video} poster={reel.poster} muted loop={reel.loop} playsinline preload="none" data-autoplay={reel.autoplay ? "1" : "0"} aria-label="NAOBA live performances"></video>
+    {reel.sound_button && <button class="sound-btn" type="button" data-on={reel.sound_label} data-off={reel.mute_label} aria-pressed="false">{reel.sound_label}</button>}
   </div>
 </section>
 
 <section class="band" id="music">
   <div class="wrap">
-    <h2 class="h2 center-text" style="margin-bottom:40px">Music</h2>
+    <h2 class="h2 center-text" style="margin-bottom:40px">{T.music}</h2>
     <div class="players">
       {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
     </div>
@@ -85,17 +86,17 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
         ))}
       </div>
     )}
-    <p class="center-text" style="margin-top:36px"><a class="btn" href={site.bandcamp}>Buy on Bandcamp</a></p>
+    <p class="center-text" style="margin-top:36px"><a class="btn" href={site.bandcamp}>{T.bandcamp_button}</a></p>
   </div>
 </section>
 
 <section class="band noche geo-bg" id="gigs">
   <div class="geo-mark" aria-hidden="true"><Cymatic size={560} petals={5} color="#E6C37F" opacity={0.12} /></div>
   <div class="wrap">
-    <h2 class="h2 center-text">Next gigs</h2>
+    <h2 class="h2 center-text">{T.gigs}</h2>
     {gigs.bandsintown_artist
       ? <div class="bit-wrap"><a class="bit-widget-initializer" data-artist-name={gigs.bandsintown_artist} data-app-id={gigs.bandsintown_app_id || undefined} data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#EFE3C8" data-link-color="#BC9855" data-background-color="rgba(0,0,0,0)" data-display-limit="8" data-link-text-color="#FFFFFF" data-popup-background-color="#0F2619" data-separator-color="rgba(240,198,124,0.2)" data-font="Jost" data-display-track-button="true" data-display-play-my-city="true"></a></div>
-      : <p class="lede center-text" style="margin:0 auto 28px">New dates are on their way.</p>}
+      : <p class="lede center-text" style="margin:0 auto 28px">{T.gigs_empty}</p>}
     <p class="center-text"><a class="btn copal" href="./dance.html">Book NAOBA</a></p>
   </div>
 </section>
@@ -105,8 +106,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 <section class="band noche press" id="press">
   <div class="wrap center-text">
     <Cymatic size={110} petals={6} color="#E6C37F" />
-    <p class="mono" style="margin-top:18px">For promoters and event organisers</p>
-    <h2 class="h2">Press kit</h2>
+    <p class="mono" style="margin-top:18px">{T.press_kicker}</p>
+    <h2 class="h2">{T.press}</h2>
     <p class="press-bio" style="white-space:pre-line">{press.bio_short}</p>
     <p class="press-btns">
       <a class="btn copal" href="./press/naoba-press-photos.zip" download>Download all photos (.zip)</a>
@@ -114,7 +115,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
       {press.rider_pdf && <a class="btn" href={press.rider_pdf}>Tech rider (PDF)</a>}
     </p>
 
-    <h3 class="h3 sub">High-res photos</h3>
+    <h3 class="h3 sub">{T.photos}</h3>
     <div class="arches">
       {photoSlots.map(ph => ph
         ? <a class="arch" href={ph.href} download><img src={ph.thumb} alt={ph.title} loading="lazy" /><span>{ph.title}<em>Download</em></span></a>
@@ -128,7 +129,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
         : <p class="hl-title">{awards.highlight.detail}</p>}
     </div>
 
-    <h3 class="h3 sub">Awards & honours</h3>
+    <h3 class="h3 sub">{T.awards}</h3>
     <div class="award-grid">
       {awards.awards.map(a => (
         <div class="award">
@@ -139,13 +140,13 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
       ))}
     </div>
 
-    <h3 class="h3 sub">Where I have played</h3>
+    <h3 class="h3 sub">{T.stages}</h3>
     {press.performed_note && <p class="italic stages-note">{press.performed_note}</p>}
     <ul class="stages">
       {(press.performed || []).map(pl => <li><span class="st-place">{pl.place}</span><span class="mono">{[pl.city, pl.country, pl.year].filter(Boolean).join(' · ')}</span></li>)}
     </ul>
 
-    <h3 class="h3 sub" id="videos">Watch</h3>
+    <h3 class="h3 sub" id="videos">{T.watch}</h3>
   </div>
   <div class="shorts" aria-label="Short videos">
     {shortList.map(sh => sh.id
@@ -153,7 +154,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
       : <div class="short frame empty"><span>Short video</span></div>)}
   </div>
   <div class="wrap" style="margin-top:44px">
-    <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>More on YouTube</a></p>
+    <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>{T.youtube_button}</a></p>
   </div>
 </section>
 
@@ -222,6 +223,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 @media (prefers-reduced-motion:no-preference){.marquee .track{animation:slide 60s linear infinite}}
 @keyframes slide{to{transform:translateX(-50%)}}
 .reel{position:relative;background:#000}
+.sound-btn{position:absolute;right:18px;bottom:18px;z-index:2;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#F6EFE0;background:rgba(0,0,0,.45);border:1px solid rgba(246,239,224,.5);padding:10px 14px;cursor:pointer;backdrop-filter:blur(4px)}
+.sound-btn[aria-pressed="true"]{background:var(--gold);color:#1a1510;border-color:var(--gold)}
 .reel video{width:100%;max-height:88vh;aspect-ratio:16/9;object-fit:cover;background:#000}
 .reel-cap{position:absolute;left:0;right:0;top:0;padding:48px 28px;text-align:center;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.6),transparent)}
 .reel-cap .mono{color:#E6C37F;margin:0 0 8px}
@@ -295,7 +298,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 </style>
 {gigs.bandsintown_artist && <script is:inline charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>}
 <script is:inline>
-(function(){var v=document.querySelector('.reel video');if(!v)return;var still=matchMedia('(prefers-reduced-motion: reduce)').matches;if(still)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!v.src){v.src=v.dataset.src}v.play().catch(function(){})}else{v.pause()}})},{threshold:.25});io.observe(v);})();
+(function(){var v=document.querySelector('.reel video');if(!v)return;var b=document.querySelector('.sound-btn');if(b){b.addEventListener('click',function(){if(!v.src){v.src=v.dataset.src}v.muted=!v.muted;var on=!v.muted;b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?b.dataset.off:b.dataset.on;if(on){v.play().catch(function(){})}})}var still=matchMedia('(prefers-reduced-motion: reduce)').matches;if(still||v.dataset.autoplay!=='1'){v.controls=true;v.src=v.dataset.src;return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!v.src){v.src=v.dataset.src}v.play().catch(function(){})}else{if(v.muted)v.pause()}})},{threshold:.25});io.observe(v);})();
 (function(){
   function go(e){var d=document.getElementById('doors'); if(!d) return; if(e) e.preventDefault(); d.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}); history.replaceState(null,'','#doors');}
   var cue=document.querySelector('.cue'); if(cue) cue.addEventListener('click',go);

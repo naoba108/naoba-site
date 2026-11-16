@@ -38,5 +38,33 @@
       "alt": "Recording a lake at sunset with a boom microphone",
       "caption": ""
     }
-  ]
+  ],
+  "hero": {
+    "video": "./video/grass.mp4",
+    "poster": "./images/ometepe-jungle.jpg",
+    "kicker": "N 11°30′ W 85°35′   Ometepe, Nicaragua",
+    "title": "Sound research & bioacoustics"
+  },
+  "titles": {
+    "intro": "Heart in Nature",
+    "field_kicker": "In the field",
+    "field": "Listening to the living world",
+    "research": "The research",
+    "sounds": "Play with these sounds",
+    "sounds_text": "Sample packs, plugins and templates made from these recordings.",
+    "video": "From the field",
+    "learn": "Learn the craft",
+    "learn_text": "Field recording, Ableton and sound design, one to one."
+  },
+  "figure": {
+    "image": "",
+    "caption": "Fig. 1  The cochlea as petroglyph spiral"
+  },
+  "spectrogram": {
+    "show": true,
+    "label": "Fig. Dawn chorus spectrogram, 0 to 10 kHz (sample)",
+    "image": ""
+  },
+  "sounds_image": "./images/guitar-hand.jpg",
+  "learn_image": "./images/rooftop-setup.jpg"
 }

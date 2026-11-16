@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "video": "./video/tree.mp4",
+    "poster": "./images/tree-poster.jpg",
+    "button": "Enter"
+  },
+  "doors": {
+    "dance": {
+      "image": "./images/dj-candles.jpg",
+      "title": "Dance",
+      "subtitle": "Ecstatic Dance & Cacao Bass™ Gatherings",
+      "button": "Book NAOBA"
+    },
+    "listen": {
+      "video": "./video/grass.mp4",
+      "poster": "./images/ometepe-jungle.jpg",
+      "title": "Listen",
+      "subtitle": "Heart in Nature. Nervous System & Immersive Listening.",
+      "button": "Enter the lab"
+    },
+    "film": {
+      "image": "./images/tree-bw.jpg",
+      "title": "Film",
+      "subtitle": "Scores and sound design"
+    },
+    "shop": {
+      "image": "./images/guitar-hand.jpg",
+      "title": "Samples & Tools",
+      "subtitle": "Sound Design Tools, Sample Packs & Ableton Templates"
+    },
+    "mentorship": {
+      "image": "./images/studio-circle.jpg",
+      "title": "Mentorship",
+      "subtitle": "Three paths"
+    }
+  },
+  "strip_text": "Keep scrolling to listen",
+  "marquee": [
+    "Dance Rituals",
+    "Bioacoustics Research",
+    "Gaian Immersions"
+  ],
+  "reel": {
+    "video": "./video/live-reel.mp4",
+    "poster": "./images/live-reel-poster.webp",
+    "loop": true,
+    "autoplay": true,
+    "sound_button": true,
+    "sound_label": "Sound on",
+    "mute_label": "Sound off"
+  },
+  "titles": {
+    "music": "Music",
+    "bandcamp_button": "Buy on Bandcamp",
+    "gigs": "Next gigs",
+    "gigs_empty": "New dates are on their way.",
+    "press_kicker": "For promoters and event organisers",
+    "press": "Press kit",
+    "photos": "High-res photos",
+    "awards": "Awards & honours",
+    "stages": "Where I have played",
+    "watch": "Watch",
+    "youtube_button": "More on YouTube"
+  }
+}

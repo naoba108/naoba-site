@@ -1,8 +1,98 @@
 media:
-  input: public/images
-  output: ./images
+  - name: images
+    label: Images
+    input: public/images
+    output: ./images
+  - name: video
+    label: Videos
+    input: public/video
+    output: ./video
+    categories: [video]
 
 content:
+  - name: home
+    label: Home page (videos, doors, titles)
+    type: file
+    path: src/content/home.json
+    format: json
+    fields:
+      - name: hero
+        label: Opening screen
+        type: object
+        fields:
+          - { name: video, label: Background video (mp4, keep under 20 MB), type: file, options: { media: video } }
+          - { name: poster, label: Still image (shown before the video loads), type: image }
+          - { name: button, label: Button text, type: string }
+      - name: doors
+        label: The five doors
+        type: object
+        fields:
+          - name: dance
+            label: Dance door
+            type: object
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
+              - { name: button, label: Button text, type: string }
+          - name: listen
+            label: Listen door
+            type: object
+            fields:
+              - { name: video, label: Video (mp4, optional), type: file, options: { media: video } }
+              - { name: poster, label: Image (used if there is no video), type: image }
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
+              - { name: button, label: Button text, type: string }
+          - name: film
+            label: Film door
+            type: object
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
+          - name: shop
+            label: Samples & Tools door
+            type: object
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
+          - name: mentorship
+            label: Mentorship door
+            type: object
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
+      - { name: strip_text, label: Text under the doors, type: string }
+      - { name: marquee, label: Moving words band (one per line), type: string, list: true }
+      - name: reel
+        label: Live video
+        type: object
+        fields:
+          - { name: video, label: Video file (mp4, keep under 20 MB), type: file, options: { media: video } }
+          - { name: poster, label: Still image shown before it plays, type: image }
+          - { name: autoplay, label: Play by itself when scrolled into view (silent), type: boolean }
+          - { name: loop, label: Loop, type: boolean }
+          - { name: sound_button, label: Show a Sound button so visitors can turn sound on, type: boolean }
+          - { name: sound_label, label: Button text when sound is off, type: string }
+          - { name: mute_label, label: Button text when sound is on, type: string }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: music, label: Music title, type: string }
+          - { name: bandcamp_button, label: Bandcamp button, type: string }
+          - { name: gigs, label: Gigs title, type: string }
+          - { name: gigs_empty, label: Text when there are no gigs, type: text }
+          - { name: press_kicker, label: Small line above Press kit, type: string }
+          - { name: press, label: Press kit title, type: string }
+          - { name: photos, label: Photos title, type: string }
+          - { name: awards, label: Awards title, type: string }
+          - { name: stages, label: Where I have played title, type: string }
+          - { name: watch, label: Watch title, type: string }
+          - { name: youtube_button, label: YouTube button, type: string }
   - name: site
     label: Home, links and taglines
     type: file
@@ -59,6 +149,25 @@ content:
     path: src/content/dance.json
     format: json
     fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: image, label: Hero image, type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: offerings, label: What I bring title, type: string }
+          - { name: watch, label: Watch title, type: string }
+          - { name: events, label: CACAO Bass title, type: string }
+          - { name: events_empty, label: Text when there are no gatherings, type: text }
+          - { name: stages, label: Stages title, type: string }
+          - { name: book, label: Book title, type: string }
+          - { name: book_text, label: Book text, type: text }
+      - { name: book_image, label: Photo next to Book NAOBA, type: image }
       - name: photos
         label: Photos (add, upload, drag to reorder)
         type: object
@@ -82,7 +191,7 @@ content:
         list: true
         fields:
           - { name: title, label: Title, type: string }
-          - { name: youtube_id, label: YouTube video ID (the letters after watch?v=), type: string }
+          - { name: youtube_id, label: "YouTube video ID (the letters after watch?v=)", type: string }
       - name: events
         label: CACAO Bass events
         type: object
@@ -99,6 +208,42 @@ content:
     path: src/content/listen.json
     format: json
     fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: video, label: Background video (mp4, keep under 20 MB), type: file, options: { media: video } }
+          - { name: poster, label: Still image (shown before the video loads, or instead of it), type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: intro, label: Intro title, type: string }
+          - { name: field_kicker, label: Small line above field title, type: string }
+          - { name: field, label: Field title, type: string }
+          - { name: research, label: Research title, type: string }
+          - { name: sounds, label: Play with these sounds title, type: string }
+          - { name: sounds_text, label: Play with these sounds text, type: text }
+          - { name: video, label: Video section title, type: string }
+          - { name: learn, label: Learn the craft title, type: string }
+          - { name: learn_text, label: Learn the craft text, type: text }
+      - name: figure
+        label: Cochlea drawing
+        type: object
+        fields:
+          - { name: caption, label: Caption, type: string }
+          - { name: image, label: Replace the drawing with your own image (optional), type: image }
+      - name: spectrogram
+        label: Spectrogram drawing
+        type: object
+        fields:
+          - { name: show, label: Show it, type: boolean }
+          - { name: label, label: Caption, type: string }
+          - { name: image, label: Replace the drawing with your own image (optional), type: image }
+      - { name: sounds_image, label: Photo next to Play with these sounds, type: image }
+      - { name: learn_image, label: Photo next to Learn the craft, type: image }
       - name: photos
         label: Photos (add, upload, drag to reorder)
         type: object
@@ -128,6 +273,20 @@ content:
     path: src/content/mentorship.json
     format: json
     fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: image, label: Hero image, type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: video, label: Video title, type: string }
+          - { name: paths, label: Three paths title, type: string }
+          - { name: paths_lede, label: Line under Three paths, type: text }
       - name: photos
         label: Photos (add, upload, drag to reorder)
         type: object
@@ -157,6 +316,22 @@ content:
     path: src/content/film.json
     format: json
     fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: image, label: Hero image, type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: services, label: What I make title, type: string }
+          - { name: projects, label: Film list title, type: string }
+          - { name: gallery, label: Gallery title, type: string }
+          - { name: quote, label: Quote form title, type: string }
+          - { name: quote_text, label: Quote form text, type: text }
       - name: photos
         label: Photos (add, upload, drag to reorder)
         type: object
@@ -190,6 +365,26 @@ content:
     path: src/content/shop.json
     format: json
     fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: image, label: Hero image, type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - name: spectrogram
+        label: Spectrogram drawing
+        type: object
+        fields:
+          - { name: show, label: Show it, type: boolean }
+          - { name: label, label: Caption, type: string }
+          - { name: image, label: Replace the drawing with your own image (optional), type: image }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: custom, label: Custom sound world title, type: string }
+          - { name: custom_text, label: Custom sound world text, type: text }
       - { name: intro, label: Intro, type: text }
       - name: shelves
         label: Shelves
@@ -303,3 +498,17 @@ content:
     fields:
       - { name: bandsintown_artist, label: Bandsintown artist name or id, type: string }
       - { name: bandsintown_app_id, label: Bandsintown app id (from the widget builder), type: string }
+  - name: contact
+    label: Contact page
+    type: file
+    path: src/content/contact.json
+    format: json
+    fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: image, label: Hero image, type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - { name: aside, label: Text next to the form, type: text }

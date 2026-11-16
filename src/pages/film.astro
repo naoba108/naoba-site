@@ -12,10 +12,10 @@ import Gallery from '../components/Gallery.astro';
 ---
 <Base title="Film and soundtrack, NAOBA" page="film">
 <section class="page-hero">
-  <img src="./images/tree-bw.jpg" alt="Tamara Montenegro listening to a tree" />
+  <img src={film.hero.image} alt="" />
   <div class="wrap">
-    <p class="mono">Composer and sound designer</p>
-    <h1 class="h1">Film &amp; soundtrack</h1>
+    <p class="mono">{film.hero.kicker}</p>
+    <h1 class="h1">{film.hero.title}</h1>
   </div>
 </section>
 
@@ -28,7 +28,7 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band noche">
   <div class="wrap">
-    <h2 class="h2">What I make</h2>
+    <h2 class="h2">{film.titles.services}</h2>
     {film.services_line && <p class="lede" style="max-width:62ch">{film.services_line}</p>}
     <div class="grid4">
       {film.services.map((s, i) => <div class="card"><Glyph name={glyphs[i % 4]} /><h3 class="h3" style="margin-top:14px">{s.title}</h3><p>{s.text}</p></div>)}
@@ -38,7 +38,7 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band">
   <div class="wrap">
-    <h2 class="h2 film-title">Film Scores and Sound Design for Film</h2>
+    <h2 class="h2 film-title">{film.titles.projects}</h2>
     <ol class="projects">
       {film.projects.map(p => (
         <li>
@@ -53,7 +53,7 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band noche">
   <div class="wrap">
-    <h2 class="h2 center-text" style="margin-bottom:34px">From the studio and the screen</h2>
+    <h2 class="h2 center-text" style="margin-bottom:34px">{film.titles.gallery}</h2>
     <Gallery items={(film.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} />
   </div>
 </section>
@@ -62,8 +62,8 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap grid2" style="align-items:start">
     <div>
       <Divider />
-      <h2 class="h2" style="margin-top:24px">Tell me about your project</h2>
-      <p class="italic">Share a few details and I'll write back with ideas, a timeline and a quote.</p>
+      <h2 class="h2" style="margin-top:24px">{film.titles.quote}</h2>
+      <p class="italic">{film.titles.quote_text}</p>
     </div>
     <form class="form" id="quote-form">
       <label>Your name<input name="name" required autocomplete="name" /></label>
