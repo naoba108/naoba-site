@@ -123,7 +123,25 @@
       "city": "",
       "country": "Hawaii",
       "year": ""
+    },
+    {
+      "place": "SoulPlay Festival",
+      "city": "California",
+      "country": "USA",
+      "year": "2024"
+    },
+    {
+      "place": "Unity Festival",
+      "city": "",
+      "country": "Guatemala",
+      "year": "2024"
+    },
+    {
+      "place": "Downtempo Festival",
+      "city": "Tepoztlán",
+      "country": "Mexico",
+      "year": ""
     }
   ],
-  "performed_note": "Amongst many others, from the last three years."
+  "performed_note": "Some of the latest venues and communities I have played at during the last three years."
 }
