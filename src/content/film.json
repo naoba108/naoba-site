@@ -141,5 +141,22 @@
       "note": ""
     }
   ],
-  "services_line": "Production, post-production, live sound, recording, sound design, music composition, Foley, sound mix and master."
+  "services_line": "Production, post-production, live sound, recording, sound design, music composition, Foley, sound mix and master.",
+  "photos": [
+    {
+      "image": "./images/gallery/ephimoptera.webp",
+      "alt": "Ephimoptera",
+      "caption": "Ephimoptera"
+    },
+    {
+      "image": "./images/gallery/water-is-love.webp",
+      "alt": "Water is Love poster",
+      "caption": "Water is Love"
+    },
+    {
+      "image": "./images/gallery/agwe-kingstoon.webp",
+      "alt": "Agwe, KingstOOn 2019 finalist",
+      "caption": "Agwe"
+    }
+  ]
 }

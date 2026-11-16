@@ -35,7 +35,7 @@ import Gallery from '../components/Gallery.astro';
 </section>
 
 <section class="collage dark">
-  <img src="./images/gallery/dance-collage.webp" alt="Dancers in ceremony, moments from NAOBA's dance space-holding" loading="lazy" />
+  <div class="wrap"><Gallery items={(dance.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
 </section>
 <section class="band cacao">
   <div class="wrap">

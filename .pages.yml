@@ -59,6 +59,14 @@ content:
     path: src/content/dance.json
     format: json
     fields:
+      - name: photos
+        label: Photos (add, upload, drag to reorder)
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image }
+          - { name: caption, label: Caption (optional), type: string }
+          - { name: alt, label: Description for screen readers (optional), type: string }
       - { name: intro, label: Intro, type: text }
       - name: offerings
         label: What I bring
@@ -91,6 +99,14 @@ content:
     path: src/content/listen.json
     format: json
     fields:
+      - name: photos
+        label: Photos (add, upload, drag to reorder)
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image }
+          - { name: caption, label: Caption (optional), type: string }
+          - { name: alt, label: Description for screen readers (optional), type: string }
       - { name: intro, label: Intro, type: text }
       - name: research
         label: Research cards
@@ -112,6 +128,14 @@ content:
     path: src/content/mentorship.json
     format: json
     fields:
+      - name: photos
+        label: Photos (add, upload, drag to reorder)
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image }
+          - { name: caption, label: Caption (optional), type: string }
+          - { name: alt, label: Description for screen readers (optional), type: string }
       - { name: intro, label: Intro, type: text }
       - { name: video_id, label: Intro video YouTube ID, type: string }
       - name: packages
@@ -133,6 +157,14 @@ content:
     path: src/content/film.json
     format: json
     fields:
+      - name: photos
+        label: Photos (add, upload, drag to reorder)
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image }
+          - { name: caption, label: Caption (optional), type: string }
+          - { name: alt, label: Description for screen readers (optional), type: string }
       - { name: services_line, label: Services line (under What I make), type: text }
       - { name: intro, label: Intro, type: text }
       - { name: showreel_id, label: Showreel YouTube ID, type: string }

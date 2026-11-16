@@ -43,5 +43,12 @@
     "Mercat de les Flors, Barcelona",
     "MNAC, Barcelona",
     "Goethe Institute, Barcelona"
+  ],
+  "photos": [
+    {
+      "image": "./images/gallery/dance-collage.webp",
+      "alt": "Dancers in ceremony",
+      "caption": ""
+    }
   ]
 }

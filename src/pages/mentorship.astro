@@ -26,10 +26,7 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="band" style="padding-top:0">
   <div class="wrap">
-    <Gallery cols={2} items={[
-      { src: './images/gallery/workshop-laptop.webp', alt: 'Women gathered around a laptop in a music production workshop', caption: 'Music production for women' },
-      { src: './images/gallery/workshop-push.webp', alt: 'Ableton Push workshop', caption: 'Ableton workshop' },
-    ]} />
+    <Gallery items={(m.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} />
   </div>
 </section>
 

@@ -32,7 +32,7 @@ import Gallery from '../components/Gallery.astro';
     <p class="mono center-text">In the field</p>
     <h2 class="h2 center-text" style="margin-bottom:34px">Listening to the living world</h2>
   </div>
-  <figure class="field-wide"><img src="./images/gallery/sunset-boom.webp" alt="Recording a lake at sunset with a boom microphone" loading="lazy" /></figure>
+  <div class="wrap"><Gallery items={(listen.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
   <div>
   </div>
 </section>

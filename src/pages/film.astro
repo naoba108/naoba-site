@@ -54,11 +54,7 @@ import Gallery from '../components/Gallery.astro';
 <section class="band noche">
   <div class="wrap">
     <h2 class="h2 center-text" style="margin-bottom:34px">From the studio and the screen</h2>
-    <Gallery cols={3} items={[
-      { src: './images/gallery/ephimoptera.webp', alt: 'Ephimoptera, dance performance with soundtrack by Tamara Montenegro', caption: 'Ephimoptera' },
-      { src: './images/gallery/water-is-love.webp', alt: 'Water is Love animation premiere poster', caption: 'Water is Love' },
-      { src: './images/gallery/agwe-kingstoon.webp', alt: 'Agwe, KingstOOn 2019 finalist laurels', caption: 'Agwe' },
-    ]} />
+    <Gallery items={(film.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} />
   </div>
 </section>
 

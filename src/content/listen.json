@@ -31,5 +31,12 @@
       "title": "Resonancias: Indio Maíz",
       "youtube_id": "3o3bhTqSHFA"
     }
+  ],
+  "photos": [
+    {
+      "image": "./images/gallery/sunset-boom.webp",
+      "alt": "Recording a lake at sunset with a boom microphone",
+      "caption": ""
+    }
   ]
 }
