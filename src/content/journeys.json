@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "image": "./images/gallery/field-forest.webp",
+    "kicker": "Travel, record, gather",
+    "title": "Journeys"
+  },
+  "intro": "I travel to listen. Rainforests, rivers, caves, volcanoes: I go to record the voice of a place before it changes, and I come back with sounds that become albums, tools and ceremonies. Some of these journeys are open. You can come with me.",
+  "kinds": [
+    {
+      "title": "Recording expeditions",
+      "text": "Small groups, wild places, early mornings. You learn field recording and deep listening beside me while I work. Simple lodging, real distance from the noise."
+    },
+    {
+      "title": "Sound & dance retreats",
+      "text": "A held container in nature. Days of listening and rest, nights of dance and sound ceremony. Cacao Bass on the road, with the land as the fifth element."
+    }
+  ],
+  "titles": {
+    "kinds": "Two ways to travel with me",
+    "upcoming": "Upcoming journeys",
+    "upcoming_empty": "The next journey is announced first in the letters. Sign up at the bottom of the page.",
+    "past": "Where we have been",
+    "host": "Host a journey",
+    "host_text": "Have land, a sanctuary or a community that wants to gather around sound? Tell me about your place and your people.",
+    "apply_button": "Apply to join"
+  },
+  "upcoming": [
+    {
+      "title": "Ometepe listening expedition",
+      "place": "Isla de Ometepe, Nicaragua",
+      "dates": "Dates coming",
+      "spots": "8 places",
+      "price": "",
+      "text": "Five days between two volcanoes: dawn recordings in the forest, lake hydrophones, a night of sound ceremony. Placeholder until dates are set.",
+      "image": "./images/ometepe-jungle.jpg",
+      "apply_url": "./contact.html?reason=Journeys"
+    }
+  ],
+  "past": [
+    {
+      "place": "Ometepe, Nicaragua",
+      "year": "2024",
+      "image": "./images/gallery/field-tripod.webp",
+      "caption": "Recording at the foot of Maderas",
+      "audio": ""
+    },
+    {
+      "place": "Lake Atitlán, Guatemala",
+      "year": "2024",
+      "image": "./images/gallery/drum-circle.webp",
+      "caption": "Sound ceremony by the lake",
+      "audio": ""
+    },
+    {
+      "place": "Huelgoat, France",
+      "year": "2025",
+      "image": "./images/gallery/field-forest.webp",
+      "caption": "Old forest, old stones",
+      "audio": ""
+    }
+  ]
+}

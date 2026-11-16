@@ -32,6 +32,11 @@
       "image": "./images/studio-circle.jpg",
       "title": "Mentorship",
       "subtitle": "Three paths"
+    },
+    "journeys": {
+      "image": "./images/gallery/field-forest.webp",
+      "title": "Journeys",
+      "subtitle": "Travel, record and gather with me"
     }
   },
   "strip_text": "Keep scrolling to listen",

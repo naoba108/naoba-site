@@ -8,6 +8,11 @@ media:
     input: public/video
     output: ./video
     categories: [video]
+  - name: audio
+    label: Audio
+    input: public/audio
+    output: ./audio
+    categories: [audio]
 
 content:
   - name: home
@@ -44,6 +49,13 @@ content:
               - { name: title, label: Title, type: string }
               - { name: subtitle, label: Subtitle, type: string }
               - { name: button, label: Button text, type: string }
+          - name: journeys
+            label: Journeys door
+            type: object
+            fields:
+              - { name: image, label: Image, type: image }
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
           - name: film
             label: Film door
             type: object
@@ -167,6 +179,7 @@ content:
           - { name: stages, label: Stages title, type: string }
           - { name: book, label: Book title, type: string }
           - { name: book_text, label: Book text, type: text }
+          - { name: journeys_line, label: Link line to Journeys (leave empty to hide), type: string }
       - { name: book_image, label: Photo next to Book NAOBA, type: image }
       - name: photos
         label: Photos (add, upload, drag to reorder)
@@ -229,6 +242,7 @@ content:
           - { name: video, label: Video section title, type: string }
           - { name: learn, label: Learn the craft title, type: string }
           - { name: learn_text, label: Learn the craft text, type: text }
+          - { name: journeys_line, label: Link line to Journeys (leave empty to hide), type: string }
       - name: figure
         label: Cochlea drawing
         type: object
@@ -512,3 +526,58 @@ content:
           - { name: kicker, label: Small line above the title, type: string }
           - { name: title, label: Title, type: string }
       - { name: aside, label: Text next to the form, type: text }
+  - name: journeys
+    label: Journeys page
+    type: file
+    path: src/content/journeys.json
+    format: json
+    fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: image, label: Hero image, type: image }
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+      - { name: intro, label: Intro, type: text }
+      - name: kinds
+        label: Kinds of journey
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - name: upcoming
+        label: Upcoming journeys
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Name of the journey, type: string }
+          - { name: place, label: Place, type: string }
+          - { name: dates, label: Dates, type: string }
+          - { name: spots, label: Places available, type: string }
+          - { name: price, label: Price, type: string }
+          - { name: text, label: Description, type: text }
+          - { name: image, label: Photo, type: image }
+          - { name: apply_url, label: "Apply link (a form, Ko-fi, or ./contact.html?reason=Journeys)", type: string }
+      - name: past
+        label: Where we have been
+        type: object
+        list: true
+        fields:
+          - { name: place, label: Place, type: string }
+          - { name: year, label: Year, type: string }
+          - { name: image, label: Photo, type: image }
+          - { name: caption, label: Caption, type: string }
+          - { name: audio, label: Field recording (mp3, optional), type: file, options: { media: audio } }
+      - name: titles
+        label: Section titles and short texts
+        type: object
+        fields:
+          - { name: kinds, label: Kinds title, type: string }
+          - { name: upcoming, label: Upcoming title, type: string }
+          - { name: upcoming_empty, label: Text when nothing is scheduled, type: text }
+          - { name: past, label: Past journeys title, type: string }
+          - { name: host, label: Host title, type: string }
+          - { name: host_text, label: Host text, type: text }
+          - { name: apply_button, label: Apply button text, type: string }
