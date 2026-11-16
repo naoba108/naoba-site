@@ -22,7 +22,6 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 ---
 <Base title="NAOBA, Tamara Montenegro" page="home">
 <section class="hero dark">
-  <div class="hero-geo" aria-hidden="true"><Cymatic size={760} petals={6} color="#E6C37F" opacity={0.28} /></div>
   <video src="./video/tree.mp4" poster="./images/tree-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="shade"></div>
   <div class="center">
@@ -147,10 +146,12 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
     <h3 class="h3 sub" id="videos">Watch</h3>
   </div>
+  <div class="shorts" aria-label="Short videos">
+    {shortList.map(sh => sh.id
+      ? <div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      : <div class="short frame empty"><span>Short video</span></div>)}
+  </div>
   <div class="wrap" style="margin-top:44px">
-    <div class="one-video">
-      {homeVideos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}
-    </div>
     <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>More on YouTube</a></p>
   </div>
 </section>
