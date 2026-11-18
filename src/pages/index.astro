@@ -16,10 +16,9 @@ const photos = press.photos.map(ph => ph.image ? { title: ph.title, href: ph.ima
 const photoSlots = [...photos, ...Array(Math.max(0, 9 - photos.length)).fill(null)];
 import Player from '../components/Player.astro';
 import Signup from '../components/Signup.astro';
-import Cymatic from '../components/Cymatic.astro';
 import gigs from '../content/gigs.json';
 import home from '../content/home.json';
-const T = home.titles; const D = home.doors; const reel = home.reel;
+const T = home.titles; const G = home.geometry || {}; const D = home.doors; const reel = home.reel;
 const homeVideos = [dance.videos[0], listen.videos[0]];
 ---
 <Base title="NAOBA, Tamara Montenegro" page="home">
@@ -74,11 +73,19 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
     <div class="players">
       {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
     </div>
+  </div>
+</section>
+<section class="band noche healing-band">
+  <div class="wrap">
     <div class="healing">
-      <Cymatic size={150} petals={8} color="var(--gold)" />
+      {G.music && <img class="sacred" src={G.music} alt="" width="260" height="260" loading="lazy" />}
       <h3 class="h3">{music.healing_title}</h3>
       <p>{music.healing_text}</p>
     </div>
+  </div>
+</section>
+<section class="band" id="music-albums">
+  <div class="wrap">
     {music.bandcamp_albums?.length > 0 && (
       <div class="bc-albums">
         {music.bandcamp_albums.map(al => (
@@ -91,7 +98,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 </section>
 
 <section class="band noche geo-bg" id="gigs">
-  <div class="geo-mark" aria-hidden="true"><Cymatic size={560} petals={5} color="#E6C37F" opacity={0.12} /></div>
+  {G.gigs && <div class="geo-mark" aria-hidden="true"><img src={G.gigs} alt="" loading="lazy" /></div>}
   <div class="wrap">
     <h2 class="h2 center-text">{T.gigs}</h2>
     {gigs.bandsintown_artist
@@ -105,7 +112,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
 <section class="band noche press" id="press">
   <div class="wrap center-text">
-    <Cymatic size={110} petals={6} color="#E6C37F" />
+    {G.press && <img class="sacred seal" src={G.press} alt="" width="230" height="230" loading="lazy" />}
     <p class="mono" style="margin-top:18px">{T.press_kicker}</p>
     <h2 class="h2">{T.press}</h2>
     <p class="press-bio" style="white-space:pre-line">{press.bio_short}</p>
@@ -182,10 +189,15 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .center-text{text-align:center}
 .center-text .italic,.intro{margin:20px auto 0;max-width:44ch;text-align:center}
 .players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px}
-.healing{text-align:center;max-width:62ch;margin:72px auto 8px}
+.healing{text-align:center;max-width:62ch;margin:0 auto}
+.sacred{display:block;margin:0 auto;height:auto;object-fit:contain}
+.healing .sacred{width:min(260px,60vw)}
+.seal{width:230px}
+#music{padding-bottom:64px}
+#music-albums{padding-top:64px}
 .healing .h3{margin:14px 0 12px;font-size:30px}
 .healing p{font-size:16px;line-height:1.75;margin:0}
-@media (max-width:820px){.players{grid-template-columns:1fr}.healing{margin-top:52px}}
+@media (max-width:820px){.players{grid-template-columns:1fr}}
 .small-doors{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .sdoor{position:relative;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;text-decoration:none;overflow:hidden;border-right:1px solid var(--line)}
 .sdoor:last-child{border-right:0}
@@ -293,7 +305,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .hero-geo svg{width:min(92vw,760px);height:auto}
 .hero .center{position:relative;z-index:2}
 .geo-bg{position:relative;overflow:hidden}
-.geo-mark{position:absolute;right:-140px;top:50%;transform:translateY(-50%);pointer-events:none}
+.geo-mark{position:absolute;right:-120px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.22}
+.geo-mark img{width:560px;height:auto;display:block}
 .geo-bg .wrap{position:relative;z-index:1}
 @media (max-width:820px){.geo-mark{right:-260px}}
 </style>

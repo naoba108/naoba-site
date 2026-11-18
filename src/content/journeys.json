@@ -8,11 +8,13 @@
   "kinds": [
     {
       "title": "Recording expeditions",
-      "text": "Small groups, wild places, early mornings. You learn field recording and deep listening beside me while I work. Simple lodging, real distance from the noise."
+      "text": "Small groups, wild places, early mornings. You learn field recording and deep listening beside me while I work. Simple lodging, real distance from the noise.",
+      "icon": "./images/sacred/vesica-piscis.png"
     },
     {
       "title": "Sound & dance retreats",
-      "text": "A held container in nature. Days of listening and rest, nights of dance and sound ceremony. Cacao Bass on the road, with the land as the fifth element."
+      "text": "A held container in nature. Days of listening and rest, nights of dance and sound ceremony. Cacao Bass on the road, with the land as the fifth element.",
+      "icon": "./images/sacred/seed-of-life.png"
     }
   ],
   "titles": {

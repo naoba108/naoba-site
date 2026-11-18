@@ -17,7 +17,7 @@ import site from '../content/site.json';
 <section class="band">
   <div class="wrap">
     <p class="italic" style="max-width:52ch">{shop.intro}</p>
-    {shop.spectrogram.show && <div style="margin-top:40px">{shop.spectrogram.image ? <figure style="margin:0;text-align:center"><img src={shop.spectrogram.image} alt={shop.spectrogram.label} loading="lazy" style="max-width:100%;height:auto" /><figcaption class="mono" style="margin-top:8px">{shop.spectrogram.label}</figcaption></figure> : <Spectrogram seed={23} label={shop.spectrogram.label} />}</div>}
+    {shop.spectrogram.show && <div style="margin-top:40px">{shop.spectrogram.image ? <figure class="dark sacred-plate"><img src={shop.spectrogram.image} alt={shop.spectrogram.label} loading="lazy" /><figcaption class="mono">{shop.spectrogram.label}</figcaption></figure> : <Spectrogram seed={23} label={shop.spectrogram.label} />}</div>}
   </div>
 </section>
 
@@ -64,3 +64,5 @@ import site from '../content/site.json';
 .price{font-family:var(--body);font-weight:450;font-variant-numeric:lining-nums;font-size:24px;color:var(--lgold)}
 </style>
 </Base>
+
+<style>.sacred-plate{margin:0 auto;max-width:760px;background:var(--noche);padding:44px 24px 26px;text-align:center}.sacred-plate img{width:min(340px,100%);height:auto;display:block;margin:0 auto}.sacred-plate figcaption{margin-top:14px;color:var(--lgold)}</style>

@@ -23,7 +23,7 @@ import Gallery from '../components/Gallery.astro';
       <h2 class="h2">{listen.titles.intro}</h2>
       <p class="italic" style="white-space:pre-line">{listen.intro}</p>
     </div>
-    <Cochlea size={320} image={listen.figure.image} caption={listen.figure.caption} />
+    <Cochlea size={460} image={listen.figure.image} caption={listen.figure.caption} />
   </div>
 </section>
 
@@ -37,15 +37,15 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>
 
-{listen.spectrogram.show && <section class="band" style="padding-top:56px;padding-bottom:56px">
-  <div class="wrap">{listen.spectrogram.image ? <figure style="margin:0;text-align:center"><img src={listen.spectrogram.image} alt={listen.spectrogram.label} loading="lazy" style="max-width:100%;height:auto" /><figcaption class="mono" style="margin-top:8px">{listen.spectrogram.label}</figcaption></figure> : <Spectrogram label={listen.spectrogram.label} />}</div>
+{listen.spectrogram.show && <section class={`band ${listen.spectrogram.image ? 'noche' : ''}`} style="padding-top:56px;padding-bottom:56px">
+  <div class="wrap">{listen.spectrogram.image ? <figure style="margin:0;text-align:center"><img src={listen.spectrogram.image} alt={listen.spectrogram.label} loading="lazy" style="width:min(620px,100%);height:auto;display:block;margin:0 auto" /><figcaption class="mono" style="margin-top:8px">{listen.spectrogram.label}</figcaption></figure> : <Spectrogram label={listen.spectrogram.label} />}</div>
 </section>}
 
 <section class="band noche">
   <div class="wrap">
     <h2 class="h2">{listen.titles.research}</h2>
     <div class="grid3">
-      {listen.research.map((r, i) => <div class="card plate"><Glyph name={glyphs[i % 3]} /><h3 class="h3" style="margin-top:14px">{r.title}</h3><p>{r.text}</p></div>)}
+      {listen.research.map((r, i) => <div class="card plate">{r.icon ? <img class="card-icon" src={r.icon} alt="" width="84" height="84" loading="lazy" /> : <Glyph name={glyphs[i % 3]} />}<h3 class="h3" style="margin-top:14px">{r.title}</h3><p>{r.text}</p></div>)}
     </div>
   </div>
 </section>
@@ -86,5 +86,6 @@ import Gallery from '../components/Gallery.astro';
 .product:hover{border-color:var(--gold);color:var(--maize)}
 .field-wide{margin:0;line-height:0}
 .field-wide img{width:100%;max-height:78vh;object-fit:cover}
+.card-icon{width:84px;height:84px;object-fit:contain;display:block;margin:0 auto}
 </style>
 </Base>

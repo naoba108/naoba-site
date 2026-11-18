@@ -77,6 +77,13 @@ content:
               - { name: image, label: Image, type: image }
               - { name: title, label: Title, type: string }
               - { name: subtitle, label: Subtitle, type: string }
+      - name: geometry
+        label: Sacred geometry images
+        type: object
+        fields:
+          - { name: music, label: Sound as medicine image, type: image }
+          - { name: gigs, label: Next gigs background image (shown faint), type: image }
+          - { name: press, label: Press kit seal, type: image }
       - { name: strip_text, label: Text under the doors, type: string }
       - { name: marquee, label: Moving words band (one per line), type: string, list: true }
       - name: reel
@@ -244,18 +251,18 @@ content:
           - { name: learn_text, label: Learn the craft text, type: text }
           - { name: journeys_line, label: Link line to Journeys (leave empty to hide), type: string }
       - name: figure
-        label: Cochlea drawing
+        label: Figure next to the intro (Fig. 1)
         type: object
         fields:
           - { name: caption, label: Caption, type: string }
-          - { name: image, label: Replace the drawing with your own image (optional), type: image }
+          - { name: image, label: Image, type: image }
       - name: spectrogram
-        label: Spectrogram drawing
+        label: Second figure (Fig. 2)
         type: object
         fields:
           - { name: show, label: Show it, type: boolean }
           - { name: label, label: Caption, type: string }
-          - { name: image, label: Replace the drawing with your own image (optional), type: image }
+          - { name: image, label: Image, type: image }
       - { name: sounds_image, label: Photo next to Play with these sounds, type: image }
       - { name: learn_image, label: Photo next to Learn the craft, type: image }
       - name: photos
@@ -272,6 +279,7 @@ content:
         type: object
         list: true
         fields:
+          - { name: icon, label: Icon image, type: image }
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
       - name: videos
@@ -392,7 +400,7 @@ content:
         fields:
           - { name: show, label: Show it, type: boolean }
           - { name: label, label: Caption, type: string }
-          - { name: image, label: Replace the drawing with your own image (optional), type: image }
+          - { name: image, label: Image, type: image }
       - name: titles
         label: Section titles and short texts
         type: object
@@ -545,6 +553,7 @@ content:
         type: object
         list: true
         fields:
+          - { name: icon, label: Icon image, type: image }
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
       - name: upcoming

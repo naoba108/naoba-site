@@ -66,5 +66,10 @@
     "stages": "Where I have played",
     "watch": "Watch",
     "youtube_button": "More on YouTube"
+  },
+  "geometry": {
+    "music": "./images/sacred/seed-of-life.png",
+    "gigs": "./images/sacred/penrose.png",
+    "press": "./images/sacred/metatron-cube.png"
   }
 }

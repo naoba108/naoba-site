@@ -18,11 +18,13 @@
     "journeys_line": "Come record with me on the next journey"
   },
   "figure": {
-    "caption": "Fig. 1  The cochlea as petroglyph spiral"
+    "caption": "Fig. 1  Hopf fibration",
+    "image": "./images/sacred/hopf-fibration.png"
   },
   "spectrogram": {
     "show": true,
-    "label": "Fig. Dawn chorus spectrogram, 0 to 10 kHz (sample)"
+    "label": "Fig. 2  Clifford torus",
+    "image": "./images/sacred/clifford-torus.png"
   },
   "sounds_image": "images/guitar-hand.jpg",
   "learn_image": "images/rooftop-setup.jpg",
@@ -36,15 +38,18 @@
   "research": [
     {
       "title": "Psychoacoustics",
-      "text": "How the ear and brain turn vibration into feeling. The heart of my Master's in Sound Art."
+      "text": "How the ear and brain turn vibration into feeling. The heart of my Master's in Sound Art.",
+      "icon": "./images/sacred/vesica-piscis.png"
     },
     {
       "title": "Bioacoustics",
-      "text": "Since 2015: the voices of living ecosystems, and how they shape our consciousness and nervous system."
+      "text": "Since 2015: the voices of living ecosystems, and how they shape our consciousness and nervous system.",
+      "icon": "./images/sacred/seed-of-life.png"
     },
     {
       "title": "3D sound",
-      "text": "Binaural and ambisonic environments for installations, planetariums and headphones."
+      "text": "Binaural and ambisonic environments for installations, planetariums and headphones.",
+      "icon": "./images/sacred/flower-of-life.png"
     }
   ],
   "videos": [
