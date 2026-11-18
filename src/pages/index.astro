@@ -11,7 +11,7 @@ import music from '../content/music.json';
 import press from '../content/press.json';
 import shorts from '../content/shorts.json';
 const shortId = (u) => { const m = (u||'').match(/(?:shorts\/|youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/); return m ? m[1] : ''; };
-const shortList = shorts.items.map(it => ({...it, id: shortId(it.url)}));
+const shortList = (shorts.items||[]).map(it => ({...it, id: shortId(it.url)})).filter(it => it.id);
 const photos = press.photos.map(ph => ph.image ? { title: ph.title, href: ph.image, thumb: ph.image } : { title: ph.title, href: `./press/${ph.file}.jpg`, thumb: `./press/${ph.file}-thumb.webp` });
 const photoSlots = [...photos, ...Array(Math.max(0, 9 - photos.length)).fill(null)];
 import Player from '../components/Player.astro';
@@ -78,7 +78,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 <section class="band noche healing-band">
   <div class="wrap">
     <div class="healing">
-      {G.music && <img class="sacred" src={G.music} alt="" width="260" height="260" loading="lazy" />}
+      {G.music && <img class="sacred" src={G.music} alt="" width="300" height="300" loading="lazy" />}
       <h3 class="h3">{music.healing_title}</h3>
       <p>{music.healing_text}</p>
     </div>
@@ -112,7 +112,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
 <section class="band noche press" id="press">
   <div class="wrap center-text">
-    {G.press && <img class="sacred seal" src={G.press} alt="" width="230" height="230" loading="lazy" />}
+    {G.press && <img class="sacred press-geo" src={G.press} alt="" width="300" height="300" loading="lazy" />}
     <p class="mono" style="margin-top:18px">{T.press_kicker}</p>
     <h2 class="h2">{T.press}</h2>
     <p class="press-bio" style="white-space:pre-line">{press.bio_short}</p>
@@ -155,11 +155,9 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
     <h3 class="h3 sub" id="videos">{T.watch}</h3>
   </div>
-  <div class="shorts" aria-label="Short videos">
-    {shortList.map(sh => sh.id
-      ? <div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      : <div class="short frame empty"><span>Short video</span></div>)}
-  </div>
+  {shortList.length > 0 && <div class="shorts" aria-label="Short videos">
+    {shortList.map(sh => <div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>)}
+  </div>}
   <div class="wrap" style="margin-top:44px">
     <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>{T.youtube_button}</a></p>
   </div>
@@ -191,8 +189,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px}
 .healing{text-align:center;max-width:62ch;margin:0 auto}
 .sacred{display:block;margin:0 auto;height:auto;object-fit:contain}
-.healing .sacred{width:min(260px,60vw)}
-.seal{width:230px}
+.healing .sacred{width:min(300px,64vw)}
+.press-geo{width:min(300px,64vw)}
 #music{padding-bottom:64px}
 #music-albums{padding-top:64px}
 .healing .h3{margin:14px 0 12px;font-size:30px}
@@ -250,14 +248,16 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .reel-head .h2{margin:0}
 .reel{background:#000}
 .reel video{width:100%;max-height:86vh;aspect-ratio:16/9;object-fit:cover;background:#000 center/cover no-repeat}
-.shorts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;max-width:74rem;margin:56px auto 0;padding:0 28px}
+.shorts{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;max-width:74rem;margin:56px auto 0;padding:0 28px}
+.shorts .short{flex:0 0 min(280px,22%)}
 .short{aspect-ratio:9/16;background:#0F2619;overflow:visible}
 .short iframe{width:100%;height:100%;border:0;display:block}
 .short.empty{display:grid;place-items:center;border:1px dashed var(--gold);background:transparent}
 .short.empty span{font:400 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--lgold)}
 @media (max-width:820px){
   .shorts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:0 20px 8px;margin-top:40px;-webkit-overflow-scrolling:touch}
-  .short{flex:0 0 62%;scroll-snap-align:center}
+  .shorts .short{flex:0 0 62%;scroll-snap-align:center}
+  .shorts:has(.short:only-child){justify-content:center}
   .reel-band{padding-top:64px}
   .reel video{max-height:none}
 }
@@ -305,7 +305,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .hero-geo svg{width:min(92vw,760px);height:auto}
 .hero .center{position:relative;z-index:2}
 .geo-bg{position:relative;overflow:hidden}
-.geo-mark{position:absolute;right:-120px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.22}
+.geo-mark{position:absolute;right:-120px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.3}
 .geo-mark img{width:560px;height:auto;display:block}
 .geo-bg .wrap{position:relative;z-index:1}
 @media (max-width:820px){.geo-mark{right:-260px}}

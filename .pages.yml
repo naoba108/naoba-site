@@ -502,9 +502,10 @@ content:
       - { name: packages_note, label: Packages note, type: text }
       - { name: turnaround, label: Turnaround, type: string }
   - name: shorts
-    label: YouTube Shorts (Home intro)
+    label: YouTube Shorts (Home, Watch)
     type: file
     path: src/content/shorts.json
+    format: json
     fields:
       - name: items
         label: Shorts (paste the YouTube link)

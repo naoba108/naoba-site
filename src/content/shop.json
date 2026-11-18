@@ -60,8 +60,8 @@
   },
   "spectrogram": {
     "show": true,
-    "label": "Fig.  Tesseract",
-    "image": "./images/sacred/tesseract.png"
+    "label": "Fig.  Vesica Piscis",
+    "image": "./images/sacred/vesica-piscis.png"
   },
   "titles": {
     "custom": "Want a custom sound world?",

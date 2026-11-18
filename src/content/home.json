@@ -69,7 +69,7 @@
   },
   "geometry": {
     "music": "./images/sacred/seed-of-life.png",
-    "gigs": "./images/sacred/penrose.png",
-    "press": "./images/sacred/metatron-cube.png"
+    "gigs": "./images/sacred/flower-of-life.png",
+    "press": "./images/sacred/penrose-stars.png"
   }
 }
