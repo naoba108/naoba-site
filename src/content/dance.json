@@ -1,4 +1,25 @@
 {
+  "hero": {
+    "image": "images/dj-candles.jpg",
+    "kicker": "Ecstatic dance DJ, producer",
+    "title": "Ceremony on the dance floor"
+  },
+  "titles": {
+    "offerings": "What I bring",
+    "watch": "Watch",
+    "events": "CACAO Bass",
+    "events_empty": "New gatherings are announced first in the letters. Sign up at the bottom of the page.",
+    "stages": "Stages and spaces",
+    "book": "Book NAOBA",
+    "book_text": "Festivals, ecstatic dance communities, retreats and ceremonies. Tell me about your space and your people."
+  },
+  "book_image": "images/dj-motion.jpg",
+  "photos": [
+    {
+      "image": "images/gallery/dance-collage.webp",
+      "alt": "Dancers in ceremony"
+    }
+  ],
   "intro": "I play ancestral rhythms and world music with a balanced electronic drive, reading the room, the frequencies and the energy of every body on the floor. A set with NAOBA is a ceremony: it opens, it builds, it lands.",
   "offerings": [
     {
@@ -14,7 +35,7 @@
       "text": "DJing with Ableton Push, live looping, voice and nature recordings."
     }
   ],
-  "soundcloud_track": "https://soundcloud.com/naobamusic",
+  "soundcloud_track": "https://on.soundcloud.com/IBEZQoE6ZvMN0CrM9s",
   "videos": [
     {
       "title": "Ecstatic Dance at Lake Atitlán",
@@ -33,7 +54,6 @@
       "youtube_id": "urkk6hx5avM"
     }
   ],
-  "events": [],
   "stages": [
     "Sound Art Festival, Mexico City",
     "Loop Festival, Berlin",
@@ -43,28 +63,5 @@
     "Mercat de les Flors, Barcelona",
     "MNAC, Barcelona",
     "Goethe Institute, Barcelona"
-  ],
-  "photos": [
-    {
-      "image": "./images/gallery/dance-collage.webp",
-      "alt": "Dancers in ceremony",
-      "caption": ""
-    }
-  ],
-  "hero": {
-    "image": "./images/dj-candles.jpg",
-    "kicker": "Ecstatic dance DJ, producer",
-    "title": "Ceremony on the dance floor"
-  },
-  "titles": {
-    "offerings": "What I bring",
-    "watch": "Watch",
-    "events": "CACAO Bass",
-    "events_empty": "New gatherings are announced first in the letters. Sign up at the bottom of the page.",
-    "stages": "Stages and spaces",
-    "book": "Book NAOBA",
-    "book_text": "Festivals, ecstatic dance communities, retreats and ceremonies. Tell me about your space and your people.",
-    "journeys_line": "Dance with me on the road: sound and dance retreats"
-  },
-  "book_image": "./images/dj-motion.jpg"
+  ]
 }
