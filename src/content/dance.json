@@ -61,14 +61,23 @@
     }
   ],
   "stages": [
-    "Sound Art Festival, Mexico City",
-    "Loop Festival, Berlin",
-    "ISEA, Dubai and Abu Dhabi",
-    "TEDxManagua",
-    "CCCB, Barcelona",
-    "Mercat de les Flors, Barcelona",
-    "MNAC, Barcelona",
-    "Goethe Institute, Barcelona"
+    "Burning Man 2023",
+    "Envision Festival 2024",
+    "Tribal Gathering 2024",
+    "SoulPlay Festival 2024",
+    "Unity Festival 2024",
+    "Audio Alchemy Festival, Hawaii",
+    "Downtempo Festival, Tepoztlán",
+    "Ecstatic Dance Festival, Lake Atitlán",
+    "Ecstatic Dance Berlin",
+    "Ecstatic Dance Paris",
+    "Ecstatic Dance Portugal",
+    "Ecstatic Dance New York City",
+    "Ecstatic Dance San Francisco",
+    "The Center San Francisco",
+    "Ecstatic Dance Oakland",
+    "Ecstatic Dance San Jose",
+    "Ecstatic Dance Boulder"
   ],
   "cacao_video": {
     "video": "./video/cacao-bass-gayborhood.mp4",
