@@ -41,6 +41,16 @@ const reasons = ['Booking a DJ set', 'Hosting a CACAO Bass gathering', 'Mentorsh
   </div>
 </section>
 
+{contact.calendly?.url && <section class="band noche cal">
+  <div class="wrap">
+    {contact.calendly.image && <img class="cal-geo" src={contact.calendly.image} alt="" width="220" height="220" loading="lazy" />}
+    <p class="mono">{contact.calendly.kicker}</p>
+    <h2 class="h2">{contact.calendly.title}</h2>
+    <p class="italic">{contact.calendly.text}</p>
+    <p><a class="btn cal-btn" href={contact.calendly.url} target="_blank" rel="noopener">{contact.calendly.button}</a></p>
+  </div>
+</section>}
+
 <script is:inline define:vars={{ email: site.email }}>
 (function(){var r=new URLSearchParams(location.search).get('reason');var sel=document.querySelector('select[name=reason]');if(r&&sel){[...sel.options].forEach(function(o){if(o.text===r)sel.value=o.text})}})();
 document.getElementById('contact').addEventListener('submit', function (e) {
@@ -54,6 +64,12 @@ document.getElementById('contact').addEventListener('submit', function (e) {
 
 <style>
 .form{display:grid;gap:18px}
+.cal{text-align:center}
+.cal-geo{display:block;margin:0 auto 18px;width:min(220px,50vw);height:auto}
+.cal .h2{margin-top:6px}
+.cal .italic{max-width:44ch;margin:0 auto 30px}
+.cal-btn{background:transparent;color:#F0C67C;border:1px solid #F0C67C;padding:16px 34px;letter-spacing:.24em;transition:background .3s,color .3s}
+.cal-btn:hover,.cal-btn:focus-visible{background:#F0C67C;color:#1a1510}
 .form label{display:grid;gap:6px;font-family:var(--head);font-size:18px;color:var(--lgold)}
 .form input,.form select,.form textarea{font:400 16px var(--body);color:var(--maize);background:var(--obsidian);border:1px solid var(--moss);border-radius:2px;padding:12px 14px}
 .form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold)}

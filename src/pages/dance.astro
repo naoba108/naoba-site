@@ -37,12 +37,12 @@ import Gallery from '../components/Gallery.astro';
 <section class="collage dark">
   <div class="wrap"><Gallery items={(dance.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
 </section>
-<section class="band cacao">
+{dance.show_youtube_video && <section class="band cacao">
   <div class="wrap">
     <h2 class="h2">{dance.titles.watch}</h2>
     <div class="one-video">{(dance.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
-</section>
+</section>}
 
 {dance.cacao_video?.video && <section class="band noche cacao-film">
   <div class="wrap">
@@ -53,31 +53,20 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>}
 
-<section class="band">
-  <div class="wrap grid2" style="align-items:start">
-    <div>
-      <h2 class="h2">{dance.titles.events}</h2>
-      {(dance.events||[]).length
-        ? <ul class="list">{(dance.events||[]).map(e => <li><span>{e.city}, {e.venue}</span><a class="mono" href={e.tickets}>{e.date}</a></li>)}</ul>
-        : <p class="italic">{dance.titles.events_empty}</p>}
-      <p><a class="btn copal" href="./contact.html">Host a CACAO Bass gathering</a></p>
-    </div>
-    <div>
-      <h3 class="h3">{dance.titles.stages}</h3>
-      <ul class="list">{(dance.stages||[]).map(s => <li><span>{s}</span></li>)}</ul>
-    </div>
-  </div>
-</section>
-
-<section class="band cacao">
-  <div class="wrap grid2">
+<section class="band cacao book">
+  <div class="wrap grid2" style="align-items:center">
     <img class="photo" src={dance.book_image} alt="" loading="lazy" />
-    <div>
+    <div class="book-body">
       <Divider />
-      <h2 class="h2" style="margin-top:24px">{dance.titles.book}</h2>
+      <h2 class="h2" style="margin-top:22px">{dance.titles.book}</h2>
       <p class="italic">{dance.titles.book_text}</p>
-      <p><a class="btn solid" href="./contact.html">Send a booking request</a></p>
-      {dance.titles.journeys_line && <p class="italic" style="margin-top:22px"><a href="./journeys.html">{dance.titles.journeys_line} →</a></p>}
+      {(dance.events||[]).length > 0 && <ul class="list gatherings">{(dance.events||[]).map(e => <li><span>{e.city}, {e.venue}</span><a class="mono" href={e.tickets}>{e.date}</a></li>)}</ul>}
+      <p><a class="btn solid" href="./contact.html">{dance.titles.book_button || 'Send a booking request'}</a></p>
+      {(dance.stages||[]).length > 0 && <div class="stages-inline">
+        <p class="mono">{dance.titles.stages}</p>
+        <p class="small">{(dance.stages||[]).map((s, i) => <span>{i > 0 && <i aria-hidden="true">✦</i>}{s}</span>)}</p>
+      </div>}
+      {dance.titles.journeys_line && <p class="italic" style="margin-top:18px"><a href="./journeys.html">{dance.titles.journeys_line}&nbsp;→</a></p>}
     </div>
   </div>
 </section>
@@ -96,6 +85,13 @@ import Gallery from '../components/Gallery.astro';
 .photo-card .h3{color:#F6EFE0}
 .photo-card p{color:rgba(246,239,224,.88)}
 .cacao-film figure{margin:0 auto}
+.book .book-body{text-align:center}
+.book .gatherings{margin:18px auto}
+.stages-inline{margin-top:30px;padding-top:20px;border-top:1px solid var(--line)}
+.stages-inline .small{line-height:1.9;margin:8px auto 0;max-width:46ch}
+.stages-inline span{white-space:nowrap}
+.stages-inline .small{max-width:52ch !important;display:flex;flex-wrap:wrap;justify-content:center;row-gap:2px}
+.stages-inline i{font-style:normal;color:var(--gold);margin:0 10px;font-size:.8em}
 .cacao-film video{width:100%;display:block;background:#000}
 .cacao-film figcaption{margin-top:12px;text-align:center;color:var(--lgold)}
 </style>

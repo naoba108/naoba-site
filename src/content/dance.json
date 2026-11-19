@@ -11,8 +11,9 @@
     "events_empty": "New gatherings are announced first in the letters. Sign up at the bottom of the page.",
     "stages": "Stages and spaces",
     "book": "Book NAOBA",
-    "book_text": "Festivals, ecstatic dance communities, retreats and ceremonies. Tell me about your space and your people.",
-    "journeys_line": "Dance with me on the road: sound and dance retreats"
+    "book_text": "Ecstatic dance sets, CACAO Bass gatherings and hybrid live sets, for festivals, dance communities, retreats and ceremonies. Tell me about your space and your people.",
+    "journeys_line": "Dance with me on the road: sound and dance retreats",
+    "book_button": "Send a booking request"
   },
   "book_image": "images/dj-motion.jpg",
   "photos": [
@@ -36,8 +37,8 @@
     {
       "title": "Hybrid live set",
       "text": "DJing with Ableton Push, live looping, voice and nature recordings.",
-      "image": "./images/manu-chao-playing-for-change.jpg",
-      "focus": "28% center"
+      "image": "./images/manu-chao-naoba-duo.jpg",
+      "focus": "center"
     }
   ],
   "soundcloud_track": "https://soundcloud.com/naobamusic/sets/ecstatic-dances",
@@ -73,5 +74,6 @@
     "video": "./video/cacao-bass-gayborhood.mp4",
     "poster": "./images/cacao-bass-gayborhood-poster.jpg",
     "caption": "CACAO Bass gathering at the Gayborhood, Costa Rica"
-  }
+  },
+  "show_youtube_video": false
 }

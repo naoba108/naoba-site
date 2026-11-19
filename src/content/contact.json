@@ -4,5 +4,13 @@
     "kicker": "Write to me",
     "title": "Contact"
   },
-  "aside": "For bookings, mentorship and everything else."
+  "aside": "For bookings, mentorship and everything else.",
+  "calendly": {
+    "kicker": "Prefer to talk?",
+    "title": "Book a time with me",
+    "text": "Choose a moment in my calendar for a call about bookings, mentorship or a project.",
+    "button": "Open my calendar",
+    "url": "https://calendly.com/naobamusic",
+    "image": "./images/sacred/vesica-piscis.png"
+  }
 }
