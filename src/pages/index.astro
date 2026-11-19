@@ -12,7 +12,7 @@ import press from '../content/press.json';
 import shorts from '../content/shorts.json';
 const shortId = (u) => { const m = (u||'').match(/(?:shorts\/|youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/); return m ? m[1] : ''; };
 const shortList = (shorts.items||[]).map(it => ({...it, id: shortId(it.url)})).filter(it => it.id);
-const photos = press.photos.map(ph => ph.image ? { title: ph.title, href: ph.image, thumb: ph.image } : { title: ph.title, href: `./press/${ph.file}.jpg`, thumb: `./press/${ph.file}-thumb.webp` });
+const photos = (press.photos||[]).map(ph => ph.image ? { title: ph.title, href: ph.image, thumb: ph.image } : { title: ph.title, href: `./press/${ph.file}.jpg`, thumb: `./press/${ph.file}-thumb.webp` });
 const photoSlots = [...photos, ...Array(Math.max(0, 9 - photos.length)).fill(null)];
 import Player from '../components/Player.astro';
 import Signup from '../components/Signup.astro';
@@ -71,7 +71,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   <div class="wrap">
     <h2 class="h2 center-text" style="margin-bottom:40px">{T.music}</h2>
     <div class="players">
-      {music.players.map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
+      {(music.players||[]).map(pl => <Player url={pl.url} title={pl.title} size={pl.size} />)}
     </div>
   </div>
 </section>
@@ -88,7 +88,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   <div class="wrap">
     {music.bandcamp_albums?.length > 0 && (
       <div class="bc-albums">
-        {music.bandcamp_albums.map(al => (
+        {(music.bandcamp_albums||[]).map(al => (
           <iframe class="bc" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe>
         ))}
       </div>
@@ -138,7 +138,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 
     <h3 class="h3 sub">{T.awards}</h3>
     <div class="award-grid">
-      {awards.awards.map(a => (
+      {(awards.awards||[]).map(a => (
         <div class="award">
           {a.image ? <img src={a.image} alt={`${a.prize}, ${a.org}`} loading="lazy" /> : <div class="seal" aria-hidden="true"><Glyph name="sun" size={34} color="var(--lgold)" /></div>}
           <p class="a-prize">{a.prize}</p>

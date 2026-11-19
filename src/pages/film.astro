@@ -31,7 +31,7 @@ import Gallery from '../components/Gallery.astro';
     <h2 class="h2">{film.titles.services}</h2>
     {film.services_line && <p class="lede" style="max-width:62ch">{film.services_line}</p>}
     <div class="grid4">
-      {film.services.map((s, i) => <div class="card"><Glyph name={glyphs[i % 4]} /><h3 class="h3" style="margin-top:14px">{s.title}</h3><p>{s.text}</p></div>)}
+      {(film.services||[]).map((s, i) => <div class="card"><Glyph name={glyphs[i % 4]} /><h3 class="h3" style="margin-top:14px">{s.title}</h3><p>{s.text}</p></div>)}
     </div>
   </div>
 </section>
@@ -40,7 +40,7 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap">
     <h2 class="h2 film-title">{film.titles.projects}</h2>
     <ol class="projects">
-      {film.projects.map(p => (
+      {(film.projects||[]).map(p => (
         <li>
           <span class="mono yr">{p.year}</span>
           <span><span class="h3 t">{p.title}</span><span class="small">{p.role}</span></span>

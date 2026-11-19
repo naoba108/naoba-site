@@ -36,7 +36,7 @@ import Gallery from '../components/Gallery.astro';
     <h2 class="h2" style="text-align:center;margin-top:28px">{m.titles.paths}</h2>
     <p class="lede" style="text-align:center;margin:0 auto 44px">{m.titles.paths_lede}</p>
     <div class="grid3">
-      {m.packages.map((p, i) => (
+      {(m.packages||[]).map((p, i) => (
         <article class={`card pkg ${i === 2 ? 'feature' : ''}`}>
           <Glyph name={glyphs[i]} size={40} color={i === 2 ? 'var(--copal)' : 'var(--gold)'} />
           <h3 class="h1" style="font-size:44px;margin-top:12px">{p.name}</h3>

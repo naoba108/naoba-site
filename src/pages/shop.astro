@@ -21,7 +21,7 @@ import site from '../content/site.json';
   </div>
 </section>
 
-{shop.shelves.map((shelf, s) => (
+{(shop.shelves||[]).map((shelf, s) => (
   <section class={`band ${s % 2 === 0 ? 'noche' : ''}`}>
     <div class="wrap">
       <h2 class="h2">{shelf.name}</h2>

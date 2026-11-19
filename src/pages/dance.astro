@@ -29,7 +29,7 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap">
     <h2 class="h2">{dance.titles.offerings}</h2>
     <div class="grid3">
-      {dance.offerings.map((o, i) => <div class="card"><Glyph name={glyphs[i % 3]} color="var(--copal)" /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div>)}
+      {(dance.offerings||[]).map((o, i) => <div class="card"><Glyph name={glyphs[i % 3]} color="var(--copal)" /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div>)}
     </div>
   </div>
 </section>
@@ -40,7 +40,7 @@ import Gallery from '../components/Gallery.astro';
 <section class="band cacao">
   <div class="wrap">
     <h2 class="h2">{dance.titles.watch}</h2>
-    <div class="one-video">{dance.videos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
+    <div class="one-video">{(dance.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
 
@@ -48,14 +48,14 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap grid2" style="align-items:start">
     <div>
       <h2 class="h2">{dance.titles.events}</h2>
-      {dance.events.length
-        ? <ul class="list">{dance.events.map(e => <li><span>{e.city}, {e.venue}</span><a class="mono" href={e.tickets}>{e.date}</a></li>)}</ul>
+      {(dance.events||[]).length
+        ? <ul class="list">{(dance.events||[]).map(e => <li><span>{e.city}, {e.venue}</span><a class="mono" href={e.tickets}>{e.date}</a></li>)}</ul>
         : <p class="italic">{dance.titles.events_empty}</p>}
       <p><a class="btn copal" href="./contact.html">Host a CACAO Bass gathering</a></p>
     </div>
     <div>
       <h3 class="h3">{dance.titles.stages}</h3>
-      <ul class="list">{dance.stages.map(s => <li><span>{s}</span></li>)}</ul>
+      <ul class="list">{(dance.stages||[]).map(s => <li><span>{s}</span></li>)}</ul>
     </div>
   </div>
 </section>

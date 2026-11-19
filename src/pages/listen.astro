@@ -45,7 +45,7 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap">
     <h2 class="h2">{listen.titles.research}</h2>
     <div class="grid3">
-      {listen.research.map((r, i) => <div class="card plate">{r.icon ? <img class="card-icon" src={r.icon} alt="" width="84" height="84" loading="lazy" /> : <Glyph name={glyphs[i % 3]} />}<h3 class="h3" style="margin-top:14px">{r.title}</h3><p>{r.text}</p></div>)}
+      {(listen.research||[]).map((r, i) => <div class="card plate">{r.icon ? <img class="card-icon" src={r.icon} alt="" width="84" height="84" loading="lazy" /> : <Glyph name={glyphs[i % 3]} />}<h3 class="h3" style="margin-top:14px">{r.title}</h3><p>{r.text}</p></div>)}
     </div>
   </div>
 </section>
@@ -65,7 +65,7 @@ import Gallery from '../components/Gallery.astro';
 <section class="band noche">
   <div class="wrap">
     <h2 class="h2">{listen.titles.video}</h2>
-    <div class="one-video">{listen.videos.slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
+    <div class="one-video">{(listen.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
 

@@ -24,7 +24,7 @@ const T = j.titles;
   <div class="wrap">
     <h2 class="h2">{T.kinds}</h2>
     <div class="grid2 kinds">
-      {j.kinds.map((k, i) => <div class="card">{k.icon ? <img class="card-icon" src={k.icon} alt="" width="84" height="84" loading="lazy" /> : <Glyph name={i ? 'sun' : 'spiral'} />}<h3 class="h3" style="margin-top:14px">{k.title}</h3><p>{k.text}</p></div>)}
+      {(j.kinds||[]).map((k, i) => <div class="card">{k.icon ? <img class="card-icon" src={k.icon} alt="" width="84" height="84" loading="lazy" /> : <Glyph name={i ? 'sun' : 'spiral'} />}<h3 class="h3" style="margin-top:14px">{k.title}</h3><p>{k.text}</p></div>)}
     </div>
   </div>
 </section>
@@ -32,8 +32,8 @@ const T = j.titles;
 <section class="band" id="upcoming">
   <div class="wrap">
     <h2 class="h2">{T.upcoming}</h2>
-    {j.upcoming.length
-      ? <div class="trips">{j.upcoming.map(t => (
+    {(j.upcoming||[]).length
+      ? <div class="trips">{(j.upcoming||[]).map(t => (
           <article class="trip">
             {t.image && <img src={t.image} alt="" loading="lazy" />}
             <div class="trip-body">
@@ -48,11 +48,11 @@ const T = j.titles;
   </div>
 </section>
 
-{j.past.length > 0 && <section class="band noche">
+{(j.past||[]).length > 0 && <section class="band noche">
   <div class="wrap">
     <h2 class="h2">{T.past}</h2>
     <div class="past">
-      {j.past.map(p => (
+      {(j.past||[]).map(p => (
         <figure class="place">
           {p.image && <img src={p.image} alt={p.caption || p.place} loading="lazy" />}
           <figcaption>
