@@ -2,7 +2,7 @@
   "hero": {
     "image": "images/dj-candles.jpg",
     "kicker": "Ecstatic dance DJ, producer",
-    "title": "Ceremony on the            dance floor"
+    "title": "Ceremony on\nthe Dance Floor"
   },
   "titles": {
     "offerings": "What I bring",
@@ -25,15 +25,19 @@
   "offerings": [
     {
       "title": "Ecstatic dance sets",
-      "text": "Journeys from the first breath to the last stillness."
+      "text": "Journeys from the first breath to the last stillness.",
+      "image": "./images/ecstatic-dance-church.jpg"
     },
     {
       "title": "CACAO Bass gatherings",
-      "text": "Cacao ceremony, dance and bass. My own event series, travelling city to city."
+      "text": "Cacao ceremony, dance and bass. My own event series, travelling city to city.",
+      "image": "./images/cacao-bass-circle.jpg"
     },
     {
       "title": "Hybrid live set",
-      "text": "DJing with Ableton Push, live looping, voice and nature recordings."
+      "text": "DJing with Ableton Push, live looping, voice and nature recordings.",
+      "image": "./images/manu-chao-playing-for-change.jpg",
+      "focus": "28% center"
     }
   ],
   "soundcloud_track": "https://soundcloud.com/naobamusic/sets/ecstatic-dances",
@@ -64,5 +68,10 @@
     "Mercat de les Flors, Barcelona",
     "MNAC, Barcelona",
     "Goethe Institute, Barcelona"
-  ]
+  ],
+  "cacao_video": {
+    "video": "./video/cacao-bass-gayborhood.mp4",
+    "poster": "./images/cacao-bass-gayborhood-poster.jpg",
+    "caption": "CACAO Bass gathering at the Gayborhood, Costa Rica"
+  }
 }

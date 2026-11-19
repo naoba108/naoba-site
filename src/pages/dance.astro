@@ -29,7 +29,7 @@ import Gallery from '../components/Gallery.astro';
   <div class="wrap">
     <h2 class="h2">{dance.titles.offerings}</h2>
     <div class="grid3">
-      {(dance.offerings||[]).map((o, i) => <div class="card"><Glyph name={glyphs[i % 3]} color="var(--copal)" /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div>)}
+      {(dance.offerings||[]).map((o, i) => <div class={`card ${o.image ? 'photo-card' : ''}`} style={o.image ? `--bg:url(${o.image});--pos:${o.focus || "center"}` : undefined}><div class="pc-inner"><Glyph name={glyphs[i % 3]} color={o.image ? "#F0C67C" : "var(--copal)"} /><h3 class="h3" style="margin-top:14px">{o.title}</h3><p>{o.text}</p></div></div>)}
     </div>
   </div>
 </section>
@@ -43,6 +43,15 @@ import Gallery from '../components/Gallery.astro';
     <div class="one-video">{(dance.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
   </div>
 </section>
+
+{dance.cacao_video?.video && <section class="band noche cacao-film">
+  <div class="wrap">
+    <figure class="one-video">
+      <video src={dance.cacao_video.video} poster={dance.cacao_video.poster} controls playsinline preload="metadata"></video>
+      {dance.cacao_video.caption && <figcaption class="mono">{dance.cacao_video.caption}</figcaption>}
+    </figure>
+  </div>
+</section>}
 
 <section class="band">
   <div class="wrap grid2" style="align-items:start">
@@ -78,5 +87,16 @@ import Gallery from '../components/Gallery.astro';
 .photo{width:100%;aspect-ratio:4/5;object-fit:cover;filter:brightness(.85)}
 .collage{background:#000;line-height:0}
 .collage img{width:100%;height:auto;max-height:520px;object-fit:cover}
+</style>
+
+<style>
+.photo-card{position:relative;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;justify-content:center;border:0;background:#1a1510 var(--bg) var(--pos,center)/cover no-repeat;color:#F6EFE0}
+.photo-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,10,.25) 0%,rgba(20,16,10,.55) 45%,rgba(20,16,10,.88) 100%)}
+.photo-card .pc-inner{position:relative;z-index:1;padding:28px 22px 26px}
+.photo-card .h3{color:#F6EFE0}
+.photo-card p{color:rgba(246,239,224,.88)}
+.cacao-film figure{margin:0 auto}
+.cacao-film video{width:100%;display:block;background:#000}
+.cacao-film figcaption{margin-top:12px;text-align:center;color:var(--lgold)}
 </style>
 </Base>

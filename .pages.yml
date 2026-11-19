@@ -174,7 +174,7 @@ content:
         fields:
           - { name: image, label: Hero image, type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - name: titles
         label: Section titles and short texts
         type: object
@@ -202,9 +202,18 @@ content:
         type: object
         list: true
         fields:
+          - { name: image, label: Background photo (optional), type: image }
+          - { name: focus, label: "Photo framing: left, center, right or e.g. 30% center", type: string }
           - { name: title, label: Title, type: string }
           - { name: text, label: Text, type: text }
       - { name: soundcloud_track, label: SoundCloud mix link, type: string }
+      - name: cacao_video
+        label: CACAO Bass video (above the gatherings)
+        type: object
+        fields:
+          - { name: video, label: "Video file (mp4, keep under 20 MB)", type: file, options: { media: video } }
+          - { name: poster, label: Still image shown before it plays, type: image }
+          - { name: caption, label: Caption, type: string }
       - name: videos
         label: Videos
         type: object
@@ -235,7 +244,7 @@ content:
           - { name: video, label: Background video (mp4, keep under 20 MB), type: file, options: { media: video } }
           - { name: poster, label: Still image (shown before the video loads, or instead of it), type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - name: titles
         label: Section titles and short texts
         type: object
@@ -301,7 +310,7 @@ content:
         fields:
           - { name: image, label: Hero image, type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - name: titles
         label: Section titles and short texts
         type: object
@@ -344,7 +353,7 @@ content:
         fields:
           - { name: image, label: Hero image, type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - name: titles
         label: Section titles and short texts
         type: object
@@ -393,7 +402,7 @@ content:
         fields:
           - { name: image, label: Hero image, type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - name: spectrogram
         label: Spectrogram drawing
         type: object
@@ -533,7 +542,7 @@ content:
         fields:
           - { name: image, label: Hero image, type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - { name: aside, label: Text next to the form, type: text }
   - name: journeys
     label: Journeys page
@@ -547,7 +556,7 @@ content:
         fields:
           - { name: image, label: Hero image, type: image }
           - { name: kicker, label: Small line above the title, type: string }
-          - { name: title, label: Title, type: string }
+          - { name: title, label: "Title (press Enter for a new line)", type: text }
       - { name: intro, label: Intro, type: text }
       - name: kinds
         label: Kinds of journey
