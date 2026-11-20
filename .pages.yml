@@ -198,6 +198,8 @@ content:
           - { name: caption, label: Caption (optional), type: string }
           - { name: alt, label: Description for screen readers (optional), type: string }
       - { name: intro, label: Intro, type: text }
+      - { name: collage_title, label: Title under the photo collage, type: string }
+      - { name: collage_text, label: Text under the photo collage, type: text }
       - name: offerings
         label: What I bring
         type: object

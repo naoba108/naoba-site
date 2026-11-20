@@ -36,6 +36,10 @@ import Gallery from '../components/Gallery.astro';
 
 <section class="collage dark">
   <div class="wrap"><Gallery items={(dance.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
+  {(dance.collage_title || dance.collage_text) && <div class="collage-cap">
+    {dance.collage_title && <h2 class="h2">{dance.collage_title}</h2>}
+    {dance.collage_text && <p class="italic">{dance.collage_text}</p>}
+  </div>}
 </section>
 {dance.show_youtube_video && <section class="band cacao">
   <div class="wrap">
@@ -76,6 +80,9 @@ import Gallery from '../components/Gallery.astro';
 .photo{width:100%;aspect-ratio:4/5;object-fit:cover;filter:brightness(.85)}
 .collage{background:#000;line-height:0}
 .collage img{width:100%;height:auto;max-height:520px;object-fit:cover}
+.collage-cap{line-height:1.5;text-align:center;padding:44px 24px 56px;max-width:980px;margin:0 auto}
+.collage-cap .h2{color:#F0C67C;margin:0 0 12px}
+.collage-cap .italic{color:rgba(246,239,224,.88);margin:0 auto;max-width:54ch}
 </style>
 
 <style>
