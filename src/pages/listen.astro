@@ -32,7 +32,7 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
   <div class="wrap">
     {listen.titles.albums && <h2 class="h2 center-text">{listen.titles.albums}</h2>}
     <div class="albums">
-      {(listen.albums||[]).map(al => <iframe class="bc4" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe>)}
+      {(listen.albums||[]).map(al => <div class="bc4w"><iframe class="bc4" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe></div>)}
     </div>
     {listen.albums_link && <p class="center-text" style="margin-top:28px"><a class="btn solid" href={listen.albums_link}>{listen.titles.albums_button || 'More on Bandcamp'}</a></p>}
   </div>
@@ -94,7 +94,8 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
 .intro-text p{font-family:var(--body);font-weight:300;font-style:normal;font-size:18px;line-height:1.9;letter-spacing:.012em;word-spacing:.06em;max-width:58ch;margin:0 auto 16px;color:rgba(246,239,224,.9)}
 .intro-text p:last-child{margin-bottom:0}
 .albums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:36px}
-.bc4{border:0;width:100%;aspect-ratio:350/470;background:#fff;display:block}
+.bc4w{position:relative;padding-bottom:calc(100% + 132px);background:#fff}
+.bc4{position:absolute;inset:0;border:0;width:100%;height:100%;display:block}
 .field-title{max-width:30ch;margin:0 auto 36px !important}
 .learn-short{max-width:340px;margin:0 auto;aspect-ratio:9/16}
 .learn-short iframe{width:100%;height:100%;border:0;display:block}
