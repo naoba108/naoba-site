@@ -7,15 +7,17 @@
   },
   "titles": {
     "intro": "Heart in Nature",
-    "field_kicker": "You're invited",
-    "field": "The Earth's Biospheres have messages for us.",
+    "field_kicker": "",
+    "field": "Biospheres Soundscapes have age-old codes which are messages for our psyche and soma.",
     "research": "The research",
     "sounds": "Play with these sounds",
     "sounds_text": "Sample packs, plugins and templates made from these recordings.",
-    "video": "From the field",
+    "video": "",
     "learn": "Learn the craft",
     "learn_text": "Field recording, Ableton and sound design, one to one.",
-    "journeys_line": "Come record with me on the next journey"
+    "journeys_line": "Come record with me on the next journey",
+    "albums": "Heart in Nature albums",
+    "albums_button": "More on Bandcamp"
   },
   "figure": {
     "caption": "Fig. 1  Hopf fibration",
@@ -34,7 +36,7 @@
       "alt": "Recording a lake at sunset with a boom microphone"
     }
   ],
-  "intro": "For more than a decade I have ventured into pristine biospheres: rainforests, rivers, the ocean, caves, volcanoes to record imprints of their unique soundscapes. I have been releasing these as pure sounds, sample packs and also composed albums with them through my platform Heart in Nature. \nSince 2015 my sound research has turned toward bioacoustics and neuroacoustics: how sound moves through the body and the nervous system. I turn those recordings into music, meditations and tools you can play.",
+  "intro": "For more than a decade I have ventured into pristine biospheres: rainforests, rivers, the ocean, caves, volcanoes to record imprints of their unique soundscapes. I have been releasing these as pure sounds, sample packs and also composed albums with them through my platform Heart in Nature.\n\nSince 2015 my sound research has turned toward bioacoustics and neuroacoustics: how sound moves through the body and the nervous system. I turn those recordings into music, meditations and tools you can play.",
   "research": [
     {
       "title": "Psychoacoustics",
@@ -69,5 +71,29 @@
       "title": "Resonancias: Indio Maíz",
       "youtube_id": "3o3bhTqSHFA"
     }
-  ]
+  ],
+  "albums_link": "https://heartinnature.bandcamp.com",
+  "albums": [
+    {
+      "title": "Río Istián Ometepe, Nicaragua",
+      "url": "https://heartinnature.bandcamp.com/album/r-o-isti-n-ometepe-nicaragua",
+      "album_id": "2876172175"
+    },
+    {
+      "title": "Parque Nacional Corcovado, Península de Osa, Costa Rica",
+      "url": "https://heartinnature.bandcamp.com/album/parque-nacional-corcovado-pen-nsula-de-osa-costa-rica",
+      "album_id": "4226354173"
+    },
+    {
+      "title": "Wild Sounds of Nicaragua ✻ Río Frío Dawn Chorus",
+      "url": "https://heartinnature.bandcamp.com/album/wild-sounds-of-nicaragua-r-o-fr-o-dawn-chorus",
+      "album_id": "3404962006"
+    },
+    {
+      "title": "Mar Espacial / Meditación con Ballenas",
+      "url": "https://heartinnature.bandcamp.com/album/mar-espacial-meditaci-n-con-ballenas",
+      "album_id": "3594136608"
+    }
+  ],
+  "learn_short": "https://youtube.com/shorts/p_QGROMpsI0"
 }

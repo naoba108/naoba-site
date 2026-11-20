@@ -7,6 +7,7 @@ import Spectrogram from '../components/Spectrogram.astro';
 import listen from '../content/listen.json';
 const glyphs = ['spiral', 'turtle', 'sun'];
 import Gallery from '../components/Gallery.astro';
+const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|embed\/)([\w-]{11})/)||[])[1] || '';
 ---
 <Base title="Listen, NAOBA" page="listen">
 <section class="page-hero">
@@ -17,20 +18,31 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>
 
-<section class="band noche">
-  <div class="wrap grid2">
+<section class="band noche intro-band">
+  <div class="wrap intro-grid">
     <div>
       <h2 class="h2">{listen.titles.intro}</h2>
-      <p class="italic" style="white-space:pre-line">{listen.intro}</p>
+      <div class="intro-text">{(listen.intro||'').split(/\n\s*\n/).map(par => <p>{par.trim()}</p>)}</div>
     </div>
-    <Cochlea size={460} image={listen.figure.image} caption={listen.figure.caption} />
+    <Cochlea size={280} image={listen.figure.image} caption={listen.figure.caption} />
   </div>
 </section>
 
+{(listen.albums||[]).length > 0 && <section class="band albums-band">
+  <div class="wrap">
+    {listen.titles.albums && <h2 class="h2 center-text">{listen.titles.albums}</h2>}
+    <div class="albums">
+      {(listen.albums||[]).map(al => <iframe class="bc4" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe>)}
+    </div>
+    {listen.albums_link && <p class="center-text" style="margin-top:28px"><a class="btn solid" href={listen.albums_link}>{listen.titles.albums_button || 'More on Bandcamp'}</a></p>}
+  </div>
+</section>}
+
 <section class="band">
   <div class="wrap">
-    <p class="mono center-text">{listen.titles.field_kicker}</p>
-    <h2 class="h2 center-text" style="margin-bottom:34px">{listen.titles.field}</h2>
+    {listen.titles.field_kicker && <p class="mono center-text">{listen.titles.field_kicker}</p>}
+    <h2 class="h2 center-text field-title">{listen.titles.field}</h2>
+    {(listen.videos||[]).length > 0 && <div class="one-video" style="margin-bottom:40px">{(listen.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>}
   </div>
   <div class="wrap"><Gallery items={(listen.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
   <div>
@@ -62,16 +74,11 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>
 
-<section class="band noche">
-  <div class="wrap">
-    <h2 class="h2">{listen.titles.video}</h2>
-    <div class="one-video">{(listen.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>
-  </div>
-</section>
-
 <section class="band">
   <div class="wrap grid2">
-    <div class="frame"><img src={listen.learn_image} alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
+    {learnShort
+      ? <div class="frame learn-short"><iframe src={`https://www.youtube-nocookie.com/embed/${learnShort}?rel=0&modestbranding=1&playsinline=1`} title={listen.titles.learn} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      : <div class="frame"><img src={listen.learn_image} alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>}
     <div>
       <h2 class="h2">{listen.titles.learn}</h2>
       <p class="italic">{listen.titles.learn_text}</p>
@@ -81,6 +88,18 @@ import Gallery from '../components/Gallery.astro';
 </section>
 
 <style>
+.intro-band{padding-top:64px !important;padding-bottom:64px !important}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:48px;align-items:center}
+.intro-grid .h2{margin-bottom:18px}
+.intro-text p{font-family:var(--body);font-weight:300;font-style:normal;font-size:18px;line-height:1.9;letter-spacing:.012em;word-spacing:.06em;max-width:58ch;margin:0 auto 16px;color:rgba(246,239,224,.9)}
+.intro-text p:last-child{margin-bottom:0}
+.albums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:36px}
+.bc4{border:0;width:100%;aspect-ratio:350/470;background:#fff;display:block}
+.field-title{max-width:30ch;margin:0 auto 36px !important}
+.learn-short{max-width:340px;margin:0 auto;aspect-ratio:9/16}
+.learn-short iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:900px){.intro-grid{grid-template-columns:1fr;gap:28px}.albums{grid-template-columns:1fr 1fr}}
+
 .plate{background-image:linear-gradient(#26402F 1px,transparent 1px),linear-gradient(90deg,#26402F 1px,transparent 1px);background-size:28px 28px;background-color:rgba(0,0,0,.35)}
 .product{text-decoration:none;color:var(--maize);display:block;transition:border-color .4s}
 .product:hover{border-color:var(--gold);color:var(--maize)}

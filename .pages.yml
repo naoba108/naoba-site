@@ -261,8 +261,20 @@ content:
           - { name: sounds_text, label: Play with these sounds text, type: text }
           - { name: video, label: Video section title, type: string }
           - { name: learn, label: Learn the craft title, type: string }
+          - { name: albums, label: Albums title, type: string }
+          - { name: albums_button, label: Albums button text, type: string }
           - { name: learn_text, label: Learn the craft text, type: text }
           - { name: journeys_line, label: Link line to Journeys (leave empty to hide), type: string }
+      - name: albums
+        label: Heart in Nature albums to stream
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Album title, type: string }
+          - { name: url, label: Album link, type: string }
+          - { name: album_id, label: Bandcamp album id (number), type: string }
+      - { name: albums_link, label: Link for the More on Bandcamp button, type: string }
+      - { name: learn_short, label: YouTube Short next to Learn the craft (link), type: string }
       - name: figure
         label: Figure next to the intro (Fig. 1)
         type: object
