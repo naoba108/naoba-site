@@ -613,6 +613,7 @@ content:
           - { name: place, label: Place, type: string }
           - { name: year, label: Year, type: string }
           - { name: image, label: Photo, type: image }
+          - { name: video, label: YouTube link (shown instead of the photo), type: string }
           - { name: caption, label: Caption, type: string }
           - { name: audio, label: Field recording (mp3, optional), type: file, options: { media: audio } }
       - name: titles

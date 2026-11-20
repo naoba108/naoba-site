@@ -40,24 +40,11 @@
   ],
   "past": [
     {
-      "place": "Ometepe, Nicaragua",
-      "year": "2024",
-      "image": "./images/gallery/field-tripod.webp",
-      "caption": "Recording at the foot of Maderas",
-      "audio": ""
-    },
-    {
-      "place": "Lake Atitlán, Guatemala",
-      "year": "2024",
-      "image": "./images/gallery/drum-circle.webp",
-      "caption": "Sound ceremony by the lake",
-      "audio": ""
-    },
-    {
-      "place": "Huelgoat, France",
-      "year": "2025",
-      "image": "./images/gallery/field-forest.webp",
-      "caption": "Old forest, old stones",
+      "place": "Tenerife Pilot Whales Expedition",
+      "year": "",
+      "image": "",
+      "video": "https://youtu.be/liHGGF1INE0",
+      "caption": "",
       "audio": ""
     }
   ]

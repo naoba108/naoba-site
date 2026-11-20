@@ -45,7 +45,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 </section>
 
 <section class="small-doors">
-  {[["journeys",D.journeys],["film",D.film],["shop",D.shop],["mentorship",D.mentorship]].filter(([k,d])=>d).map(([k,d]) => <a class="sdoor" href={`./${k}.html`}><img src={d.image} alt="" loading="lazy" /><span class="h2">{d.title}</span><span class="italic">{d.subtitle}</span></a>)}
+  {[["shop",D.shop],["mentorship",D.mentorship],["film",D.film],["journeys",D.journeys]].filter(([k,d])=>d).map(([k,d]) => <a class="sdoor" href={`./${k}.html`}><img src={d.image} alt="" loading="lazy" /><span class="h2">{d.title}</span><span class="italic">{d.subtitle}</span></a>)}
 </section>
 <a class="listen-strip" href="#music" aria-label="Keep scrolling to listen to NAOBA">
   <span class="wave" aria-hidden="true">{Array.from({length:28}).map((_, i) => <i style={`--d:${(i*0.137)%1.1}s;--h:${30+((i*37)%60)}%`}></i>)}</span>
