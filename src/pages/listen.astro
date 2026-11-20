@@ -28,16 +28,6 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
   </div>
 </section>
 
-{(listen.albums||[]).length > 0 && <section class="band albums-band">
-  <div class="wrap">
-    {listen.titles.albums && <h2 class="h2 center-text">{listen.titles.albums}</h2>}
-    <div class="albums">
-      {(listen.albums||[]).map(al => <div class="bc4w"><iframe class="bc4" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe></div>)}
-    </div>
-    {listen.albums_link && <p class="center-text" style="margin-top:28px"><a class="btn solid" href={listen.albums_link}>{listen.titles.albums_button || 'More on Bandcamp'}</a></p>}
-  </div>
-</section>}
-
 <section class="band">
   <div class="wrap">
     {listen.titles.field_kicker && <p class="mono center-text">{listen.titles.field_kicker}</p>}
@@ -48,6 +38,16 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
   <div>
   </div>
 </section>
+
+{(listen.albums||[]).length > 0 && <section class="band albums-band">
+  <div class="wrap">
+    {listen.titles.albums && <h2 class="h2 center-text">{listen.titles.albums}</h2>}
+    <div class="albums">
+      {(listen.albums||[]).map(al => <div class="bc4w"><iframe class="bc4" src={`https://bandcamp.com/EmbeddedPlayer/album=${al.album_id}/size=large/bgcol=ffffff/linkcol=93702f/tracklist=false/transparent=true/`} title={`${al.title} on Bandcamp`} loading="lazy" seamless></iframe></div>)}
+    </div>
+    {listen.albums_link && <p class="center-text" style="margin-top:28px"><a class="btn solid" href={listen.albums_link}>{listen.titles.albums_button || 'More on Bandcamp'}</a></p>}
+  </div>
+</section>}
 
 {listen.spectrogram.show && <section class={`band ${listen.spectrogram.image ? 'noche' : ''}`} style="padding-top:56px;padding-bottom:56px">
   <div class="wrap">{listen.spectrogram.image ? <figure style="margin:0;text-align:center"><img src={listen.spectrogram.image} alt={listen.spectrogram.label} loading="lazy" style="width:min(620px,100%);height:auto;display:block;margin:0 auto" /><figcaption class="mono" style="margin-top:8px">{listen.spectrogram.label}</figcaption></figure> : <Spectrogram label={listen.spectrogram.label} />}</div>
@@ -62,27 +62,23 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap grid2">
-    <div class="frame"><img src={listen.sounds_image} alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>
-    <div>
-      <h2 class="h2">{listen.titles.sounds}</h2>
-      <p class="italic">{listen.titles.sounds_text}</p>
-      <p><a class="btn solid" href="./shop.html">Visit the shop</a></p>
-      {listen.titles.journeys_line && <p class="italic" style="margin-top:22px"><a href="./journeys.html">{listen.titles.journeys_line} →</a></p>}
-    </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap grid2">
+<section class="band closing">
+  <div class="wrap grid2" style="align-items:center">
     {learnShort
       ? <div class="frame learn-short"><iframe src={`https://www.youtube-nocookie.com/embed/${learnShort}?rel=0&modestbranding=1&playsinline=1`} title={listen.titles.learn} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
       : <div class="frame"><img src={listen.learn_image} alt="" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover" /></div>}
-    <div>
-      <h2 class="h2">{listen.titles.learn}</h2>
-      <p class="italic">{listen.titles.learn_text}</p>
-      <p><a class="btn solid" href="./mentorship.html">See mentorship</a></p>
+    <div class="closing-body">
+      <div class="closing-part">
+        <h2 class="h2">{listen.titles.sounds}</h2>
+        <p class="italic">{listen.titles.sounds_text}</p>
+        <p><a class="btn solid" href="./shop.html">Visit the shop</a></p>
+      </div>
+      <div class="closing-part">
+        <h2 class="h2">{listen.titles.learn}</h2>
+        <p class="italic">{listen.titles.learn_text}</p>
+        <p><a class="btn" href="./mentorship.html">See mentorship</a></p>
+      </div>
+      {listen.titles.journeys_line && <p class="italic journeys-line"><a href="./journeys.html">{listen.titles.journeys_line}&nbsp;→</a></p>}
     </div>
   </div>
 </section>
@@ -98,6 +94,10 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
 .bc4{position:absolute;inset:0;border:0;width:100%;height:100%;display:block}
 .field-title{max-width:30ch;margin:0 auto 36px !important}
 .learn-short{max-width:340px;margin:0 auto;aspect-ratio:9/16}
+.closing-body{text-align:center}
+.closing-part + .closing-part{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
+.closing .h2{font-size:clamp(30px,3.4vw,44px)}
+.journeys-line{margin-top:26px}
 .learn-short iframe{width:100%;height:100%;border:0;display:block}
 @media (max-width:900px){.intro-grid{grid-template-columns:1fr;gap:28px}.albums{grid-template-columns:1fr 1fr}}
 
