@@ -73,12 +73,28 @@
           "alt": "The community gathered for a group photo"
         },
         {
+          "image": "./images/journeys/ometepe-volcano.jpg",
+          "alt": "Concepción volcano at dusk"
+        },
+        {
           "image": "./images/journeys/ometepe-ritual.jpg",
           "alt": "Leading the opening prayer, hands raised"
         },
         {
+          "image": "./images/journeys/ometepe-prayer.jpg",
+          "alt": "Prayer circle around a newly planted tree"
+        },
+        {
           "image": "./images/journeys/ometepe-tree.jpg",
           "alt": "Planting a tree together"
+        },
+        {
+          "image": "./images/journeys/ometepe-planting-hands.jpg",
+          "alt": "Hands pressing earth around a sapling"
+        },
+        {
+          "image": "./images/journeys/ometepe-cacao-circle.jpg",
+          "alt": "Cacao ceremony circle around a palm-leaf altar"
         },
         {
           "image": "./images/journeys/ometepe-conch.jpg",
