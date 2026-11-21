@@ -16,7 +16,7 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
   </div>
 </section>
 
-<section class="band">
+<section class="band intro-j">
   <div class="wrap">
     <PetroRow cls="petro-top" />
     <p class="italic" style="white-space:pre-line">{j.intro}</p>
@@ -93,8 +93,9 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
 
 <style>
 .kinds{max-width:900px;margin:0 auto}
-.petro-top{margin-bottom:30px}
-.petro-sec{margin:6px auto 36px;opacity:.6}
+:global(.petro-top){margin-bottom:34px !important}
+.intro-j p{margin:0 auto}
+:global(.petro-sec){margin:6px auto 36px !important;opacity:.6 !important}
 .card-icon{width:84px;height:84px;object-fit:contain;display:block;margin:0 auto}
 .trips{display:grid;gap:28px;max-width:900px;margin:0 auto}
 .trip{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);border:1px solid var(--line);background:var(--cardbg);text-align:left}
