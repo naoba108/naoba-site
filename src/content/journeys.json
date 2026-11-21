@@ -28,6 +28,16 @@
   },
   "upcoming": [
     {
+      "title": "Five Body Nourishment Journey to Calakmul",
+      "place": "Calakmul, Mexico",
+      "dates": "Dates coming",
+      "spots": "5 days",
+      "price": "",
+      "text": "Five days in the ancient forests of Calakmul, nourishing the five bodies with listening, ceremony and the living jungle. Details coming soon.",
+      "image": "./images/journeys/calakmul.jpg",
+      "apply_url": "./contact.html?reason=Journeys"
+    },
+    {
       "title": "Ometepe listening expedition",
       "place": "Isla de Ometepe, Nicaragua",
       "dates": "Dates coming",
@@ -45,7 +55,60 @@
       "image": "",
       "video": "https://youtu.be/liHGGF1INE0",
       "caption": "",
-      "audio": ""
+      "audio": "",
+      "text": "",
+      "photos": []
+    },
+    {
+      "place": "Ometepe Island Retreat",
+      "year": "",
+      "image": "",
+      "video": "",
+      "caption": "Ometepe Island, Nicaragua",
+      "text": "Two days with my community between the volcanoes: a mini-festival where we planted trees, opened with prayer and ritual, shared a cacao ceremony and danced into the night.",
+      "audio": "",
+      "photos": [
+        {
+          "image": "./images/journeys/ometepe-community.jpg",
+          "alt": "The community gathered for a group photo"
+        },
+        {
+          "image": "./images/journeys/ometepe-ritual.jpg",
+          "alt": "Leading the opening prayer, hands raised"
+        },
+        {
+          "image": "./images/journeys/ometepe-tree.jpg",
+          "alt": "Planting a tree together"
+        },
+        {
+          "image": "./images/journeys/ometepe-conch.jpg",
+          "alt": "Blowing the conch before Concepción volcano"
+        },
+        {
+          "image": "./images/journeys/ometepe-fire.jpg",
+          "alt": "The ceremonial fire at night"
+        }
+      ]
+    },
+    {
+      "place": "Lake Atitlán, Guatemala",
+      "year": "2024",
+      "image": "./images/gallery/drum-circle.webp",
+      "video": "",
+      "caption": "Sound ceremony by the lake",
+      "audio": "",
+      "text": "",
+      "photos": []
+    },
+    {
+      "place": "Huelgoat, France",
+      "year": "2025",
+      "image": "./images/gallery/field-forest.webp",
+      "video": "",
+      "caption": "Old forest, old stones",
+      "audio": "",
+      "text": "",
+      "photos": []
     }
   ]
 }

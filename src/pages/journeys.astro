@@ -53,15 +53,27 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
   <div class="wrap">
     <h2 class="h2">{T.past}</h2>
     <div class="past">
-      {(j.past||[]).map(p => (
-        <figure class="place">
-          {ytId(p.video) ? <div class="place-video"><iframe src={`https://www.youtube-nocookie.com/embed/${ytId(p.video)}?rel=0&modestbranding=1`} title={p.place} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> : p.image && <img src={p.image} alt={p.caption || p.place} loading="lazy" />}
+      {(j.past||[]).map((p) => {
+        const vid = ytId(p.video); const pics = (p.photos||[]).filter(ph => ph.image);
+        const wide = vid || pics.length > 1;
+        return (
+        <figure class={`place ${wide ? 'wide' : ''}`}>
+          {vid ? <div class="place-video"><iframe src={`https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1`} title={p.place} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+           : pics.length > 1 ? <div class="carousel" data-carousel>
+               <div class="track">{pics.map(ph => <div class="slide"><img src={ph.image} alt={ph.alt || p.place} loading="lazy" /></div>)}</div>
+               <button class="nav prev" type="button" aria-label="Previous photo">‹</button>
+               <button class="nav next" type="button" aria-label="Next photo">›</button>
+               <div class="dots">{pics.map((_, i) => <button type="button" aria-label={`Photo ${i+1}`} class={i === 0 ? 'on' : ''}></button>)}</div>
+             </div>
+           : (pics[0]?.image || p.image) && <img src={pics[0]?.image || p.image} alt={p.caption || p.place} loading="lazy" />}
           <figcaption>
             <span class="h3">{p.place}</span>
-            <span class="mono">{[p.year, p.caption].filter(Boolean).join(' · ')}</span>
+            {[p.year, p.caption].filter(Boolean).length > 0 && <span class="mono">{[p.year, p.caption].filter(Boolean).join(' · ')}</span>}
+            {p.text && <span class="italic place-text">{p.text}</span>}
             {p.audio && <audio controls preload="none" src={p.audio}></audio>}
           </figcaption>
-        </figure>))}
+        </figure>);
+      })}
     </div>
   </div>
 </section>}
@@ -86,8 +98,19 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
 .trip-body p{margin:0}
 .trip-body .meta{color:var(--copal)}
 .past{display:flex;flex-wrap:wrap;justify-content:center;gap:28px}
-.past .place{flex:1 1 300px;max-width:880px}
-.past:has(.place:nth-child(2)) .place{max-width:420px}
+.past .place{flex:1 1 320px;max-width:430px}
+.past .place.wide{flex-basis:100%;max-width:880px}
+.place-text{max-width:56ch;margin:6px auto 0;line-height:1.6}
+.carousel{position:relative;background:#0b0a07;aspect-ratio:4/3;overflow:hidden}
+.carousel .track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.carousel .track::-webkit-scrollbar{display:none}
+.carousel .slide{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center}
+.carousel .slide img{width:100%;height:100%;object-fit:contain;aspect-ratio:auto}
+.carousel .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(240,198,124,.6);background:rgba(11,10,7,.55);color:#F0C67C;font-size:26px;line-height:1;cursor:pointer}
+.carousel .prev{left:14px}.carousel .next{right:14px}
+.carousel .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.carousel .dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(246,239,224,.4);cursor:pointer}
+.carousel .dots button.on{background:#F0C67C}
 .place-video{aspect-ratio:16/9;background:#000}
 .place-video iframe{width:100%;height:100%;border:0;display:block}
 .place{margin:0}
@@ -97,4 +120,7 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
 .place audio{width:100%;margin-top:8px;filter:sepia(.4)}
 @media (max-width:820px){.trip{grid-template-columns:1fr}}
 </style>
+<script is:inline>
+document.querySelectorAll('[data-carousel]').forEach(function(c){var t=c.querySelector('.track'),d=[].slice.call(c.querySelectorAll('.dots button'));function go(i){var n=d.length;i=(i+n)%n;t.scrollTo({left:i*t.clientWidth,behavior:'smooth'})}function cur(){return Math.round(t.scrollLeft/t.clientWidth)}c.querySelector('.prev').onclick=function(){go(cur()-1)};c.querySelector('.next').onclick=function(){go(cur()+1)};d.forEach(function(b,i){b.onclick=function(){go(i)}});t.addEventListener('scroll',function(){var i=cur();d.forEach(function(b,k){b.classList.toggle('on',k===i)})},{passive:true})});
+</script>
 </Base>

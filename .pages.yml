@@ -614,7 +614,15 @@ content:
           - { name: year, label: Year, type: string }
           - { name: image, label: Photo, type: image }
           - { name: video, label: YouTube link (shown instead of the photo), type: string }
+          - name: photos
+            label: Photo carousel (add several photos, drag to reorder)
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: alt, label: Short description, type: string }
           - { name: caption, label: Caption, type: string }
+          - { name: text, label: Short story (optional), type: text }
           - { name: audio, label: Field recording (mp3, optional), type: file, options: { media: audio } }
       - name: titles
         label: Section titles and short texts
