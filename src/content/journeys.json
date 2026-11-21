@@ -1,6 +1,6 @@
 {
   "hero": {
-    "image": "./images/gallery/field-forest.webp",
+    "image": "./images/journeys/recording-forest-wide.jpg",
     "kicker": "Sound & Ritual",
     "title": "Journeys"
   },
@@ -124,7 +124,7 @@
     {
       "place": "Huelgoat Forest Listening",
       "year": "2025",
-      "image": "./images/gallery/field-forest.webp",
+      "image": "./images/journeys/recording-forest-4x3.jpg",
       "video": "",
       "caption": "Huelgoat, Brittany, France",
       "audio": "",
