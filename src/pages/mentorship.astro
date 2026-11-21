@@ -52,6 +52,16 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>
 
+{m.cal?.link && <section class="band cal-band" id="book">
+  <div class="wrap">
+    {m.cal.kicker && <p class="mono">{m.cal.kicker}</p>}
+    <h2 class="h2">{m.cal.title}</h2>
+    {m.cal.text && <p class="italic" style="max-width:52ch;margin:0 auto 34px">{m.cal.text}</p>}
+    <div id="cal-inline" class="cal-inline" data-cal-link={m.cal.link}></div>
+    <noscript><p><a class="btn solid" href={`https://cal.com/${m.cal.link}`}>Book on Cal.com</a></p></noscript>
+  </div>
+</section>}
+
 <section class="band" id="mixing">
   <div class="wrap">
     <h2 class="h2">{mx.title}</h2>
@@ -88,4 +98,15 @@ import Gallery from '../components/Gallery.astro';
 @media (max-width:980px){.mix-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.mix-grid{grid-template-columns:1fr}}
 </style>
+<style>
+.cal-inline{width:100%;min-height:640px;max-width:1040px;margin:0 auto;background:#fff;border:1px solid var(--line)}
+</style>
+<script is:inline>
+(function(){var el=document.getElementById('cal-inline');if(!el)return;var link=el.dataset.calLink;
+(function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "naoba", {origin:"https://cal.com"});
+Cal.ns.naoba("inline", {elementOrSelector:"#cal-inline", config:{layout:"month_view", theme:"light"}, calLink: link});
+Cal.ns.naoba("ui", {theme:"light", cssVarsPerTheme:{light:{"cal-brand":"#93702F"}}, hideEventTypeDetails:false, layout:"month_view"});
+})();
+</script>
 </Base>

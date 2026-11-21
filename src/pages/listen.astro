@@ -8,6 +8,7 @@ import listen from '../content/listen.json';
 const glyphs = ['spiral', 'turtle', 'sun'];
 import Gallery from '../components/Gallery.astro';
 const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|embed\/)([\w-]{11})/)||[])[1] || '';
+const fieldBg = listen.field_background || '';
 ---
 <Base title="Listen, NAOBA" page="listen">
 <section class="page-hero">
@@ -28,13 +29,13 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
   </div>
 </section>
 
-<section class="band">
+<section class={`band field-bg ${fieldBg ? 'dark' : ''}`} style={fieldBg ? `--fbg:url(${fieldBg})` : undefined}>
   <div class="wrap">
     {listen.titles.field_kicker && <p class="mono center-text">{listen.titles.field_kicker}</p>}
     <h2 class="h2 center-text field-title">{listen.titles.field}</h2>
     {(listen.videos||[]).length > 0 && <div class="one-video" style="margin-bottom:40px">{(listen.videos||[]).slice(0,1).map(v => <Video id={v.youtube_id} title={v.title} />)}</div>}
   </div>
-  <div class="wrap"><Gallery items={(listen.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>
+  {!fieldBg && <div class="wrap"><Gallery items={(listen.photos||[]).map(p=>({src:p.image,alt:p.alt||p.caption||'',caption:p.caption}))} /></div>}
   <div>
   </div>
 </section>
@@ -84,6 +85,11 @@ const learnShort = ((listen.learn_short||'').match(/(?:shorts\/|youtu\.be\/|v=|e
 </section>
 
 <style>
+.field-bg{background:#0d0b08 var(--fbg) center 62%/cover no-repeat;position:relative}
+.field-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,11,8,.62) 0%,rgba(13,11,8,.38) 45%,rgba(13,11,8,.7) 100%)}
+.field-bg > .wrap{position:relative;z-index:1}
+.field-bg.dark .field-title{color:#F0C67C}
+
 .intro-band{padding-top:64px !important;padding-bottom:64px !important}
 .intro-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:48px;align-items:center}
 .intro-grid .h2{margin-bottom:18px}

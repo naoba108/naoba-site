@@ -69,5 +69,11 @@
     "video": "Why I mentor",
     "paths": "Three paths",
     "paths_lede": "The longer the path, the more each hour gives you."
+  },
+  "cal": {
+    "kicker": "Book a session",
+    "title": "Choose your time",
+    "text": "Pick a slot that works for you: a first call, a single session or the start of your path.",
+    "link": "naoba"
   }
 }

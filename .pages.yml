@@ -265,6 +265,7 @@ content:
           - { name: albums_button, label: Albums button text, type: string }
           - { name: learn_text, label: Learn the craft text, type: text }
           - { name: journeys_line, label: Link line to Journeys (leave empty to hide), type: string }
+      - { name: field_background, label: Background photo behind the film section, type: image }
       - name: albums
         label: Heart in Nature albums to stream
         type: object
@@ -320,6 +321,14 @@ content:
     path: src/content/mentorship.json
     format: json
     fields:
+      - name: cal
+        label: Booking calendar (Cal.com)
+        type: object
+        fields:
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: link, label: "Your Cal.com name (the part after cal.com/)", type: string }
       - name: hero
         label: Top of page
         type: object
@@ -439,11 +448,13 @@ content:
         list: true
         fields:
           - { name: name, label: Shelf name, type: string }
+          - { name: image_ratio, label: "Image shape (1/1 square, 4/3 landscape)", type: string }
           - name: items
             label: Products
             type: object
             list: true
             fields:
+              - { name: image, label: Cover image, type: image }
               - { name: title, label: Title, type: string }
               - { name: format, label: Format, type: string }
               - { name: text, label: Description, type: text }

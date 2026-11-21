@@ -3,7 +3,18 @@
   "shelves": [
     {
       "name": "Sample packs",
+      "image_ratio": "1/1",
       "items": [
+        {
+          "title": "Ocarinas",
+          "format": "WAV 24-bit, 48 kHz",
+          "text": "Clay ocarinas recorded up close: breath, whistle and call, with singing bowls and chalices around them. Ready to play.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Available",
+          "image": "./images/ocarinas.jpg"
+        },
         {
           "title": "Rainforest at dawn",
           "format": "WAV 24-bit, 48 kHz",
@@ -11,7 +22,8 @@
           "price": "",
           "url": "https://ko-fi.com/naoba",
           "audio": "",
-          "status": "Coming soon"
+          "status": "Coming soon",
+          "image": "./images/ometepe-jungle.jpg"
         },
         {
           "title": "Volcano and river",
@@ -20,21 +32,44 @@
           "price": "",
           "url": "https://ko-fi.com/naoba",
           "audio": "",
-          "status": "Coming soon"
+          "status": "Coming soon",
+          "image": "./images/journeys/ometepe-volcano.jpg"
         }
       ]
     },
     {
       "name": "Plugins",
+      "image_ratio": "16/9",
       "items": [
         {
-          "title": "NAOBA plugin",
-          "format": "VST3, AU",
-          "text": "An instrument built from field recordings. In development.",
+          "title": "Pod",
+          "format": "Max for Live · MIDI",
+          "text": "Whale-like calls that glide, and a second whale that answers. Call and response, never the same twice.",
           "price": "",
           "url": "https://ko-fi.com/naoba",
           "audio": "",
-          "status": "Early access"
+          "status": "In development",
+          "image": "./images/pod-device.png"
+        },
+        {
+          "title": "Place Tuner",
+          "format": "Tuning · Live 12",
+          "text": "Turns a place's recordings into its own musical scale, so every instrument plays in the intervals the land or the pod sings.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "In development",
+          "image": "./images/place-tuner.png"
+        },
+        {
+          "title": "Breath Clock",
+          "format": "Max for Live · LFO",
+          "text": "An LFO that breathes: box breath, 4-7-8 or coherent breathing, mapped to any parameter in your set.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Coming soon",
+          "image": "./images/breath-clock.png"
         }
       ]
     },
@@ -59,7 +94,7 @@
     "title": "Sound design from the living Earth"
   },
   "spectrogram": {
-    "show": true,
+    "show": false,
     "label": "Fig.  Vesica Piscis",
     "image": "./images/sacred/vesica-piscis.png"
   },

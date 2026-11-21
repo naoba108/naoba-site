@@ -28,6 +28,7 @@ import site from '../content/site.json';
       <div class="grid3">
         {shelf.items.map(it => (
           <article class="card item">
+            {it.image && <img class="item-img" src={it.image} alt={it.title} loading="lazy" style={`aspect-ratio:${shelf.image_ratio || '4/3'}`} />}
             <p class="mono">{it.format} &nbsp; {it.status}</p>
             <h3 class="h3" style="margin-top:10px">{it.title}</h3>
             <p>{it.text}</p>
@@ -57,6 +58,9 @@ import site from '../content/site.json';
 
 <style>
 .item{display:flex;flex-direction:column;gap:12px}
+.item-img{width:calc(100% + 56px);margin:0 -28px 8px;max-width:none;object-fit:cover;display:block}
+@media (max-width:820px){.item-img{width:calc(100% + 44px);margin:0 -22px 8px}}
+.card.item:has(.item-img){padding-top:0;overflow:hidden}
 .item p{margin:0}
 .item audio{width:100%;margin-top:6px}
 .preview{border:1px dashed var(--moss);padding:12px;text-align:center}
