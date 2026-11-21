@@ -1,0 +1,10 @@
+---
+import Petroglyph from './Petroglyph.astro';
+const { names = ['spiral','dancer','sun','serpent','rings','twin'], size = 40, color = 'var(--gold)', cls = '' } = Astro.props;
+---
+<div class={`petro-row ${cls}`} aria-hidden="true">
+  {names.map(n => <Petroglyph name={n} size={size} color={color} />)}
+</div>
+<style>
+.petro-row{display:flex;justify-content:center;align-items:center;gap:clamp(18px,4vw,44px);opacity:.75;margin:0 auto}
+</style>

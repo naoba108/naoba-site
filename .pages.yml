@@ -631,6 +631,7 @@ content:
           - { name: kinds, label: Kinds title, type: string }
           - { name: upcoming, label: Upcoming title, type: string }
           - { name: upcoming_empty, label: Text when nothing is scheduled, type: text }
+          - { name: past_kicker, label: Small line above the past journeys title, type: string }
           - { name: past, label: Past journeys title, type: string }
           - { name: host, label: Host title, type: string }
           - { name: host_text, label: Host text, type: text }

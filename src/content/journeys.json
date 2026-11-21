@@ -1,7 +1,7 @@
 {
   "hero": {
     "image": "./images/gallery/field-forest.webp",
-    "kicker": "Travel, record, gather",
+    "kicker": "Sound & Ritual",
     "title": "Journeys"
   },
   "intro": "I travel to listen. Rainforests, rivers, caves, volcanoes: I go to record the voice of a place before it changes, and I come back with sounds that become albums, tools and ceremonies. Some of these journeys are open. You can come with me.",
@@ -21,10 +21,11 @@
     "kinds": "Two ways to travel with me",
     "upcoming": "Upcoming journeys",
     "upcoming_empty": "The next journey is announced first in the letters. Sign up at the bottom of the page.",
-    "past": "Where we have been",
+    "past": "Sound & Ritual",
     "host": "Host a journey",
     "host_text": "Have land, a sanctuary or a community that wants to gather around sound? Tell me about your place and your people.",
-    "apply_button": "Apply to join"
+    "apply_button": "Apply to join",
+    "past_kicker": "Where we have been"
   },
   "upcoming": [
     {
@@ -51,12 +52,12 @@
   "past": [
     {
       "place": "Tenerife Pilot Whales Expedition",
-      "year": "",
+      "year": "2026",
       "image": "",
       "video": "https://youtu.be/liHGGF1INE0",
-      "caption": "",
+      "caption": "Tenerife, Canary Islands",
       "audio": "",
-      "text": "",
+      "text": "Ten of us, on the tenth day of the tenth month, out at sea with the pilot whales. A hydrophone let us hear their calls and songs; ceremony, meditation and deep listening let us meet them as kin, part of one great web of life.",
       "photos": []
     },
     {
@@ -111,23 +112,23 @@
       ]
     },
     {
-      "place": "Lake Atitlán, Guatemala",
-      "year": "2024",
+      "place": "Download your Soul Song Workshop",
+      "year": "2023",
       "image": "./images/gallery/drum-circle.webp",
       "video": "",
-      "caption": "Sound ceremony by the lake",
+      "caption": "Maderas Beach, Nicaragua",
       "audio": "",
-      "text": "",
+      "text": "A trance ritual of remembrance. We walked out into the land, each finding a spot to tune into nature's rhythms, the way ancient lineages listened for their melodic codes, and downloaded our soul song: the frequency of our spirit.",
       "photos": []
     },
     {
-      "place": "Huelgoat, France",
+      "place": "Huelgoat Forest Listening",
       "year": "2025",
       "image": "./images/gallery/field-forest.webp",
       "video": "",
-      "caption": "Old forest, old stones",
+      "caption": "Huelgoat, Brittany, France",
       "audio": "",
-      "text": "",
+      "text": "Slow walks in an old Breton forest of granite, moss and streams: recording what the stones and waters hold, and letting the forest set the rhythm of the day.",
       "photos": []
     }
   ]

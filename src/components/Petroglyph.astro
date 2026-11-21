@@ -1,0 +1,23 @@
+---
+// Petroglyph-style symbols, drawn with a slightly uneven line like carved stone
+// (spirals, rings, sun, serpent and dancing figures as found on Ometepe and across the Americas).
+const { name = 'spiral', size = 56, color = 'currentColor', stroke = 2.4 } = Astro.props;
+let seed = [...name].reduce((a, c) => a + c.charCodeAt(0), 7);
+const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280 - 0.5; };
+const j = (v, a = 0.9) => +(v + rnd() * a).toFixed(2);
+const poly = (pts) => 'M' + pts.map(([x, y]) => `${j(x)} ${j(y)}`).join(' L');
+const circle = (cx, cy, r, n = 28) => poly(Array.from({ length: n + 1 }, (_, i) => { const t = (i / n) * Math.PI * 2; return [cx + r * Math.cos(t), cy + r * Math.sin(t)]; }));
+const spiral = (cx, cy, turns, rMax, dir = 1, start = 0) => poly(Array.from({ length: Math.round(turns * 36) + 1 }, (_, i) => { const t = i / 36 * Math.PI * 2; const r = rMax * (i / (turns * 36)); return [cx + dir * r * Math.cos(t + start), cy + r * Math.sin(t + start)]; }));
+const paths = {
+  spiral: [spiral(32, 32, 3.2, 26)],
+  rings: [circle(32, 32, 26), circle(32, 32, 17, 22), circle(32, 32, 8, 14), circle(32, 32, 1.6, 6)],
+  sun: [circle(32, 32, 12, 20), ...Array.from({ length: 10 }, (_, i) => { const t = i / 10 * Math.PI * 2; return poly([[32 + 17 * Math.cos(t), 32 + 17 * Math.sin(t)], [32 + 27 * Math.cos(t), 32 + 27 * Math.sin(t)]]); })],
+  serpent: [poly(Array.from({ length: 33 }, (_, i) => [4 + i * 1.7, 34 + 10 * Math.sin(i / 32 * Math.PI * 3)])), circle(60, 34, 3.4, 10)],
+  dancer: [circle(32, 12, 5, 14), poly([[32, 17], [32, 38]]), poly([[18, 10], [22, 22], [32, 24], [42, 22], [46, 10]]), poly([[22, 54], [25, 44], [32, 38], [39, 44], [42, 54]])],
+  twin: [spiral(20, 32, 2.2, 13, 1), spiral(44, 32, 2.2, 13, -1, Math.PI), poly([[20, 32], [44, 32]])],
+};
+const d = paths[name] || paths.spiral;
+---
+<svg class="petro" width={size} height={size} viewBox="0 0 64 64" fill="none" stroke={color} stroke-width={stroke} stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  {d.map(p => <path d={p} />)}
+</svg>

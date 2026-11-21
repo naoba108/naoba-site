@@ -12,6 +12,7 @@ const nav = [
 ];
 import Signup from '../components/Signup.astro';
 import Social from '../components/Social.astro';
+import PetroRow from '../components/PetroRow.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,7 @@ import Social from '../components/Social.astro';
 </header>
 <slot />
 <footer class="foot">
+  <PetroRow size={30} color="#E6C37F" cls="petro-foot" />
   <Signup variant="foot" />
   <Social />
   {site.person && <p class="small mono">NAOBA is {site.person}</p>}
@@ -55,6 +57,7 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 --head:'Italiana',Georgia,serif;--title:'Italiana',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--fell:'Fraunces',Georgia,serif;--body:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box}
 .center-text{text-align:center}
+.petro-foot{margin-bottom:34px !important;opacity:.55 !important}
 .page-hero h1{white-space:pre-line}
 .band,.page-hero .wrap{text-align:center}
 .band .lede,.band .italic,.band p{margin-left:auto;margin-right:auto}

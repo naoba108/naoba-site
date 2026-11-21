@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Divider from '../components/Divider.astro';
 import Glyph from '../components/Glyph.astro';
+import PetroRow from '../components/PetroRow.astro';
 import j from '../content/journeys.json';
 const T = j.titles;
 const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/)||[])[1] || '';
@@ -17,6 +18,7 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
 
 <section class="band">
   <div class="wrap">
+    <PetroRow cls="petro-top" />
     <p class="italic" style="white-space:pre-line">{j.intro}</p>
   </div>
 </section>
@@ -51,7 +53,9 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
 
 {(j.past||[]).length > 0 && <section class="band noche">
   <div class="wrap">
+    {T.past_kicker && <p class="mono">{T.past_kicker}</p>}
     <h2 class="h2">{T.past}</h2>
+    <PetroRow names={['twin','sun','spiral']} size={34} color="#E6C37F" cls="petro-sec" />
     <div class="past">
       {(j.past||[]).map((p) => {
         const vid = ytId(p.video); const pics = (p.photos||[]).filter(ph => ph.image);
@@ -89,6 +93,8 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
 
 <style>
 .kinds{max-width:900px;margin:0 auto}
+.petro-top{margin-bottom:30px}
+.petro-sec{margin:6px auto 36px;opacity:.6}
 .card-icon{width:84px;height:84px;object-fit:contain;display:block;margin:0 auto}
 .trips{display:grid;gap:28px;max-width:900px;margin:0 auto}
 .trip{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);border:1px solid var(--line);background:var(--cardbg);text-align:left}
