@@ -77,15 +77,37 @@
       "name": "Templates",
       "items": [
         {
-          "title": "Sound-healing Ableton template",
+          "title": "Sound Healing Journey",
           "format": "Ableton Live 11+",
-          "text": "Open the session and play with drones, frequencies and nature layers.",
+          "text": "A ready 60-minute journey: arrival, grounding, deepening and return, with drones, bowls, monochord, binaural glides and nature beds. Open it and hold the space.",
           "price": "",
           "url": "https://ko-fi.com/naoba",
           "audio": "",
-          "status": "Coming soon"
+          "status": "Coming soon",
+          "image": "./images/sound-healing-template.png"
+        },
+        {
+          "title": "Breath & Nervous System Set",
+          "format": "Ableton Live 12",
+          "text": "Four states, Activate, Pause & Realign, Relax and Sleep, each with its own breath pace, pulse and nature layer.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Coming soon",
+          "image": "./images/breath-nervous-template.png"
+        },
+        {
+          "title": "Generative Soundscape",
+          "format": "Ableton Live 12",
+          "text": "A self-playing set for studios, spas and installations: birds, water, whales and harmony that move from dawn to night, never the same twice.",
+          "price": "",
+          "url": "https://ko-fi.com/naoba",
+          "audio": "",
+          "status": "Coming soon",
+          "image": "./images/generative-template.png"
         }
-      ]
+      ],
+      "image_ratio": "16/9"
     }
   ],
   "hero": {
