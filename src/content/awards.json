@@ -7,22 +7,34 @@
   },
   "awards": [
     {
+      "org": "International Artists Project",
+      "prize": "Founding Artist of The World Album",
+      "for": "Representing Nicaragua. Grammy considered for Best Global Music Album 2026",
+      "image": "./images/awards/world-album-founding-artist.webp"
+    },
+    {
+      "org": "International Artists Project, August 2025",
+      "prize": "Cover artist, The World Album release",
+      "for": "",
+      "image": "./images/awards/iap-world-album-cover.webp"
+    },
+    {
       "org": "Global Music Awards",
       "prize": "Gold Medal and Best in Show",
       "for": "",
-      "image": ""
+      "image": "./images/awards/global-music-awards-winner.webp"
     },
     {
       "org": "Global Music Awards",
       "prize": "Silver Medal, Best Concept Album",
       "for": "",
-      "image": ""
+      "image": "./images/awards/global-music-awards-winner.webp"
     },
     {
       "org": "International Music Artist Awards (IMAA)",
-      "prize": "Best World Music (2x)",
+      "prize": "Best World Music (2x), Autumn 2026",
       "for": "",
-      "image": ""
+      "image": "./images/awards/imaa-best-world-music-2026.webp"
     },
     {
       "org": "LIT Music Awards",
@@ -31,16 +43,16 @@
       "image": ""
     },
     {
-      "org": "LIT Music Awards",
+      "org": "LIT Music Awards 2026",
       "prize": "Best Collaborative Album",
       "for": "",
-      "image": ""
+      "image": "./images/awards/lit-best-collaborative-album-2026.webp"
     },
     {
-      "org": "LIT Music Awards",
+      "org": "LIT Music Awards 2026",
       "prize": "Best Concept Album",
       "for": "",
-      "image": ""
+      "image": "./images/awards/lit-best-concept-album-2026.webp"
     },
     {
       "org": "Global Music Artist Awards, Autumn 2025",

@@ -140,7 +140,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
     <div class="award-grid">
       {(awards.awards||[]).map(a => (
         <div class="award">
-          {a.image ? <img src={a.image} alt={`${a.prize}, ${a.org}`} loading="lazy" /> : <div class="seal" aria-hidden="true"><Glyph name="sun" size={34} color="var(--lgold)" /></div>}
+          {a.image ? <a class="a-img" href={a.image} target="_blank" rel="noopener"><img src={a.image} alt={`${a.prize}, ${a.org}`} loading="lazy" /></a> : <div class="seal" aria-hidden="true"><Glyph name="sun" size={34} color="var(--lgold)" /></div>}
           <p class="a-prize">{a.prize}</p>
           <p class="mono">{a.org}</p>
         </div>
@@ -288,7 +288,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .award-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;max-width:1000px;margin:0 auto}
 .award-grid .award{flex:0 1 220px}
 .award{border:1px solid rgba(240,198,124,.25);padding:28px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.award img{width:100%;aspect-ratio:1;object-fit:contain}
+.a-img{display:block;width:100%}
+.award img{width:100%;height:220px;object-fit:contain;display:block}
 .seal{width:84px;height:84px;border-radius:50%;border:1px solid rgba(240,198,124,.5);display:grid;place-items:center;margin-bottom:4px}
 .a-prize{font:400 22px/1.2 var(--title);letter-spacing:.03em;color:#F6EFE0;margin:0}
 .award .mono{margin:0}
