@@ -19,16 +19,16 @@
       "image": "./images/awards/iap-world-album-cover.webp"
     },
     {
-      "org": "Global Music Awards",
+      "org": "Global Music Awards, February 2026",
       "prize": "Gold Medal and Best in Show",
       "for": "",
-      "image": "./images/awards/global-music-awards-winner.webp"
+      "image": "./images/awards/gma-gold-best-in-show-2026.webp"
     },
     {
       "org": "Global Music Awards",
       "prize": "Silver Medal, Best Concept Album",
       "for": "",
-      "image": "./images/awards/global-music-awards-winner.webp"
+      "image": "./images/awards/global-music-awards-winner-blue.webp"
     },
     {
       "org": "International Music Artist Awards (IMAA)",
@@ -37,10 +37,10 @@
       "image": "./images/awards/imaa-best-world-music-2026.webp"
     },
     {
-      "org": "LIT Music Awards",
-      "prize": "Best World Music Album",
+      "org": "LIT Music Awards 2026",
+      "prize": "Platinum, Best World Music Album",
       "for": "",
-      "image": ""
+      "image": "./images/awards/lit-platinum-best-world-music-album-2026.webp"
     },
     {
       "org": "LIT Music Awards 2026",
