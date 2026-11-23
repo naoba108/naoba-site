@@ -14,7 +14,7 @@ const { a } = Astro.props;
     <img class="full" src={a.article_image} alt={a.title} />
     <p class="links">
       {a.video && <a class="btn" href={a.video} target="_blank" rel="noopener">Watch the video</a>}
-      <a class="btn" href="./index.html#press" onclick="if(window.opener){window.close();return false;}">Close</a>
+      <a class="btn" href="./index.html#press" onclick="if(history.length<=1){window.close();return false;}">Close</a>
     </p>
   </div>
 </section>
