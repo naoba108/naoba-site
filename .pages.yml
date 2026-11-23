@@ -85,6 +85,13 @@ content:
           - { name: gigs, label: Next gigs background image (shown faint), type: image }
           - { name: press, label: Press kit seal, type: image }
       - { name: strip_text, label: Text under the doors, type: string }
+      - name: tribe
+        label: Newsletter invitation
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: button, label: Button, type: string }
       - { name: marquee, label: Moving words band (one per line), type: string, list: true }
       - name: reel
         label: Live video

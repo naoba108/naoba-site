@@ -1,6 +1,6 @@
 ---
 import site from '../content/site.json';
-const { title = 'Become part of the tribe', text = 'Newsletters to your inbox: new music, gatherings and field notes.', variant = 'band' } = Astro.props;
+const { title = 'Join the Tribe', text = 'Letters from the field: new music, gatherings near you, and the sounds I bring home from the wild.', button = 'Join', variant = 'band' } = Astro.props;
 const base = (site.substack || '').replace(/\/$/, '');
 ---
 <div class={`signup ${variant}`}>
@@ -12,7 +12,7 @@ const base = (site.substack || '').replace(/\/$/, '');
     <label class="sr" for={`email-${variant}`}>Your email</label>
     <input id={`email-${variant}`} type="email" name="email" placeholder="Your email" required autocomplete="email" />
     <input type="hidden" name="first_url" value="https://naobasounds.com" />
-    <button class="btn" type="submit">Join</button>
+    <button class="btn" type="submit">{button || 'Join'}</button>
   </form>
 </div>
 <style>

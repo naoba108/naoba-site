@@ -71,5 +71,10 @@
     "music": "./images/sacred/seed-of-life.png",
     "gigs": "./images/sacred/flower-of-life.png",
     "press": "./images/sacred/penrose-stars.png"
+  },
+  "tribe": {
+    "title": "Join the Tribe",
+    "text": "Letters from the field: new music, gatherings near you, and the sounds I bring home from the wild.",
+    "button": "Join"
   }
 }
