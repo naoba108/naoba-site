@@ -16,38 +16,14 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
   </div>
 </section>
 
-<section class="band intro-j">
+<section class="band intro-j" id="ways">
   <div class="wrap">
     <PetroRow cls="petro-top" />
-    <p class="italic" style="white-space:pre-line">{j.intro}</p>
-  </div>
-</section>
-
-<section class="band noche">
-  <div class="wrap">
+    <p class="italic" style="white-space:pre-line;margin:0 auto 64px">{j.intro}</p>
     <h2 class="h2">{T.kinds}</h2>
     <div class="grid2 kinds">
       {(j.kinds||[]).map((k, i) => <div class="card">{k.icon ? <img class="card-icon" src={k.icon} alt="" width="84" height="84" loading="lazy" /> : <Glyph name={i ? 'sun' : 'spiral'} />}<h3 class="h3" style="margin-top:14px">{k.title}</h3><p>{k.text}</p></div>)}
     </div>
-  </div>
-</section>
-
-<section class="band" id="upcoming">
-  <div class="wrap">
-    <h2 class="h2">{T.upcoming}</h2>
-    {(j.upcoming||[]).length
-      ? <div class="trips">{(j.upcoming||[]).map(t => (
-          <article class="trip">
-            {t.image && <img src={t.image} alt="" loading="lazy" />}
-            <div class="trip-body">
-              <p class="mono">{[t.place, t.dates].filter(Boolean).join(' · ')}</p>
-              <h3 class="h3">{t.title}</h3>
-              <p>{t.text}</p>
-              <p class="mono meta">{[t.spots, t.price].filter(Boolean).join(' · ')}</p>
-              {t.apply_url && <a class="btn copal" href={t.apply_url}>{T.apply_button}</a>}
-            </div>
-          </article>))}</div>
-      : <p class="italic">{T.upcoming_empty}</p>}
   </div>
 </section>
 
@@ -82,12 +58,31 @@ const ytId = (u) => ((u||'').match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11
   </div>
 </section>}
 
+<section class="band" id="upcoming">
+  <div class="wrap">
+    <h2 class="h2">{T.upcoming}</h2>
+    {(j.upcoming||[]).length
+      ? <div class="trips">{(j.upcoming||[]).map(t => (
+          <article class="trip">
+            {t.image && <img src={t.image} alt="" loading="lazy" />}
+            <div class="trip-body">
+              <p class="mono">{[t.place, t.dates].filter(Boolean).join(' · ')}</p>
+              <h3 class="h3">{t.title}</h3>
+              <p>{t.text}</p>
+              <p class="mono meta">{[t.spots, t.price].filter(Boolean).join(' · ')}</p>
+              {t.apply_url && <a class="btn copal" href={t.apply_url}>{T.apply_button}</a>}
+            </div>
+          </article>))}</div>
+      : <p class="italic">{T.upcoming_empty}</p>}
+  </div>
+</section>
+
 <section class="band cacao">
   <div class="wrap" style="text-align:center">
     <Divider />
     <h2 class="h2" style="margin-top:24px">{T.host}</h2>
     <p class="italic" style="margin:0 auto 28px">{T.host_text}</p>
-    <a class="btn" href="./contact.html?reason=Journeys">Write to me</a>
+    <a class="btn" href="./contact.html?reason=Journeys">{T.host_button || 'Connect with me'}</a>
   </div>
 </section>
 

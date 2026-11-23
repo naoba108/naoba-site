@@ -675,4 +675,5 @@ content:
           - { name: past, label: Past journeys title, type: string }
           - { name: host, label: Host title, type: string }
           - { name: host_text, label: Host text, type: text }
+          - { name: host_button, label: Host a journey button, type: string }
           - { name: apply_button, label: Apply button text, type: string }
