@@ -350,6 +350,7 @@ content:
           - { name: video, label: Video title, type: string }
           - { name: paths, label: Three paths title, type: string }
           - { name: paths_lede, label: Line under Three paths, type: text }
+          - { name: testimonials, label: Testimonials title, type: string }
       - name: photos
         label: Photos (add, upload, drag to reorder)
         type: object
@@ -540,10 +541,17 @@ content:
           - { name: country, label: Country, type: string }
           - { name: year, label: Year, type: string }
   - name: mixing
-    label: Mixing & mastering (Mentorship page)
+    label: Music production page (mixing & mastering)
     type: file
     path: src/content/mixing.json
     fields:
+      - name: hero
+        label: Top of page
+        type: object
+        fields:
+          - { name: kicker, label: Small line, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: image, label: Background photo, type: image }
       - { name: title, label: Title, type: string }
       - { name: intro, label: Intro, type: text }
       - name: services

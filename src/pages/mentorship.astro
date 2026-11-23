@@ -4,7 +4,6 @@ import Divider from '../components/Divider.astro';
 import Glyph from '../components/Glyph.astro';
 import Video from '../components/Video.astro';
 import m from '../content/mentorship.json';
-import mx from '../content/mixing.json';
 const glyphs = ['spiral', 'turtle', 'sun'];
 import Gallery from '../components/Gallery.astro';
 ---
@@ -52,6 +51,21 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>
 
+<section class="band testimonials">
+  <div class="wrap">
+    <h2 class="h2">{m.titles?.testimonials || 'Words from artists'}</h2>
+    <div class="grid3">
+      {(m.testimonials && m.testimonials.length ? m.testimonials : [{},{},{}]).map(t => (
+        <figure class={`card tq ${t.quote ? '' : 'empty'}`}>
+          {t.photo ? <img class="tq-photo" src={t.photo} alt={t.name || ''} loading="lazy" /> : <div class="tq-photo ph" aria-hidden="true"></div>}
+          <blockquote>{t.quote || 'Testimonial coming soon.'}</blockquote>
+          <figcaption><span class="tq-name">{t.name || 'Artist name'}</span>{(t.role || !t.quote) && <span class="mono">{t.role || 'Mentorship path'}</span>}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
 {m.cal?.link && <section class="band cal-band" id="book">
   <div class="wrap">
     {m.cal.kicker && <p class="mono">{m.cal.kicker}</p>}
@@ -62,31 +76,20 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>}
 
-<section class="band" id="mixing">
-  <div class="wrap">
-    <h2 class="h2">{mx.title}</h2>
-    <p class="lede" style="max-width:62ch">{mx.intro}</p>
-    <div class="mix-grid">
-      {mx.services.map(sv => (
-        <article class="card mix">
-          <h3 class="h3">{sv.name}</h3>
-          <p class="price">{sv.usd} <span>/ {sv.eur}</span></p>
-          <p class="mono">{sv.unit}</p>
-          <p class="mix-detail">{sv.details}</p>
-        </article>
-      ))}
-    </div>
-    <p class="mix-note">{mx.packages_note}<br />{mx.turnaround}</p>
-    <a class="btn copal" href="./contact.html?reason=Mixing%20%26%20mastering">Send your track</a>
-  </div>
-</section>
 
 <style>
 .pkg{display:flex;flex-direction:column}
 .pkg ul{list-style:none;padding:0;margin:18px 0 24px;flex:1}
 .pkg li{padding:8px 0 8px 18px;border-top:1px solid var(--line);position:relative;font-size:16px}
 .pkg li::before{content:'';position:absolute;left:0;top:17px;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
-.pkg .btn{align-self:flex-start}
+.pkg .btn{align-self:center}
+.tq{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px}
+.tq-photo{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}
+.tq-photo.ph{background:var(--obsidian)}
+.tq blockquote{margin:0;font-family:var(--fell);font-size:18px;line-height:1.55;font-style:italic}
+.tq.empty blockquote{opacity:.55}
+.tq figcaption{display:flex;flex-direction:column;gap:4px}
+.tq-name{font-family:var(--title);font-size:22px;color:var(--lgold)}
 .price{font-family:var(--body);font-weight:450;font-variant-numeric:lining-nums;font-size:30px;color:var(--lgold);margin:0}
 .price span{font-size:22px;color:var(--gold)}
 .feature{border-color:var(--copal)}

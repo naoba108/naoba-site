@@ -5,11 +5,15 @@ const nav = [
   { href: './dance.html', label: 'Dance', key: 'dance' },
   { href: './listen.html', label: 'Listen', key: 'listen' },
   { href: './shop.html', label: 'Samples & Tools', key: 'shop' },
-  { href: './mentorship.html', label: 'Mentorship', key: 'mentorship' },
-  { href: './film.html', label: 'Film', key: 'film' },
+  { href: './mentorship.html', label: 'Work with me', key: 'work', children: [
+    { href: './mentorship.html', label: 'Mentorship', key: 'mentorship' },
+    { href: './music-production.html', label: 'Music production', key: 'production' },
+    { href: './film.html', label: 'Soundtrack', key: 'film' }
+  ] },
   { href: './journeys.html', label: 'Journeys', key: 'journeys' },
   { href: './contact.html', label: 'Contact', key: 'contact' }
 ];
+const isOn = (n) => page === n.key || (n.children || []).some(c => c.key === page);
 import Signup from '../components/Signup.astro';
 import Social from '../components/Social.astro';
 import PetroRow from '../components/PetroRow.astro';
@@ -29,11 +33,16 @@ import PetroRow from '../components/PetroRow.astro';
 <header class="bar" id="bar">
   <a class="home" href="./index.html">NAOBA</a>
   <nav aria-label="Main" class="desk">
-    {nav.map(n => <a href={n.href} aria-current={page === n.key ? 'page' : undefined}>{n.label}</a>)}
+    {nav.map(n => n.children
+      ? <div class="dd"><a href={n.href} class="dd-top" aria-haspopup="true" aria-current={isOn(n) ? 'page' : undefined}>{n.label} <span aria-hidden="true">▾</span></a>
+          <div class="dd-menu">{n.children.map(c => <a href={c.href} aria-current={page === c.key ? 'page' : undefined}>{c.label}</a>)}</div></div>
+      : <a href={n.href} aria-current={isOn(n) ? 'page' : undefined}>{n.label}</a>)}
   </nav>
   <details class="mob">
     <summary>Menu</summary>
-    <nav aria-label="Main">{nav.map(n => <a href={n.href} aria-current={page === n.key ? 'page' : undefined}>{n.label}</a>)}</nav>
+    <nav aria-label="Main">{nav.flatMap(n => n.children
+      ? [<span class="mob-group">{n.label}</span>, ...n.children.map(c => <a class="mob-sub" href={c.href} aria-current={page === c.key ? 'page' : undefined}>{c.label}</a>)]
+      : [<a href={n.href} aria-current={isOn(n) ? 'page' : undefined}>{n.label}</a>])}</nav>
   </details>
 </header>
 <slot />
@@ -70,11 +79,22 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 .card ul,.card ol{text-align:center;padding-left:0}
 form,.form{text-align:left;max-width:640px;margin-left:auto;margin-right:auto}
 .one-video{max-width:900px;margin:0 auto}
+.card .btn,.card button.btn{align-self:center !important;margin-left:auto;margin-right:auto}
+.card:has(> .btn),.card .ar-links,.card p:has(> .btn){text-align:center}
 
 .dark,.band.noche,.band.cacao,.page-hero,.foot{--maize:#EFE3C8;--lgold:#E6C37F;--line:rgba(240,198,124,.16);--obsidian:#0b0907;--cardbg:rgba(0,0,0,.25);color:var(--maize)}
 .bar.solid,body:not(.home) .bar{background:rgba(243,238,226,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom-color:var(--line)}
 .bar.solid a,body:not(.home) .bar a,.bar.solid .mob summary,body:not(.home) .bar .mob summary{color:#3b2f22}
 .bar.solid nav a[aria-current],body:not(.home) .bar nav a[aria-current]{color:var(--gold)}
+.dd{position:relative}
+.dd-top span{font-size:9px;margin-left:2px}
+.dd-menu{position:absolute;left:50%;top:100%;transform:translateX(-50%);padding-top:22px;display:none;min-width:220px}
+.dd-menu::before{content:'';position:absolute;inset:22px 0 0;background:#F3EEE2;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.12);z-index:-1}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:flex;flex-direction:column}
+.dd-menu a{color:#3b2f22 !important;padding:13px 22px;text-align:center;white-space:nowrap}
+.dd-menu a:hover,.dd-menu a[aria-current]{color:var(--gold) !important}
+.mob-group{color:var(--lgold);font-size:10px;letter-spacing:.24em;opacity:.8;margin-top:4px}
+.mob-sub{padding-left:14px}
 html{scroll-padding-top:var(--navh)}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

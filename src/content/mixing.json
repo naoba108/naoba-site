@@ -2,11 +2,40 @@
   "title": "Mixing & mastering",
   "intro": "Send me your track and I'll bring it to life: clear lows, open space, and a master that sounds right on a festival system, in headphones and on streaming. I work especially with organic, downtempo, ecstatic dance and world electronica, music with field recordings and live instruments.",
   "services": [
-    { "name": "Mastering", "usd": "$50", "eur": "€45", "unit": "per track", "details": "Stereo master ready for streaming, 24-bit WAV + MP3, 2 revisions" },
-    { "name": "Stem mastering", "usd": "$75", "eur": "€70", "unit": "per track", "details": "Mastered from up to 8 stems (drums, bass, pads, vocals…) for more control, 2 revisions" },
-    { "name": "Mixing", "usd": "$120", "eur": "€110", "unit": "per track", "details": "Full mix from your stems, up to 40 tracks, 2 revisions" },
-    { "name": "Mix + master", "usd": "$150", "eur": "€140", "unit": "per track", "details": "Both together, one smooth process, 2 revisions on each" }
+    {
+      "name": "Mastering",
+      "usd": "$50",
+      "eur": "€45",
+      "unit": "per track",
+      "details": "Stereo master ready for streaming, 24-bit WAV + MP3, 2 revisions"
+    },
+    {
+      "name": "Stem mastering",
+      "usd": "$75",
+      "eur": "€70",
+      "unit": "per track",
+      "details": "Mastered from up to 8 stems (drums, bass, pads, vocals…) for more control, 2 revisions"
+    },
+    {
+      "name": "Mixing",
+      "usd": "$120",
+      "eur": "€110",
+      "unit": "per track",
+      "details": "Full mix from your stems, up to 40 tracks, 2 revisions"
+    },
+    {
+      "name": "Mix + master",
+      "usd": "$150",
+      "eur": "€140",
+      "unit": "per track",
+      "details": "Both together, one smooth process, 2 revisions on each"
+    }
   ],
   "packages_note": "EPs and albums: 10% off when you book 4 tracks or more, mastered to flow together as one release.",
-  "turnaround": "Usually ready in 3 to 5 working days."
+  "turnaround": "Usually ready in 3 to 5 working days.",
+  "hero": {
+    "kicker": "Work with me",
+    "title": "Music production",
+    "image": "./images/rooftop-setup.jpg"
+  }
 }
