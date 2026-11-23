@@ -1,5 +1,7 @@
 ---
 import site from '../content/site.json';
+import home from '../content/home.json';
+import press from '../content/press.json';
 const { title = 'NAOBA', page = '' } = Astro.props;
 const nav = [
   { href: './dance.html', label: 'Dance', key: 'dance' },
@@ -13,6 +15,12 @@ const nav = [
   { href: './journeys.html', label: 'Journeys', key: 'journeys' },
   { href: './contact.html', label: 'Contact', key: 'contact' }
 ];
+const HT = home.titles || {};
+const homeSections = [
+  ['music', HT.music || 'Music'], ['gigs', HT.gigs || 'Next events'], ['press', HT.press || 'Press kit'],
+  ['photos', HT.photos || 'Photos'], ['awards', HT.awards || 'Awards'], ['in-the-press', press.articles_title || 'In the press'],
+  ['stages', HT.stages || 'Where I have played'], ['videos', HT.watch || 'Videos']
+].map(([id, label]) => ({ href: `./index.html#${id}`, label }));
 const isOn = (n) => page === n.key || (n.children || []).some(c => c.key === page);
 import Signup from '../components/Signup.astro';
 import Social from '../components/Social.astro';
@@ -31,7 +39,8 @@ import PetroRow from '../components/PetroRow.astro';
 </head>
 <body class={page}>
 <header class="bar" id="bar">
-  <a class="home" href="./index.html">NAOBA</a>
+  <div class="dd dd-home"><a class="home" href="./index.html" aria-haspopup="true">NAOBA <span aria-hidden="true">▾</span></a>
+    <div class="dd-menu">{homeSections.map(s => <a href={s.href}>{s.label}</a>)}</div></div>
   <nav aria-label="Main" class="desk">
     {nav.map(n => n.children
       ? <div class="dd"><a href={n.href} class="dd-top" aria-haspopup="true" aria-current={isOn(n) ? 'page' : undefined}>{n.label} <span aria-hidden="true">▾</span></a>
@@ -40,7 +49,7 @@ import PetroRow from '../components/PetroRow.astro';
   </nav>
   <details class="mob">
     <summary>Menu</summary>
-    <nav aria-label="Main">{nav.flatMap(n => n.children
+    <nav aria-label="Main"><span class="mob-group">NAOBA</span>{homeSections.map(s => <a class="mob-sub" href={s.href}>{s.label}</a>)}{nav.flatMap(n => n.children
       ? [<span class="mob-group">{n.label}</span>, ...n.children.map(c => <a class="mob-sub" href={c.href} aria-current={page === c.key ? 'page' : undefined}>{c.label}</a>)]
       : [<a href={n.href} aria-current={isOn(n) ? 'page' : undefined}>{n.label}</a>])}</nav>
   </details>
@@ -87,7 +96,9 @@ form,.form{text-align:left;max-width:640px;margin-left:auto;margin-right:auto}
 .bar.solid a,body:not(.home) .bar a,.bar.solid .mob summary,body:not(.home) .bar .mob summary{color:#3b2f22}
 .bar.solid nav a[aria-current],body:not(.home) .bar nav a[aria-current]{color:var(--gold)}
 .dd{position:relative}
-.dd-top span{font-size:9px;margin-left:2px}
+.dd-top span,.dd-home .home span{font-size:9px;margin-left:2px;letter-spacing:0;vertical-align:middle}
+.dd-home .dd-menu{left:0;transform:none}
+.dd-home .dd-menu a{text-align:left;font:400 12.5px/1 var(--sans);letter-spacing:.2em}
 .dd-menu{position:absolute;left:50%;top:100%;transform:translateX(-50%);padding-top:22px;display:none;min-width:220px}
 .dd-menu::before{content:'';position:absolute;inset:22px 0 0;background:#F3EEE2;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.12);z-index:-1}
 .dd:hover .dd-menu,.dd:focus-within .dd-menu{display:flex;flex-direction:column}
@@ -110,7 +121,7 @@ img,video{max-width:100%;display:block}
 .mob{display:none}
 .mob summary{list-style:none;cursor:pointer;color:#F6EFE0;font:500 11px/1 var(--sans);letter-spacing:.2em;border:1px solid var(--gold);padding:8px 14px;border-radius:0}
 .mob summary::-webkit-details-marker{display:none}
-.mob nav{position:absolute;right:18px;top:58px;flex-direction:column;gap:16px;background:#F3EEE2;border:1px solid var(--line);padding:20px 26px}
+.mob nav{position:absolute;right:18px;top:58px;max-height:calc(100vh - 80px);overflow-y:auto;flex-direction:column;gap:16px;background:#F3EEE2;border:1px solid var(--line);padding:20px 26px}
 .mob nav a{color:#3b2f22 !important}
 .bar nav a[aria-current]{color:var(--gold)}
 .bar .home{font:400 22px/1 var(--title);letter-spacing:.18em}
