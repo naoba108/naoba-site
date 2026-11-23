@@ -117,5 +117,18 @@
       "city": "Tepoztlán",
       "country": "Mexico"
     }
+  ],
+  "articles_title": "In the press",
+  "articles": [
+    {
+      "outlet": "It's (not) all about music",
+      "date": "30 July 2024",
+      "title": "El rapero maya tz'utujil Tzutu Kan y la productora nicaragüense Naoba colaboran con Manu Chao en \"Mr. Bobby\"",
+      "author": "Gustavo \"Tavo\" Gómez",
+      "image": "./images/press/itsnotallaboutmusic-mr-bobby-thumb.webp",
+      "article_image": "./images/press/itsnotallaboutmusic-mr-bobby-2024.webp",
+      "link": "",
+      "video": "https://www.youtube.com/watch?v=U_FFasIeLxM"
+    }
   ]
 }

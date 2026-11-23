@@ -508,6 +508,20 @@ content:
           - { name: image, label: Or upload a high-res photo, type: image }
           - { name: title, label: Caption, type: string }
           - { name: credit, label: Photo credit, type: string }
+      - { name: articles_title, label: In the press title, type: string }
+      - name: articles
+        label: Press articles
+        type: object
+        list: true
+        fields:
+          - { name: outlet, label: Magazine or blog, type: string }
+          - { name: date, label: Date, type: string }
+          - { name: title, label: Headline, type: text }
+          - { name: author, label: Written by, type: string }
+          - { name: image, label: Small preview image, type: image }
+          - { name: article_image, label: Full article as one image (if the page is gone), type: image }
+          - { name: link, label: Link to the article (if still online), type: string }
+          - { name: video, label: Link to the video (optional), type: string }
       - { name: performed_note, label: Line under 'Where I have played', type: string }
       - name: performed
         label: Places I have performed
