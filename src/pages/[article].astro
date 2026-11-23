@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import press from '../content/press.json';
+import { slugOf } from '../lib/slug.js';
+export function getStaticPaths() {
+  return (press.articles || []).filter(a => a.article_image).map(a => ({ params: { article: slugOf(a) }, props: { a } }));
+}
+const { a } = Astro.props;
+---
+<Base title={`${a.outlet}, NAOBA in the press`} page="home">
+<section class="band noche article-page">
+  <div class="wrap">
+    <p class="mono">{[a.outlet, a.date].filter(Boolean).join(' · ')}</p>
+    <img class="full" src={a.article_image} alt={a.title} />
+    <p class="links">
+      {a.video && <a class="btn" href={a.video} target="_blank" rel="noopener">Watch the video</a>}
+      <a class="btn" href="./index.html#press">Back to NAOBA</a>
+    </p>
+  </div>
+</section>
+</Base>
+<style>
+.article-page{padding:140px 0 90px}
+.article-page .wrap{max-width:1100px;text-align:center}
+.full{display:block;width:100%;height:auto;margin:18px auto 36px;box-shadow:0 2px 30px rgba(0,0,0,.18)}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+</style>

@@ -5,6 +5,7 @@ import Glyph from '../components/Glyph.astro';
 import Video from '../components/Video.astro';
 import site from '../content/site.json';
 import awards from '../content/awards.json';
+import { slugOf } from '../lib/slug.js';
 import dance from '../content/dance.json';
 import listen from '../content/listen.json';
 import music from '../content/music.json';
@@ -152,13 +153,13 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
     <div class="articles">
       {(press.articles||[]).map(ar => (
         <article class="article">
-          <a class="ar-img" href={ar.link || ar.article_image} target="_blank" rel="noopener">{ar.image && <img src={ar.image} alt={ar.title} loading="lazy" />}</a>
+          <a class="ar-img" href={ar.link || `./${slugOf(ar)}.html`}>{ar.image && <img src={ar.image} alt={ar.title} loading="lazy" />}</a>
           <div class="ar-text">
             <p class="mono">{[ar.outlet, ar.date].filter(Boolean).join(' · ')}</p>
             <p class="ar-title">{ar.title}</p>
             {ar.author && <p class="ar-by">by {ar.author}</p>}
             <p class="ar-links">
-              {(ar.link || ar.article_image) && <a class="btn" href={ar.link || ar.article_image} target="_blank" rel="noopener">Read the article</a>}
+              {(ar.link || ar.article_image) && <a class="btn" href={ar.link || `./${slugOf(ar)}.html`}>Read the article</a>}
               {ar.video && <a class="btn outline" href={ar.video} target="_blank" rel="noopener">Watch the video</a>}
             </p>
           </div>
