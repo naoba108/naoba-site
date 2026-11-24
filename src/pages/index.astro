@@ -342,6 +342,46 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 @media (max-width:820px){.article{grid-template-columns:1fr;gap:20px;padding:18px}}
 [id]{scroll-margin-top:90px}
 </style>
+<style is:global>
+.bit-wrap{max-width:1000px !important;width:100%}
+.bit-wrap .bit-widget{display:flex !important;flex-wrap:wrap;justify-content:center;column-gap:56px}
+.bit-wrap .bit-widget > *{width:100%}
+.bit-wrap .bit-nav-bar-container{display:none !important}
+.bit-wrap .bit-event-lists{order:1}
+.bit-wrap .bit-follow-section-wrapper,.bit-wrap .bit-play-my-city-wrapper{order:2;width:auto !important;flex:0 1 auto;display:flex !important;flex-direction:row !important;align-items:center;gap:18px;margin:34px 0 0 !important;padding:0 !important}
+.bit-wrap .bit-widget > div:last-child{order:3;margin-top:30px}
+.bit-wrap .bit-follow-section-heading-text,.bit-wrap .bit-play-my-city-heading-text{margin:0 !important;font-size:15px !important;color:#EFE3C8 !important;opacity:.85}
+.bit-wrap .bit-event{display:grid !important;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;padding:22px 6px !important;border-color:rgba(240,198,124,.2) !important}
+.bit-wrap .bit-mobile-date-and-share-wrapper{display:none !important}
+.bit-wrap .bit-details-inner-wrapper{display:flex !important;align-items:center;flex-wrap:wrap;gap:6px 44px;text-align:left}
+.bit-wrap .bit-details-inner-wrapper > a.bit-details{display:flex !important;align-items:center;gap:44px}
+.bit-wrap .bit-date-wrapper{display:block !important}
+.bit-wrap .bit-date{font-family:var(--title,serif);font-size:22px !important;color:#E6C37F !important;font-weight:400 !important;white-space:nowrap}
+.bit-wrap .bit-location-under-desktop{display:block !important;font-size:16px !important;color:#EFE3C8 !important}
+.bit-wrap .bit-location-under-mobile{display:none !important}
+.bit-wrap .bit-venue{font-size:16px !important;color:#EFE3C8 !important;opacity:.8}
+.bit-wrap a.bit-button,.bit-wrap .bit-follow-section-cta,.bit-wrap .bit-play-my-city-cta{font-family:var(--sans,sans-serif) !important;font-size:11.5px !important;letter-spacing:.22em !important;text-transform:uppercase;padding:13px 22px !important;border-radius:0 !important;border:1px solid #BC9855 !important;background:transparent !important;color:#E6C37F !important;min-width:0 !important;width:auto !important;display:inline-flex !important;align-items:center;gap:10px;transition:background .25s,color .25s;margin:0 !important}
+.bit-wrap a.bit-button *{color:inherit !important}
+.bit-wrap a.bit-button:hover,.bit-wrap .bit-play-my-city-cta:hover{background:#BC9855 !important;color:#0F2619 !important}
+.bit-wrap .bit-follow-section-cta{background:#BC9855 !important;color:#0F2619 !important}
+.bit-wrap .bit-follow-section-cta:hover{background:#E6C37F !important;border-color:#E6C37F !important}
+.bit-wrap .bit-follow-section-cta::before{content:'';width:17px;height:18px;flex:0 0 auto;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 23'%3E%3Cpolygon points='17.2344 11.7359 21.6916 11.7359 21.6916 0 17.2344 0'/%3E%3Cpolygon points='11.291 11.7357 15.7482 11.7357 15.7482 6.16113 11.291 6.16113'/%3E%3Cpolygon points='5.6445 11.7357 10.1017 11.7357 10.1017 6.16113 5.6445 6.16113'/%3E%3Cpolygon points='0 0 0 22.8822 16.885 22.8822 17.2032 22.8851 21.6915 22.8851 21.6915 13.2792 5.7602 13.2792 5.7602 17.4791 17.2032 17.4791 17.2032 18.6813 4.4891 18.6813 4.4891 0'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 23'%3E%3Cpolygon points='17.2344 11.7359 21.6916 11.7359 21.6916 0 17.2344 0'/%3E%3Cpolygon points='11.291 11.7357 15.7482 11.7357 15.7482 6.16113 11.291 6.16113'/%3E%3Cpolygon points='5.6445 11.7357 10.1017 11.7357 10.1017 6.16113 5.6445 6.16113'/%3E%3Cpolygon points='0 0 0 22.8822 16.885 22.8822 17.2032 22.8851 21.6915 22.8851 21.6915 13.2792 5.7602 13.2792 5.7602 17.4791 17.2032 17.4791 17.2032 18.6813 4.4891 18.6813 4.4891 0'/%3E%3C/svg%3E") center/contain no-repeat}
+.bit-wrap .bit-location-under-tablet,.bit-wrap .bit-desktop-social-share-button{display:none !important}
+.bit-wrap .bit-event{grid-template-columns:minmax(0,1fr) auto !important}
+.bit-wrap .bit-details-inner-wrapper{flex-wrap:nowrap !important;gap:44px !important;width:auto !important;justify-content:flex-start !important}
+.bit-wrap .bit-details-inner-wrapper > a.bit-details{width:auto !important;flex:0 0 auto;justify-content:flex-start !important}
+.bit-wrap .bit-date-wrapper{min-width:170px;margin:0 !important}
+.bit-wrap .bit-location-under-desktop,.bit-wrap .bit-titleWrapper{margin:0 !important;width:auto !important}
+.bit-wrap .bit-event-buttons{margin:0 !important;width:auto !important}
+@media (max-width:760px){
+.bit-wrap .bit-event{grid-template-columns:1fr !important}
+.bit-wrap .bit-details-inner-wrapper,.bit-wrap .bit-details-inner-wrapper > a.bit-details{flex-direction:column !important;gap:4px !important;align-items:center;justify-content:center !important}
+.bit-wrap .bit-date-wrapper{min-width:0}
+.bit-wrap .bit-event{grid-template-columns:1fr;text-align:center;justify-items:center}
+.bit-wrap .bit-details-inner-wrapper,.bit-wrap .bit-details-inner-wrapper > a.bit-details{flex-direction:column;gap:4px;text-align:center}
+.bit-wrap .bit-follow-section-wrapper,.bit-wrap .bit-play-my-city-wrapper{flex-direction:column !important;width:100% !important}
+}
+</style>
 {gigs.bandsintown_artist && <script is:inline charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>}
 <script is:inline>
 (function(){var v=document.querySelector('.reel video');if(!v)return;var b=document.querySelector('.sound-btn');if(b){b.addEventListener('click',function(){if(!v.src){v.src=v.dataset.src}v.muted=!v.muted;var on=!v.muted;b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?b.dataset.off:b.dataset.on;if(on){v.play().catch(function(){})}})}var still=matchMedia('(prefers-reduced-motion: reduce)').matches;if(still||v.dataset.autoplay!=='1'){v.controls=true;v.src=v.dataset.src;return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!v.src){v.src=v.dataset.src}v.play().catch(function(){})}else{if(v.muted)v.pause()}})},{threshold:.25});io.observe(v);})();
