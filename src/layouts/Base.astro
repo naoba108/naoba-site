@@ -33,6 +33,19 @@ import PetroRow from '../components/PetroRow.astro';
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={site.intro} />
+<link rel="icon" href="./favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+<meta name="theme-color" content="#0F2619" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NAOBA" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={site.intro} />
+<meta property="og:image" content="https://www.naobasounds.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.naobasounds.com/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=IM+Fell+English:ital@1&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
@@ -67,9 +80,6 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
 }
 </script>
 <style is:global>
-@font-face{font-family:'Toreadore';src:url('./fonts/toreadore.woff2?v=1') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'Nova';src:url('./fonts/nova-bold.woff2?v=1') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'Butterbrotpapier';src:url('./fonts/butterbrotpapier.woff2?v=3') format('woff2');font-display:swap}
 :root{--navh:64px;--black:#000;--noche:#0F2619;--moss:#5A6431;--gold:#BC9855;--copal:#D9772A;--cacao:#1a100a;
 --bg:#F3EEE2;--obsidian:#E9E1CF;--maize:#3b2f22;--lgold:#93702F;--line:rgba(80,60,30,.18);--cardbg:rgba(255,255,255,.55);
 --head:'Italiana',Georgia,serif;--title:'Italiana',Georgia,serif;--sans:'Jost',system-ui,sans-serif;--fell:'Fraunces',Georgia,serif;--body:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}

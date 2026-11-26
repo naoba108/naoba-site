@@ -51,11 +51,11 @@ import Gallery from '../components/Gallery.astro';
   </div>
 </section>
 
-<section class="band testimonials">
+{(m.testimonials||[]).some(t => t.quote) && <section class="band testimonials">
   <div class="wrap">
     <h2 class="h2">{m.titles?.testimonials || 'Words from artists'}</h2>
     <div class="grid3">
-      {(m.testimonials && m.testimonials.length ? m.testimonials : [{},{},{}]).map(t => (
+      {(m.testimonials||[]).filter(t => t.quote).map(t => (
         <figure class={`card tq ${t.quote ? '' : 'empty'}`}>
           {t.photo ? <img class="tq-photo" src={t.photo} alt={t.name || ''} loading="lazy" /> : <div class="tq-photo ph" aria-hidden="true"></div>}
           <blockquote>{t.quote || 'Testimonial coming soon.'}</blockquote>
@@ -64,7 +64,7 @@ import Gallery from '../components/Gallery.astro';
       ))}
     </div>
   </div>
-</section>
+</section>}
 
 {m.cal?.link && <section class="band cal-band" id="book">
   <div class="wrap">
