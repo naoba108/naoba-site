@@ -4,8 +4,8 @@ import mx from '../content/mixing.json';
 const h = mx.hero || {};
 ---
 <Base title="Music production, NAOBA" page="production">
-<section class="page-hero">
-  {h.image && <img src={h.image} alt="" />}
+<section class="page-hero prod-hero">
+  {h.image && <img src={h.image} alt="" style="object-position:50% 14%" />}
   <div class="wrap">
     {h.kicker && <p class="mono">{h.kicker}</p>}
     <h1 class="h1">{h.title || 'Music production'}</h1>
@@ -32,6 +32,7 @@ const h = mx.hero || {};
 </section>
 </Base>
 <style>
+.prod-hero{min-height:90vh}
 .price{font-family:var(--body);font-weight:450;font-variant-numeric:lining-nums;font-size:30px;color:var(--lgold);margin:0}
 .price span{font-size:22px;color:var(--gold)}
 .feature{border-color:var(--copal)}
