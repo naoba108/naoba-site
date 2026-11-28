@@ -103,7 +103,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
   <div class="wrap">
     <h2 class="h2 center-text">{T.gigs}</h2>
     {gigs.bandsintown_artist
-      ? <div class="bit-wrap"><a class="bit-widget-initializer" data-artist-name={gigs.bandsintown_artist} data-app-id={gigs.bandsintown_app_id || undefined} data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#EFE3C8" data-link-color="#BC9855" data-background-color="rgba(0,0,0,0)" data-display-limit="8" data-link-text-color="#FFFFFF" data-popup-background-color="#0F2619" data-separator-color="rgba(240,198,124,0.2)" data-font="Jost" data-display-track-button="true" data-display-play-my-city="true"></a></div>
+      ? <div class="bit-wrap"><a class="bit-widget-initializer" data-artist-name={gigs.bandsintown_artist} data-app-id={gigs.bandsintown_app_id || undefined} data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#EFE3C8" data-link-color="#BC9855" data-background-color="rgba(0,0,0,0)" data-display-limit="8" data-link-text-color="#FFFFFF" data-popup-background-color="#0F2619" data-separator-color="rgba(240,198,124,0.2)" data-font="Jost" data-display-track-button="true" data-display-play-my-city="true"></a></div><div class="bit-fallback" hidden><p>Upcoming dates live on Bandsintown.</p><a class="btn" href={`https://www.bandsintown.com/a/${String(gigs.bandsintown_artist).replace(/^id_/,"")}`} target="_blank" rel="noopener">See my upcoming dates</a></div><script is:inline>setTimeout(function(){if(!document.querySelector(".bit-wrap .bit-widget .bit-event, .bit-wrap .bit-widget")){var f=document.querySelector(".bit-fallback");if(f)f.hidden=false;}},7000);</script>
       : <p class="lede center-text" style="margin:0 auto 28px">{T.gigs_empty}</p>}
     <p class="center-text"><a class="btn copal" href="./dance.html">Book NAOBA</a></p>
   </div>
@@ -287,6 +287,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
 .bc-albums{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:40px}
 .bc{border:0;width:350px;max-width:100%;height:470px;background:#fff}
 .bit-wrap{max-width:820px;margin:0 auto 32px;font-family:var(--sans)}
+.bit-fallback{text-align:center;margin:0 auto 32px}.bit-fallback p{margin:0 0 16px;opacity:.85}
 .award-hl{margin:80px 0 48px}
 .hl-title{font:400 clamp(44px,6vw,80px)/1.05 var(--title);letter-spacing:.04em;color:var(--lgold);margin:0}
 #press .h3{margin-bottom:14px}
