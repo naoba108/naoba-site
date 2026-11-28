@@ -13,6 +13,10 @@ media:
     input: public/audio
     output: ./audio
     categories: [audio]
+  - name: files
+    label: Files (PDF)
+    input: public/files
+    output: ./files
 
 content:
   - name: home
@@ -328,6 +332,17 @@ content:
     path: src/content/mentorship.json
     format: json
     fields:
+      - name: guide
+        label: Pathways guide (prices by email)
+        type: object
+        fields:
+          - { name: show_prices, label: Show prices on the three paths, type: boolean }
+          - { name: from, label: Starting price line, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: button, label: Button, type: string }
+          - { name: done, label: Message after they send their email, type: text }
+          - { name: file, label: Guide PDF, type: file, options: { media: files } }
       - name: cal
         label: Booking calendar (Cal.com)
         type: object

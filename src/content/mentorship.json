@@ -96,5 +96,14 @@
       "role": "",
       "photo": ""
     }
-  ]
+  ],
+  "guide": {
+    "show_prices": false,
+    "from": "Paths from $390 / €350",
+    "title": "Get the full pathways guide",
+    "text": "Leave your email and the guide opens right away: all three paths, prices and payment plans. You'll also receive Letters from the field, my newsletter. Leave anytime.",
+    "button": "Send me the guide",
+    "done": "Your guide is ready. It's open in a new tab, and you can also download it here.",
+    "file": "./files/NAOBA-Mentorship-Pathways.pdf"
+  }
 }

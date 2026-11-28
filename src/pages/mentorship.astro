@@ -4,6 +4,10 @@ import Divider from '../components/Divider.astro';
 import Glyph from '../components/Glyph.astro';
 import Video from '../components/Video.astro';
 import m from '../content/mentorship.json';
+import site from '../content/site.json';
+const G = m.guide || {};
+const showPrices = G.show_prices !== false && !G.file ? true : !!G.show_prices;
+const sub = (site.substack || '').replace(/\/$/, '');
 const glyphs = ['spiral', 'turtle', 'sun'];
 import Gallery from '../components/Gallery.astro';
 ---
@@ -40,14 +44,35 @@ import Gallery from '../components/Gallery.astro';
           <Glyph name={glyphs[i]} size={40} color={i === 2 ? 'var(--copal)' : 'var(--gold)'} />
           <h3 class="h1" style="font-size:44px;margin-top:12px">{p.name}</h3>
           <p class="italic" style="font-size:18px;margin:2px 0 14px">{p.meaning}, {p.length}</p>
-          <p class="price">{p.usd} <span>/ {p.eur}</span></p>
-          {p.plan && <p class="mono">{p.plan}</p>}
+          {showPrices && <p class="price">{p.usd} <span>/ {p.eur}</span></p>}
+          {showPrices && p.plan && <p class="mono">{p.plan}</p>}
           <p class="mono" style="color:var(--maize);margin-top:10px">{p.sessions}, every 2 weeks</p>
           <ul>{p.includes.map(x => <li>{x}</li>)}</ul>
           <a class={`btn ${i === 2 ? 'solid' : ''}`} href="./contact.html">Book a free call</a>
         </article>
       ))}
     </div>
+    {G.file && !showPrices && (
+      <div class="guide" id="guide">
+        <p class="g-from">{G.from}</p>
+        <h3 class="h2 g-title">{G.title}</h3>
+        <p class="g-text">{G.text}</p>
+        <form class="g-form" action={`${sub}/api/v1/free?nojs=true`} method="post" target="g-sink">
+          <label class="sr" for="g-email">Your email</label>
+          <input id="g-email" type="email" name="email" placeholder="Your email" required autocomplete="email" />
+          <input type="hidden" name="first_url" value="https://naobasounds.com/mentorship.html" />
+          <button class="btn solid" type="submit">{G.button}</button>
+        </form>
+        <div class="g-done" hidden>
+          <p>{G.done}</p>
+          <a class="btn" href={G.file} target="_blank" rel="noopener" download>Download the guide</a>
+        </div>
+        <iframe name="g-sink" title="" aria-hidden="true" tabindex="-1" style="display:none"></iframe>
+      </div>
+    )}
+    <script is:inline>
+    (function(){var f=document.querySelector('.g-form');if(!f)return;f.addEventListener('submit',function(){var d=document.querySelector('.g-done'),a=d.querySelector('a');window.open(a.href,'_blank');setTimeout(function(){f.hidden=true;d.hidden=false;},300);});})();
+    </script>
   </div>
 </section>
 
@@ -83,6 +108,15 @@ import Gallery from '../components/Gallery.astro';
 .pkg li{padding:8px 0 8px 18px;border-top:1px solid var(--line);position:relative;font-size:16px}
 .pkg li::before{content:'';position:absolute;left:0;top:17px;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
 .pkg .btn{align-self:center}
+.guide{max-width:720px;margin:56px auto 0;text-align:center;border:1px solid var(--gold);padding:40px 36px}
+.g-from{font-family:var(--sans);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.g-title{margin:0 0 12px;font-size:clamp(30px,3.2vw,42px) !important}
+.g-text{margin:0 auto 24px;max-width:52ch;opacity:.9}
+.g-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.g-form input{flex:1 1 260px;max-width:340px;padding:14px 16px;background:transparent;border:1px solid var(--gold);color:var(--maize);font:inherit}
+.g-form input::placeholder{color:var(--maize);opacity:.6}
+.g-done p{margin:0 0 18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .tq{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px}
 .tq-photo{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}
 .tq-photo.ph{background:var(--obsidian)}
