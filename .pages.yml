@@ -532,6 +532,8 @@ content:
           - { name: title, label: Caption, type: string }
           - { name: credit, label: Photo credit, type: string }
       - { name: articles_title, label: In the press title, type: string }
+      - { name: photos_drive, label: Link to the Google Drive folder of high-res photos (shared with anyone with the link), type: string }
+      - { name: photos_drive_button, label: Text of the Drive photos button, type: string }
       - name: articles
         label: Press articles
         type: object
@@ -543,7 +545,7 @@ content:
           - { name: author, label: Written by, type: string }
           - { name: image, label: Small preview image, type: image }
           - { name: article_image, label: Full article as one image (if the page is gone), type: image }
-          - { name: link, label: Link to the article (if still online), type: string }
+          - { name: link, label: Link to the article or interview (if still online), type: string }
           - { name: video, label: Link to the video (optional), type: string }
       - { name: performed_note, label: Line under 'Where I have played', type: string }
       - name: performed
@@ -593,6 +595,7 @@ content:
         list: true
         fields:
           - { name: title, label: Title, type: string }
+          - { name: caption, label: Caption under the video (where it was filmed), type: string }
           - { name: url, label: YouTube Shorts link, type: string }
   - name: gigs
     label: Gigs widget (Bandsintown)
