@@ -17,7 +17,8 @@
     "learn_text": "Field recording, Ableton and sound design, one to one.",
     "journeys_line": "Come record with me on the next journey",
     "albums": "Heart in Nature albums",
-    "albums_button": "More on Bandcamp"
+    "albums_button": "More on Bandcamp",
+    "heard_on": "As heard on"
   },
   "figure": {
     "caption": "Fig. 1  Hopf fibration",
@@ -96,5 +97,27 @@
     }
   ],
   "learn_short": "https://youtube.com/shorts/p_QGROMpsI0",
-  "field_background": "images/gallery/sunset-boom.webp"
+  "field_background": "images/gallery/sunset-boom.webp",
+  "heard_on": [
+    {
+      "outlet": "NPR, Morning Edition",
+      "date": "16 July 2020",
+      "title": "A New Album Turns The Sound Of Endangered Birds Into Electronic Music",
+      "text": "My track for the guardabarranco, Nicaragua's national bird, on A Guide to the Birdsong.",
+      "image": "./images/press/birdsong-guide-cover.webp",
+      "player": "https://www.npr.org/player/embed/891432319/891735356",
+      "link": "https://www.npr.org/2020/07/16/891432319/a-new-album-turns-the-sound-of-endangered-birds-into-electronic-music",
+      "link_label": "Read on NPR"
+    },
+    {
+      "outlet": "BBC Radio 4",
+      "date": "23 June 2020",
+      "title": "The Last Songs of Gaia, 1: Birds",
+      "text": "Verity Sharp listens to how musicians, sound artists and poets answer the loss of species.",
+      "image": "./images/press/bbc-radio4-last-songs-of-gaia.webp",
+      "player": "",
+      "link": "https://www.bbc.co.uk/programmes/m000k99r",
+      "link_label": "See on BBC Radio 4"
+    }
+  ]
 }

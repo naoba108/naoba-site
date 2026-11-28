@@ -166,7 +166,8 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
             <p class="ar-title">{ar.title}</p>
             {ar.author && <p class="ar-by">by {ar.author}</p>}
             <p class="ar-links">
-              {main && <a class="btn" href={main} target="_blank" rel="noopener">{ar.link && /bbc\.co|soundcloud|podcast|radio/i.test(ar.link) ? 'Listen' : 'Read the article'}</a>}
+              {ar.listen && <a class="btn" href={ar.listen} target="_blank" rel="noopener">Listen</a>}
+              {main && <a class={`btn${ar.listen ? ' outline' : ''}`} href={main} target="_blank" rel="noopener">{ar.link_label || 'Read the article'}</a>}
               {ar.link && page && <a class="btn outline" href={page} target="_blank" rel="noopener">See the clipping</a>}
               {ar.video && <a class="btn outline" href={ar.video} target="_blank" rel="noopener">Watch the video</a>}
             </p>

@@ -121,14 +121,16 @@
   "articles_title": "In the press",
   "articles": [
     {
-      "outlet": "BBC",
-      "date": "",
-      "title": "NAOBA on the BBC",
-      "author": "",
-      "image": "",
+      "outlet": "BBC Radio 4",
+      "date": "23 June 2020",
+      "title": "The Last Songs of Gaia, 1: Birds",
+      "author": "Verity Sharp",
+      "image": "./images/press/bbc-radio4-last-songs-of-gaia.webp",
       "article_image": "",
       "link": "https://www.bbc.co.uk/programmes/m000k99r",
-      "video": ""
+      "video": "",
+      "listen": "",
+      "link_label": "See on BBC Radio 4"
     },
     {
       "outlet": "NPR, National Public Radio",
@@ -138,7 +140,9 @@
       "image": "./images/press/npr-2020-birdsong-thumb.webp",
       "article_image": "./images/press/npr-2020-birdsong.webp",
       "link": "https://www.npr.org/2020/07/16/891432319/a-new-album-turns-the-sound-of-endangered-birds-into-electronic-music",
-      "video": ""
+      "video": "",
+      "listen": "https://www.npr.org/player/embed/891432319/891735356",
+      "link_label": ""
     },
     {
       "outlet": "Mixmag UK",
@@ -148,7 +152,9 @@
       "image": "./images/press/mixmag-uk-2021-tool-for-protest-thumb.webp",
       "article_image": "./images/press/mixmag-uk-2021-tool-for-protest.webp",
       "link": "https://mixmag.net/feature/global-south-women-female-non-binary-djs-protest-music",
-      "video": ""
+      "video": "",
+      "listen": "",
+      "link_label": ""
     },
     {
       "outlet": "GROOVE, Germany",
@@ -158,7 +164,9 @@
       "image": "./images/press/groove-2020-they-want-our-music-thumb.webp",
       "article_image": "./images/press/groove-2020-they-want-our-music.webp",
       "link": "https://groove.de/2020/11/18/they-want-our-music-but-not-the-struggle-the-musicians-forging-a-new-central-american-identity/",
-      "video": ""
+      "video": "",
+      "listen": "",
+      "link_label": ""
     },
     {
       "outlet": "Mixmag México",
@@ -167,8 +175,10 @@
       "author": "",
       "image": "./images/press/mixmag-mexico-2020-thumb.webp",
       "article_image": "./images/press/mixmag-mexico-2020.webp",
-      "link": "https://issuu.com/mixmagmx/docs/mixmag_septiembre_2020/10",
-      "video": ""
+      "link": "",
+      "video": "",
+      "listen": "",
+      "link_label": ""
     },
     {
       "outlet": "It's (not) all about music",
@@ -178,7 +188,9 @@
       "image": "./images/press/itsnotallaboutmusic-mr-bobby-thumb.webp",
       "article_image": "./images/press/itsnotallaboutmusic-mr-bobby-2024.webp",
       "link": "",
-      "video": "https://www.youtube.com/watch?v=U_FFasIeLxM"
+      "video": "https://www.youtube.com/watch?v=U_FFasIeLxM",
+      "listen": "",
+      "link_label": ""
     }
   ],
   "photos_drive": "",

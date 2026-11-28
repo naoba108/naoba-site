@@ -252,6 +252,19 @@ content:
     path: src/content/listen.json
     format: json
     fields:
+      - name: heard_on
+        label: As heard on (radio features)
+        type: object
+        list: true
+        fields:
+          - { name: outlet, label: Station or program, type: string }
+          - { name: date, label: Date, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: text, label: One line about it, type: text }
+          - { name: image, label: Picture (used if there is no player), type: image }
+          - { name: player, label: Embedded player link (e.g. NPR player/embed link), type: string }
+          - { name: link, label: Link (leave empty if broken), type: string }
+          - { name: link_label, label: Button text, type: string }
       - name: hero
         label: Top of page
         type: object
@@ -274,6 +287,7 @@ content:
           - { name: learn, label: Learn the craft title, type: string }
           - { name: albums, label: Albums title, type: string }
           - { name: albums_button, label: Albums button text, type: string }
+          - { name: heard_on, label: 'As heard on' title (radio features), type: string }
           - { name: learn_text, label: Learn the craft text, type: text }
           - { name: journeys_line, label: Link line to Journeys (leave empty to hide), type: string }
       - { name: field_background, label: Background photo behind the film section, type: image }
@@ -545,7 +559,9 @@ content:
           - { name: author, label: Written by, type: string }
           - { name: image, label: Small preview image, type: image }
           - { name: article_image, label: Full article as one image (if the page is gone), type: image }
-          - { name: link, label: Link to the article or interview (if still online), type: string }
+          - { name: link, label: Link to the article or interview (if still online; leave empty if broken), type: string }
+          - { name: link_label, label: Text of that button (optional; default 'Read the article'), type: string }
+          - { name: listen, label: Link to the recording (optional; adds a Listen button), type: string }
           - { name: video, label: Link to the video (optional), type: string }
       - { name: performed_note, label: Line under 'Where I have played', type: string }
       - name: performed
