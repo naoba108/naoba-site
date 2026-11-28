@@ -121,6 +121,19 @@
   "articles_title": "In the press",
   "articles": [
     {
+      "outlet": "It's (not) all about music",
+      "date": "30 July 2024",
+      "title": "El rapero maya tz'utujil Tzutu Kan y la productora nicaragüense Naoba colaboran con Manu Chao en \"Mr. Bobby\"",
+      "author": "Gustavo \"Tavo\" Gómez",
+      "image": "./images/press/itsnotallaboutmusic-mr-bobby-thumb.webp",
+      "article_image": "./images/press/itsnotallaboutmusic-mr-bobby-2024.webp",
+      "link": "",
+      "video": "https://www.youtube.com/watch?v=U_FFasIeLxM",
+      "listen": "",
+      "link_label": "",
+      "note": ""
+    },
+    {
       "outlet": "BBC Radio 4",
       "date": "23 June 2020",
       "title": "The Last Songs of Gaia, 1: Birds",
@@ -130,43 +143,8 @@
       "link": "https://www.bbc.co.uk/programmes/m000k99r",
       "video": "",
       "listen": "",
-      "link_label": "See on BBC Radio 4"
-    },
-    {
-      "outlet": "NPR, National Public Radio",
-      "date": "16 July 2020",
-      "title": "A New Album Turns The Sound Of Endangered Birds Into Electronic Music",
-      "author": "Catalina Maria Johnson",
-      "image": "./images/press/npr-2020-birdsong-thumb.webp",
-      "article_image": "./images/press/npr-2020-birdsong.webp",
-      "link": "https://www.npr.org/2020/07/16/891432319/a-new-album-turns-the-sound-of-endangered-birds-into-electronic-music",
-      "video": "",
-      "listen": "https://www.npr.org/player/embed/891432319/891735356",
-      "link_label": ""
-    },
-    {
-      "outlet": "Mixmag UK",
-      "date": "2021",
-      "title": "\"A tool for protest\": DJs from the Global South are fighting oppression with music",
-      "author": "",
-      "image": "./images/press/mixmag-uk-2021-tool-for-protest-thumb.webp",
-      "article_image": "./images/press/mixmag-uk-2021-tool-for-protest.webp",
-      "link": "https://mixmag.net/feature/global-south-women-female-non-binary-djs-protest-music",
-      "video": "",
-      "listen": "",
-      "link_label": ""
-    },
-    {
-      "outlet": "GROOVE, Germany",
-      "date": "18 November 2020",
-      "title": "\"They Want Our Music But Not the Struggle\": the Musicians Forging a New Central American Identity",
-      "author": "Gustavo Gómez",
-      "image": "./images/press/groove-2020-they-want-our-music-thumb.webp",
-      "article_image": "./images/press/groove-2020-they-want-our-music.webp",
-      "link": "https://groove.de/2020/11/18/they-want-our-music-but-not-the-struggle-the-musicians-forging-a-new-central-american-identity/",
-      "video": "",
-      "listen": "",
-      "link_label": ""
+      "link_label": "See on BBC Radio 4",
+      "note": "Only available to listen in the UK"
     },
     {
       "outlet": "Mixmag México",
@@ -178,19 +156,47 @@
       "link": "",
       "video": "",
       "listen": "",
-      "link_label": ""
+      "link_label": "",
+      "note": ""
     },
     {
-      "outlet": "It's (not) all about music",
-      "date": "30 July 2024",
-      "title": "El rapero maya tz'utujil Tzutu Kan y la productora nicaragüense Naoba colaboran con Manu Chao en \"Mr. Bobby\"",
-      "author": "Gustavo \"Tavo\" Gómez",
-      "image": "./images/press/itsnotallaboutmusic-mr-bobby-thumb.webp",
-      "article_image": "./images/press/itsnotallaboutmusic-mr-bobby-2024.webp",
-      "link": "",
-      "video": "https://www.youtube.com/watch?v=U_FFasIeLxM",
+      "outlet": "NPR, National Public Radio",
+      "date": "16 July 2020",
+      "title": "A New Album Turns The Sound Of Endangered Birds Into Electronic Music",
+      "author": "Catalina Maria Johnson",
+      "image": "./images/press/npr-2020-birdsong-thumb.webp",
+      "article_image": "./images/press/npr-2020-birdsong.webp",
+      "link": "https://www.npr.org/2020/07/16/891432319/a-new-album-turns-the-sound-of-endangered-birds-into-electronic-music",
+      "video": "",
+      "listen": "https://www.npr.org/player/embed/891432319/891735356",
+      "link_label": "",
+      "note": ""
+    },
+    {
+      "outlet": "GROOVE, Germany",
+      "date": "18 November 2020",
+      "title": "\"They Want Our Music But Not the Struggle\": the Musicians Forging a New Central American Identity",
+      "author": "Gustavo Gómez",
+      "image": "./images/press/groove-2020-they-want-our-music-thumb.webp",
+      "article_image": "./images/press/groove-2020-they-want-our-music.webp",
+      "link": "https://groove.de/2020/11/18/they-want-our-music-but-not-the-struggle-the-musicians-forging-a-new-central-american-identity/",
+      "video": "",
       "listen": "",
-      "link_label": ""
+      "link_label": "",
+      "note": ""
+    },
+    {
+      "outlet": "Mixmag UK",
+      "date": "2021",
+      "title": "\"A tool for protest\": DJs from the Global South are fighting oppression with music",
+      "author": "",
+      "image": "./images/press/mixmag-uk-2021-tool-for-protest-thumb.webp",
+      "article_image": "./images/press/mixmag-uk-2021-tool-for-protest.webp",
+      "link": "https://mixmag.net/feature/global-south-women-female-non-binary-djs-protest-music",
+      "video": "",
+      "listen": "",
+      "link_label": "",
+      "note": ""
     }
   ],
   "photos_drive": "",

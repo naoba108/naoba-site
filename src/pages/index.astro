@@ -171,6 +171,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
               {ar.link && page && <a class="btn outline" href={page} target="_blank" rel="noopener">See the clipping</a>}
               {ar.video && <a class="btn outline" href={ar.video} target="_blank" rel="noopener">Watch the video</a>}
             </p>
+            {ar.note && <p class="ar-note">{ar.note}</p>}
           </div>
         </article>);
       })}
@@ -192,7 +193,7 @@ const homeVideos = [dance.videos[0], listen.videos[0]];
     <h3 class="h3 sub" id="videos">{T.watch}</h3>
   </div>
   {shortList.length > 0 && <div class="shorts" aria-label="Short videos">
-    {shortList.map(sh => <figure class="short-fig"><div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>{sh.caption && <figcaption>{sh.caption}</figcaption>}</figure>)}
+    {shortList.map(sh => <figure class="short-fig"><div class="short frame"><iframe src={`https://www.youtube-nocookie.com/embed/${sh.id}?rel=0&modestbranding=1&playsinline=1`} title={sh.title || 'NAOBA short'} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>{sh.caption && <figcaption>{sh.caption.split(' · ').map((part, k) => <span class={k===0 ? 'cap-place' : 'cap-where'}>{part}</span>)}</figcaption>}</figure>)}
   </div>}
   <div class="wrap" style="margin-top:44px">
     <p class="center-text" style="margin-top:32px"><a class="btn" href={site.youtube}>{T.youtube_button}</a></p>
@@ -306,7 +307,11 @@ document.querySelectorAll('[data-carousel]').forEach(root => {
 .reel video{width:100%;max-height:86vh;aspect-ratio:16/9;object-fit:cover;background:#000 center/cover no-repeat}
 .shorts{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;max-width:74rem;margin:56px auto 0;padding:0 28px}
 .shorts .short-fig{flex:0 0 min(280px,22%);margin:0}
-.short-fig figcaption{margin-top:10px;text-align:center;font-style:italic;font-size:15px;opacity:.85}
+.short-fig figcaption{margin-top:14px;text-align:center;font-variant:small-caps;letter-spacing:.08em;font-size:17px;color:var(--lgold)}
+.short-fig figcaption span{display:block}
+.short-fig .cap-where{display:inline;font-size:14px;opacity:.8}
+.short-fig .cap-where + .cap-where::before{content:' · '}
+.ar-note{margin:14px 0 0;font-size:14px;font-style:italic;opacity:.7}
 .short{aspect-ratio:9/16;background:#0F2619;overflow:visible}
 .short iframe{width:100%;height:100%;border:0;display:block}
 .short.empty{display:grid;place-items:center;border:1px dashed var(--gold);background:transparent}

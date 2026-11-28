@@ -107,7 +107,8 @@
       "image": "./images/press/birdsong-guide-cover.webp",
       "player": "https://www.npr.org/player/embed/891432319/891735356",
       "link": "https://www.npr.org/2020/07/16/891432319/a-new-album-turns-the-sound-of-endangered-birds-into-electronic-music",
-      "link_label": "Read on NPR"
+      "link_label": "Read on NPR",
+      "note": ""
     },
     {
       "outlet": "BBC Radio 4",
@@ -117,7 +118,8 @@
       "image": "./images/press/bbc-radio4-last-songs-of-gaia.webp",
       "player": "",
       "link": "https://www.bbc.co.uk/programmes/m000k99r",
-      "link_label": "See on BBC Radio 4"
+      "link_label": "See on BBC Radio 4",
+      "note": "Only available to listen in the UK"
     }
   ]
 }

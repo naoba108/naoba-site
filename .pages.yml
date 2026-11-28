@@ -265,6 +265,7 @@ content:
           - { name: player, label: Embedded player link (e.g. NPR player/embed link), type: string }
           - { name: link, label: Link (leave empty if broken), type: string }
           - { name: link_label, label: Button text, type: string }
+          - { name: note, label: Small note under the button (optional), type: string }
       - name: hero
         label: Top of page
         type: object
@@ -562,6 +563,7 @@ content:
           - { name: link, label: Link to the article or interview (if still online; leave empty if broken), type: string }
           - { name: link_label, label: Text of that button (optional; default 'Read the article'), type: string }
           - { name: listen, label: Link to the recording (optional; adds a Listen button), type: string }
+          - { name: note, label: Small note under the buttons (optional), type: string }
           - { name: video, label: Link to the video (optional), type: string }
       - { name: performed_note, label: Line under 'Where I have played', type: string }
       - name: performed
